@@ -20,22 +20,8 @@ public class BatcaveApplication implements CommandLineRunner {
 	
 	@Override
 	public void run(String... args) throws Exception {
-
 		repo.deleteAll();
-
 		repo.save(new Document("Test", "Dies ist ein Test!"));
 		repo.save(new Document("Telefon", "Ich geh ans Telefon ran!"));
-
-		System.out.println("Docs found with findAll():");
-		System.out.println("-------------------------------");
-		for (Document doc : repo.findAll()) {
-			System.out.println(doc);
-		}
-		System.out.println();
-
-		System.out.println("Doc found with findByTitle('Test'):");
-		System.out.println("--------------------------------");
-		System.out.println(repo.findByTitle("Test"));
-
 	}
 }

@@ -15,7 +15,6 @@ public class TestController {
 	@Autowired
 	private DocumentRepository repo;
 	
-	
 	@RequestMapping("/")
     public String index() {
         return "Die Menschen brauchen Erziehung, nicht Unterhaltung!";
@@ -29,7 +28,7 @@ public class TestController {
 	@RequestMapping(value = "/doc/{title}", method = RequestMethod.GET)
     public String doc(@PathVariable String title) {
 		Document doc = repo.findByTitle(title);
-        return doc == null ? "Document not found." : doc.toString();
+        return doc == null ? "{}" : doc.toString();
     }
 	
 }
