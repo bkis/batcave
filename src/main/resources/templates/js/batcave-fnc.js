@@ -2,16 +2,17 @@ var colorHash = new ColorHash({lightness: 0.7});
 
 
 function getColorFor(tagString){
-	return colorHash.hex(tagString.length + tagString);
+	return colorHash.hex(tagString);
 }
 
 
-function getJsonQ(jsonString){
-	return jsonQ(JSON.parse(jsonString));
+function getJsonQ(json){
+	return jsonQ(json);
 }
 
 
-function getLegend(jsonQ){
+function getLegend(json){
+	var jsonQ = getJsonQ(json);
 	//extract tags
 	var tags = jsonQ.find("tags").value();
 	tags = Array.from(new Set([].concat.apply([], tags)));
@@ -27,12 +28,13 @@ function getLegend(jsonQ){
 }
 
 
-function getDisplayData(jsonQ){
-	var data = jsonQ.find("objects").value()[0];
+function getDisplayData(json){
 	var out = "";
 	
-	for (obj in data){
-		out += '<span class="bc-object" data-tag="' + data[obj].tags + '">' + data[obj].display + '</span>';
+	for (obj in json.objects){
+		out += '<span class="bc-object" data-tag="' + 
+				json.objects[obj].tags + '">' + 
+				json.objects[obj].display + '</span>';
 	}
 	
 	return out;

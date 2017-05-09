@@ -1,11 +1,11 @@
 
 $(document).ready(function() {
 
-	var jsonString = '{"meta":{"volume":"Volume1","chapter":"KapitelDings","page":"32"},"objects":[{"display":"Haus","tags":["NN","ADV","V_PP"]},{"display":"bauen","tags":["V_PP"]}]}';
-	var jsonQ = getJsonQ(jsonString);
+	var jsonString = '{"meta":{"volume":"Volume1","chapter":"KapitelDings","page":"32"},"objects":[{"display":"Peter","tags":["NN"]},{"display":"ist","tags":["V_PP"]},{"display":"heute","tags":["PRÄP_TEMP"]},{"display":"wieder","tags":["CONJ"]},{"display":"besonders","tags":["ADV","ADJ"]},{"display":"begriffsstutzig.","tags":["ADJ"]}]}';
+	var json = JSON.parse(jsonString);
 
 	//extract and prepare data
-	var legend = getLegend(jsonQ);
+	var legend = getLegend(json);
 
 	//fill legend in DOM
 	$("#bc-legend").empty();
@@ -20,14 +20,21 @@ $(document).ready(function() {
 	
 	//set hover actions for legend items
 	$(".bc-legend-item").hover(function() {
-		$(".bc-object[data-tag='" + $(this).attr("data-tag") + "']").css("background-color", legend[$(this).attr("data-tag")]);
+		$(this).addClass("bc-legend-item-hover");
+		$(".bc-object[data-tag*='" + $(this).attr("data-tag") + "']").css("background-color", legend[$(this).attr("data-tag")]);
 	}, function() {
-		$(".bc-object[data-tag='" + $(this).attr("data-tag") + "']").css("background-color", "#fff");
+		$(this).removeClass("bc-legend-item-hover");
+		$(".bc-object[data-tag*='" + $(this).attr("data-tag") + "']").css("background-color", "#fff");
 	});
 	
 	//fill display
-	$("#bc-display").append(getDisplayData(jsonQ));
+	$("#bc-display").append(getDisplayData(json));
 
-
+	//set hover actions for display objects
+	$(".bc-object").hover(function() {
+		$(".bc-legend-item").mouseenter();
+	}, function() {
+		$(".bc-legend-item").mouseout();
+	});
 });
 
