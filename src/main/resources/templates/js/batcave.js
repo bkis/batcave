@@ -1,5 +1,5 @@
 //load color-hash util and set color lightness
-var colorHash = new ColorHash({lightness: 0.7});
+var colorHash = new ColorHash({lightness: 0.6});
 
 //returns color based on tag-string
 function getColorFor(tagString){
