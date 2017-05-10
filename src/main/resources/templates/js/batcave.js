@@ -32,9 +32,19 @@ $(document).ready(function() {
 
 	//set hover actions for display objects
 	$(".bc-object").hover(function() {
-		$(".bc-legend-item").mouseenter();
+		var hovered = $(this);
+		$(".bc-legend-item").each(function(){
+			if (hovered.attr("data-tag").includes($(this).attr("data-tag"))){
+				$(this).mouseenter();
+			}
+		});
 	}, function() {
-		$(".bc-legend-item").mouseout();
+		var hovered = $(this);
+		$(".bc-legend-item").each(function(){
+			if (hovered.attr("data-tag").includes($(this).attr("data-tag"))){
+				$(this).mouseout();
+			}
+		});
 	});
 });
 
