@@ -68,12 +68,12 @@ div.frame-box {
     font-size: 180%;
 }
 
-#bc-legend {
+#bc-tags {
     font-size: 100%;
     font-variant: small-caps;
 }
 
-.bc-legend-item {
+.bc-tags-item {
     padding: 5px;
     padding-top: 8px;
     padding-bottom: 8px; 
@@ -89,13 +89,13 @@ div.frame-box {
     box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.3);
 }
 
-.bc-legend-item-hover {
+.bc-tags-item-hover {
     background-color: #888;
     color: #fff;
     cursor: pointer;
 }
 
-.bc-legend-item-active {
+.bc-tags-item-active {
     font-weight: bold;
 }
 

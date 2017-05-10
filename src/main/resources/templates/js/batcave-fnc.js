@@ -11,20 +11,20 @@ function getJsonQ(json){
 }
 
 
-function getLegend(json){
+function getTags(json){
 	var jsonQ = getJsonQ(json);
 	//extract tags
 	var tags = jsonQ.find("tags").value();
 	tags = Array.from(new Set([].concat.apply([], tags)));
 
-	//build legend json
-	var legend = {};
+	//build tags json
+	var tagsData = {};
 	for (var i = 0; i < tags.length; i++) {
-		legend[tags[i]] = getColorFor(tags[i]);
+		tagsData[tags[i]] = getColorFor(tags[i]);
 	}
 
-	//return legend
-	return legend;
+	//return tags data
+	return tagsData;
 }
 
 

@@ -5,25 +5,25 @@ $(document).ready(function() {
 	var json = JSON.parse(jsonString);
 
 	//extract and prepare data
-	var legend = getLegend(json);
+	var tags = getTags(json);
 
-	//fill legend in DOM
-	$("#bc-legend").empty();
-	for (var key in legend) {
-		$("#bc-legend").append('<span class="bc-legend-item" data-tag="' + key + '">' + key + '</span>');
+	//fill tags area in DOM
+	$("#bc-tags").empty();
+	for (var key in tags) {
+		$("#bc-tags").append('<span class="bc-tags-item" data-tag="' + key + '">' + key + '</span>');
 	}
 	
-	//set legend colors
-	$(".bc-legend-item").each(function() {
-		$( this ).css( "border-color", legend[$(this).attr("data-tag")] );
+	//set tags colors
+	$(".bc-tags-item").each(function() {
+		$( this ).css( "border-color", tags[$(this).attr("data-tag")] );
 	});
 	
-	//set hover actions for legend items
-	$(".bc-legend-item").hover(function() {
-		$(this).addClass("bc-legend-item-hover");
-		$(".bc-object[data-tag*='" + $(this).attr("data-tag") + "']").css("background-color", legend[$(this).attr("data-tag")]);
+	//set hover actions for tags items
+	$(".bc-tags-item").hover(function() {
+		$(this).addClass("bc-tags-item-hover");
+		$(".bc-object[data-tag*='" + $(this).attr("data-tag") + "']").css("background-color", tags[$(this).attr("data-tag")]);
 	}, function() {
-		$(this).removeClass("bc-legend-item-hover");
+		$(this).removeClass("bc-tags-item-hover");
 		$(".bc-object[data-tag*='" + $(this).attr("data-tag") + "']").css("background-color", "#fff");
 	});
 	
@@ -33,14 +33,14 @@ $(document).ready(function() {
 	//set hover actions for display objects
 	$(".bc-object").hover(function() {
 		var hovered = $(this);
-		$(".bc-legend-item").each(function(){
+		$(".bc-tags-item").each(function(){
 			if (hovered.attr("data-tag").includes($(this).attr("data-tag"))){
 				$(this).mouseenter();
 			}
 		});
 	}, function() {
 		var hovered = $(this);
-		$(".bc-legend-item").each(function(){
+		$(".bc-tags-item").each(function(){
 			if (hovered.attr("data-tag").includes($(this).attr("data-tag"))){
 				$(this).mouseout();
 			}
