@@ -6,16 +6,11 @@ function getColorFor(tagString){
 	return colorHash.hex(tagString);
 }
 
-//returns a jsonQ-object
-function getJsonQ(json){
-	return jsonQ(json);
-}
-
 //returns a json-object that maps tag names to colors
 function getTags(json){
-	var jsonQ = getJsonQ(json);
+	var json = jsonQ(json);
 	//extract tags
-	var tags = jsonQ.find("tags").value();
+	var tags = json.find("tags").value();
 	tags = Array.from(new Set([].concat.apply([], tags)));
 
 	//build tags json
