@@ -1,16 +1,17 @@
+//load color-hash util and set color lightness
 var colorHash = new ColorHash({lightness: 0.7});
 
-
+//returns color based on tag-string
 function getColorFor(tagString){
 	return colorHash.hex(tagString);
 }
 
-
+//returns a jsonQ-object
 function getJsonQ(json){
 	return jsonQ(json);
 }
 
-
+//returns a json-object that maps tag names to colors
 function getTags(json){
 	var jsonQ = getJsonQ(json);
 	//extract tags
@@ -27,7 +28,7 @@ function getTags(json){
 	return tagsData;
 }
 
-
+//builds the html-data for the text to display
 function getDisplayData(json){
 	var out = "";
 	
@@ -40,7 +41,7 @@ function getDisplayData(json){
 	return out;
 }
 
-
+//jQuery execute when doc fully loaded
 $(document).ready(function() {
 
 	var jsonString = '{"meta":{"volume":"Volume1","chapter":"KapitelDings","page":"32"},"objects":[{"display":"Peter","tags":["NN"]},{"display":"ist","tags":["V_PP"]},{"display":"heute","tags":["PRÄP_TEMP"]},{"display":"wieder","tags":["CONJ"]},{"display":"besonders","tags":["ADV","ADJ"]},{"display":"begriffsstutzig.","tags":["ADJ"]}]}';
@@ -88,5 +89,6 @@ $(document).ready(function() {
 			}
 		});
 	});
+	
 });
 
