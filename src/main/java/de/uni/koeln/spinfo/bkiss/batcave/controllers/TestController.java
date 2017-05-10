@@ -15,14 +15,9 @@ public class TestController {
 	@Autowired
 	private DocumentRepository repo;
 	
-	@RequestMapping("/")
-    public String index() {
-        return "Die Menschen brauchen Erziehung, nicht Unterhaltung!";
-    }
-	
-	@RequestMapping("/docs")
-    public String docs() {
-        return repo.findAll().toString();
+	@RequestMapping("/search")
+    public String search() {
+        return "nothing here.";
     }
 	
 	@RequestMapping(value = "/doc/{title}", method = RequestMethod.GET)
