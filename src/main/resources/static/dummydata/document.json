@@ -1,0 +1,48 @@
+{
+
+	"meta": {
+		"volume" : "Volume 1",
+		"chapter": "Kapitel Dings",
+		"page" : "32"
+	},
+
+	"objects" : [
+		{
+			"display" : "Peter",
+			"tags" : [
+				"NN"
+			]
+		},
+		{
+			"display" : "ist",
+			"tags" : [
+				"V_PP"
+			]
+		},
+		{
+			"display" : "heute",
+			"tags" : [
+				"PRÄP_TEMP"
+			]
+		},
+		{
+			"display" : "wieder",
+			"tags" : [
+				"CONJ"
+			]
+		},
+		{
+			"display" : "besonders",
+			"tags" : [
+				"ADV", "ADJ"
+			]
+		},
+		{
+			"display" : "begriffsstutzig",
+			"tags" : [
+				"ADJ"
+			]
+		}
+	]
+
+}

@@ -28,6 +28,7 @@
 	<!-- CSS
 	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
 	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/milligram.css">
 	<link rel="stylesheet" href="css/style.css">
 
 	<!-- JS
@@ -40,19 +41,36 @@
 </head>
 <body>
 
-	<div id="header">
-		Browse Annotated Text Corpora And Visualize Everything
+	<div class="container">
+	
+		<!-- 
+		<div id="header">
+			Browse Annotated Text Corpora And Visualize Everything
+		</div>
+		
+		<div id="bc-toolbar" class="frame-box">
+			Hier könnte ihre Werbung stehen!
+		</div>
+		-->
+		
+		<div class="row">
+			<div id="bc-tags" class="noframe-box">
+				<span id="bc-tags-reset">&xotime;</span>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="column">
+				<div id="bc-display" class="frame-box"></div>
+			</div>
+			<div class="column">
+				<div id="bc-extra" class="frame-box">
+					<img src="img/dummy.png" alt=""/>
+				</div>
+			</div>
+		</div>
+			
 	</div>
-
-	<div id="bc-toolbar" class="frame-box">
-		Hier könnte ihre Werbung stehen!
-	</div>
-
-	<div id="bc-tags" class="noframe-box">
-		<span id="bc-tags-reset">&xotime;</span>
-	</div>
-
-	<div id="bc-display" class="frame-box"></div>
 
 </body>
 </html>

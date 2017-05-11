@@ -36,12 +36,16 @@ function getDisplayData(json){
 	return out;
 }
 
-//jQuery execute when doc fully loaded
-$(document).ready(function() {
+//load json data from url
+function loadJsonData(url){
+	//load data
+	$.getJSON(url, function(data) {
+		prepareFrontend(data);
+	});
+}
 
-	var jsonString = '{"meta":{"volume":"Volume1","chapter":"KapitelDings","page":"32"},"objects":[{"display":"Peter","tags":["NN"]},{"display":"ist","tags":["V_PP"]},{"display":"heute","tags":["PRÄP_TEMP"]},{"display":"wieder","tags":["CONJ"]},{"display":"besonders","tags":["ADV"]},{"display":"begriffsstutzig.","tags":["ADJ"]}]}';
-	var json = JSON.parse(jsonString);
-
+//build frontend elements based on data
+function prepareFrontend(json){
 	//extract and prepare data
 	var tags = getTags(json);
 
@@ -118,6 +122,10 @@ $(document).ready(function() {
 	$("#bc-tags-reset").click(function() {
 		$(".bc-tags-item[data-locked='true']").click().mouseout();
 	});
-	
+}
+
+//jQuery execute when doc fully loaded
+$(document).ready(function() {
+	loadJsonData("dummydata/document.json");
 });
 
