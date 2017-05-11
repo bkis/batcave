@@ -26,14 +26,34 @@ function getTags(json){
 //builds the html-data for the text to display
 function getDisplayData(json){
 	var out = "";
-	
+	var i = 0;
 	for (obj in json.objects){
-		out += '<span class="bc-object" data-locked="false" data-tag="' + 
+		out += '<span class="bc-object" data-locked="false" data-index="' + i + '" data-tag="' + 
 				json.objects[obj].tags + '">' + 
 				json.objects[obj].display + '</span>';
+		i++;
 	}
 	
 	return out;
+}
+
+//show position in scan
+function showScanPosition(coordinates){
+	if (coordinates == false){
+		$("#scanbox").remove();
+		return;
+	}
+	if (typeof coordinates == "undefined"){
+		return;
+	}
+	//draw box
+	$("#bc-extra").prepend(
+		'<div id="scanbox"></div>'
+	);
+	$("#scanbox").css("top",coordinates.y);
+	$("#scanbox").css("left",coordinates.x);
+	$("#scanbox").css("width",coordinates.width);
+	$("#scanbox").css("height",coordinates.height);
 }
 
 //load json data from url
@@ -99,6 +119,8 @@ function prepareFrontend(json){
 				$(this).mouseenter();
 			}
 		});
+		var index = parseInt(target.attr("data-index"));
+		showScanPosition(json.objects[index].coordinates);
 	}, function() {
 		var target = $(this);
 		$(".bc-tags-item").each(function(){
@@ -106,6 +128,7 @@ function prepareFrontend(json){
 				$(this).mouseout();
 			}
 		});
+		showScanPosition(false);
 	});
 	
 	//set click actions for display objects

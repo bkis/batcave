@@ -11,7 +11,13 @@
 			"display" : "Peter",
 			"tags" : [
 				"NN"
-			]
+			],
+			"coordinates" : {
+				"x" : 40,
+				"y" : 110,
+				"width" : 200,
+				"height" : 20
+			}
 		},
 		{
 			"display" : "ist",
@@ -34,7 +40,7 @@
 		{
 			"display" : "besonders",
 			"tags" : [
-				"ADV", "ADJ"
+				"ADV"
 			]
 		},
 		{
