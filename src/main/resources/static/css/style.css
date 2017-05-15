@@ -86,6 +86,7 @@ div.noframe-box{
 #bc-display {
     color: #363636;
     font-size: 180%;
+    overflow: auto;
     
     -webkit-touch-callout: text;
       -webkit-user-select: text;
@@ -182,6 +183,7 @@ div.noframe-box{
 }
 
 .bc-object {
+	float: left;
     border: none;
     cursor: pointer;
     border-radius: 2px;
