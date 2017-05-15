@@ -22,19 +22,19 @@
 		{
 			"display" : "ist",
 			"tags" : [
-				"V_PP"
+				"V_NP"
 			]
 		},
 		{
 			"display" : "heute",
 			"tags" : [
-				"PRÄP_TEMP"
+				"TEMP"
 			]
 		},
 		{
 			"display" : "wieder",
 			"tags" : [
-				"CONJ"
+				"ADV"
 			]
 		},
 		{

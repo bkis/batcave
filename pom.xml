@@ -39,6 +39,18 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-thymeleaf</artifactId>
+			<version>1.5.3.RELEASE</version>
+		</dependency>
+		
+		<dependency>
+		     <groupId>net.sourceforge.nekohtml</groupId>
+		     <artifactId>nekohtml</artifactId>
+		     <version>1.9.21</version>
+		 </dependency>
 	</dependencies>
 
 	<build>

@@ -50,6 +50,7 @@ function showScanPosition(coordinates){
 	$("#bc-extra").prepend(
 		'<div id="scanbox"></div>'
 	);
+	//set position and dimensions
 	$("#scanbox").css("top",coordinates.y);
 	$("#scanbox").css("left",coordinates.x);
 	$("#scanbox").css("width",coordinates.width);
