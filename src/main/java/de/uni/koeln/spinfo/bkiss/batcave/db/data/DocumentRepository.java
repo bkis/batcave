@@ -1,4 +1,4 @@
-package de.uni.koeln.spinfo.bkiss.batcave.data;
+package de.uni.koeln.spinfo.bkiss.batcave.db.data;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
 

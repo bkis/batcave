@@ -5,8 +5,8 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import de.uni.koeln.spinfo.bkiss.batcave.data.Document;
-import de.uni.koeln.spinfo.bkiss.batcave.data.DocumentRepository;
+import de.uni.koeln.spinfo.bkiss.batcave.db.data.Document;
+import de.uni.koeln.spinfo.bkiss.batcave.db.data.DocumentRepository;
 
 @SpringBootApplication
 public class BatcaveApplication implements CommandLineRunner {

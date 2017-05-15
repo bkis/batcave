@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import de.uni.koeln.spinfo.bkiss.batcave.data.DocumentRepository;
+import de.uni.koeln.spinfo.bkiss.batcave.db.data.DocumentRepository;
 
 @RestController
 public class RestServicesController {
