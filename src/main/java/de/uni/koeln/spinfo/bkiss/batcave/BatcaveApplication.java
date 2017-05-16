@@ -5,14 +5,14 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import de.uni.koeln.spinfo.bkiss.batcave.db.data.Document;
-import de.uni.koeln.spinfo.bkiss.batcave.db.data.DocumentRepository;
+import de.uni.koeln.spinfo.bkiss.batcave.db.data.PageDocument;
+import de.uni.koeln.spinfo.bkiss.batcave.db.data.PageDocumentRepository;
 
 @SpringBootApplication
 public class BatcaveApplication implements CommandLineRunner {
 	
 	@Autowired
-	private DocumentRepository repo;
+	private PageDocumentRepository repo;
 
 	public static void main(String[] args) {
 		SpringApplication.run(BatcaveApplication.class, args);
@@ -21,7 +21,7 @@ public class BatcaveApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		repo.deleteAll();
-		repo.save(new Document("Test", "Dies ist ein Test!"));
-		repo.save(new Document("Telefon", "Ich geh ans Telefon ran!"));
+		repo.save(new PageDocument("s76s76s75s"));
+		repo.save(new PageDocument("ijuoi34iu43oiu34"));
 	}
 }
