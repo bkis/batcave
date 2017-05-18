@@ -1,11 +1,6 @@
 package de.uni.koeln.spinfo.bkiss.batcave.db.data;
 
-import java.io.Serializable;
-
-public class ScanPosition implements Serializable {
-	
-	private static final long serialVersionUID = 1L;
-	
+public class ScanPosition {
 	
 	private int x;
 	private int y;

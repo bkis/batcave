@@ -1,17 +1,15 @@
 package de.uni.koeln.spinfo.bkiss.batcave.db.data;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-public class PageDocument implements Serializable {
+
+public class PageDocument implements Comparable<PageDocument> {
 	
-	private static final long serialVersionUID = 1L;
-	
-	private String id;
+	private String _id;
 	private String imageFile;
 	private String volume;
 	private Set<String> chapters;
@@ -27,7 +25,7 @@ public class PageDocument implements Serializable {
 
     public PageDocument(String id) {
     	this();
-        this.id = id;
+        this._id = id;
     }
 
     
@@ -47,8 +45,8 @@ public class PageDocument implements Serializable {
 		this.volume = volume;
 	}
 
-	public String getId() {
-		return id;
+	public String getPageId() {
+		return _id;
 	}
 
 	public Set<String> getChapters() {
@@ -86,7 +84,7 @@ public class PageDocument implements Serializable {
 
 	@Override
     public String toString() {
-        return "PageDocument[" + id + "]\n"
+        return "PageDocument[" + _id + "]\n"
         		+ "\tvolume: " + volume + "\n"
            		+ "\timageFile: " + imageFile + "\n"
            		+ "\tchapters: " + chapters + "\n"
@@ -97,7 +95,12 @@ public class PageDocument implements Serializable {
 	@Override
 	public boolean equals(Object obj) {
 		return obj instanceof PageDocument
-				&& ((PageDocument)obj).getId().equals(id);
+				&& ((PageDocument)obj).getPageId().equals(_id);
+	}
+
+	@Override
+	public int compareTo(PageDocument o) {
+		return imageFile.compareTo(o.getImageFile());
 	}
     
 

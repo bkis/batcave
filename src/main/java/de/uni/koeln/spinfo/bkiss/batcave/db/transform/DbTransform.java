@@ -1,12 +1,9 @@
 package de.uni.koeln.spinfo.bkiss.batcave.db.transform;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.ObjectOutputStream;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -18,7 +15,8 @@ import java.util.logging.Logger;
 
 import org.bson.Document;
 import org.bson.types.ObjectId;
-
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.jayway.jsonpath.Configuration;
 import com.jayway.jsonpath.JsonPath;
 import com.jayway.jsonpath.Option;
@@ -28,11 +26,11 @@ import com.mongodb.MongoClient;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoCursor;
 import com.mongodb.client.MongoDatabase;
-
 import de.uni.koeln.spinfo.bkiss.batcave.db.data.PageDocument;
 import de.uni.koeln.spinfo.bkiss.batcave.db.data.ScanPosition;
 import de.uni.koeln.spinfo.bkiss.batcave.db.data.Token;
 import net.minidev.json.JSONArray;
+
 
 /**
  * Class used to transform data from the ARC project db into a new purpose-built db structure
@@ -62,37 +60,27 @@ public class DbTransform {
 		Logger.getLogger("org.mongodb.driver.protocol.command").setLevel(Level.SEVERE);
 		Logger.getLogger("com.jayway.jsonpath.internal.path.CompiledPath").setLevel(Level.SEVERE);
 		
-		//start transformation
+		//create list for PageDocuments
 		List<PageDocument> pages = null;
+		
+		//start transformation
 		try {
-			pages = transform(
-						mongo.getDatabase("crestomazia"),
-						mongo.getDatabase("batcave")
-					);
+			//TODO run without test-mode
+			pages = transform(mongo.getDatabase("crestomazia"), true);
 		} catch (Exception e) {
 			e.printStackTrace();
-		} finally {
-			mongo.close();
 		}
+		
+		//write collected data to target db
+		writeNewDbData(pages, mongo.getDatabase("batcave"));
 		
 		//cleanup
 		mongo.close();
-		
-		//serialize pages list
-		try {
-			ObjectOutputStream oos = new ObjectOutputStream(
-					new FileOutputStream(new File("pagedocuments.list")));
-			oos.writeObject(pages);
-			oos.close();
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
 	}
 	
 	
-	private static List<PageDocument> transform(MongoDatabase s, MongoDatabase t) throws Exception {
+	@SuppressWarnings("unchecked")
+	private static List<PageDocument> transform(MongoDatabase s, boolean testRun) throws Exception {
 		
 		//target pages set
 		Map<String, PageDocument> targetPages = new HashMap<String, PageDocument>();
@@ -112,9 +100,9 @@ public class DbTransform {
 	              .options(Option.DEFAULT_PATH_LEAF_TO_NULL)
 	              .build();
 		
-		//collect token data and generate Token instances
-		Set<String> chapterIds = new HashSet<String>();
 		int count = 0;
+		
+		//collect token data and generate Token instances
 		try {
 		    while (words.hasNext() && count < 1000) {
 		    	ReadContext json = JsonPath.using(conf).parse(words.next().toJson());	//get json object
@@ -149,9 +137,9 @@ public class DbTransform {
 		    	//tags
 		    	Set<String> tags = new HashSet<String>();
 		    	if (((JSONArray)json.read("$.posList[?(@.userId != 'matcher')].posTag")).size() == 0){
-		    		tags.addAll((List)json.read("$.posList[*].posTag"));
+		    		tags.addAll((List<String>)json.read("$.posList[*].posTag"));
 		    	} else {
-		    		tags.addAll((List)json.read("$.posList[?(@.userId != 'matcher' && @.posTag != 'NOT_TAGGED') ].posTag"));
+		    		tags.addAll((List<String>)json.read("$.posList[?(@.userId != 'matcher' && @.posTag != 'NOT_TAGGED') ].posTag"));
 		    	}
 		    	
 		    	//construct Token instance
@@ -179,18 +167,33 @@ public class DbTransform {
 	    		if (chapter != null) page.addChapter(chapter.getString("title"));
 	    		//language
 	    		Document language = languages.find(query).first();
-	    		if (language != null) page.addLanguage(language.getString("title"));
-		    	
-		        count++;
+	    		if (language != null)
+	    			page.addLanguage(language.getString("title"));
+
+	    		//test run counter
+	    		if (testRun)
+	    			count++;
 		    }
 		} finally {
 		    words.close();
 		}
 		
+		//construct PageDocument list
 		List<PageDocument> pagesList = new ArrayList<PageDocument>(targetPages.values());
-		targetPages = null;
+		Collections.sort(pagesList);
 		
 		return pagesList;
+	}
+	
+	
+	private static void writeNewDbData(List<PageDocument> docs, MongoDatabase db){
+		Gson gson = new GsonBuilder().create();
+		List<Document> converted = new ArrayList<Document>();
+		
+		for (PageDocument page : docs)
+			converted.add(Document.parse(gson.toJson(page)));
+		
+		db.getCollection("pages").insertMany(converted);
 	}
 	
 	

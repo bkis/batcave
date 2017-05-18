@@ -1,17 +1,15 @@
 package de.uni.koeln.spinfo.bkiss.batcave.db.data;
 
-import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
-public class Token implements Comparable<Token>, Serializable {
-	
-	private static final long serialVersionUID = 1L;
+
+public class Token implements Comparable<Token> {
 	
 	private String form;
 	private int index;
 	private Set<String> tags;
-	private ScanPosition pos;
+	private ScanPosition scanPosition;
 
 	
 	public Token(){
@@ -22,7 +20,7 @@ public class Token implements Comparable<Token>, Serializable {
 		this();
 		this.form = form;
 		this.index = index;
-		this.pos = pos;
+		this.scanPosition = pos;
 		this.tags = tags;
 	}
 
@@ -43,12 +41,12 @@ public class Token implements Comparable<Token>, Serializable {
 		this.index = index;
 	}
 
-	public ScanPosition getPos() {
-		return pos;
+	public ScanPosition getScanPosition() {
+		return scanPosition;
 	}
 
-	public void setPos(ScanPosition pos) {
-		this.pos = pos;
+	public void setScanPosition(ScanPosition pos) {
+		this.scanPosition = pos;
 	}
 
 	public Set<String> getTags() {
