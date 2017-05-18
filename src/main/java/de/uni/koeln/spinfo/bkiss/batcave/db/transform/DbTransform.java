@@ -1,26 +1,38 @@
 package de.uni.koeln.spinfo.bkiss.batcave.db.transform;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.ObjectOutputStream;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
 import java.util.Properties;
 import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import org.bson.Document;
+import org.bson.types.ObjectId;
 
+import com.jayway.jsonpath.Configuration;
 import com.jayway.jsonpath.JsonPath;
 import com.jayway.jsonpath.Option;
 import com.jayway.jsonpath.ReadContext;
-import com.jayway.jsonpath.Configuration;
-import com.jayway.jsonpath.Configuration.ConfigurationBuilder;
+import com.mongodb.BasicDBObject;
 import com.mongodb.MongoClient;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoCursor;
 import com.mongodb.client.MongoDatabase;
 
 import de.uni.koeln.spinfo.bkiss.batcave.db.data.PageDocument;
+import de.uni.koeln.spinfo.bkiss.batcave.db.data.ScanPosition;
+import de.uni.koeln.spinfo.bkiss.batcave.db.data.Token;
+import net.minidev.json.JSONArray;
 
 /**
  * Class used to transform data from the ARC project db into a new purpose-built db structure
@@ -51,11 +63,12 @@ public class DbTransform {
 		Logger.getLogger("com.jayway.jsonpath.internal.path.CompiledPath").setLevel(Level.SEVERE);
 		
 		//start transformation
+		List<PageDocument> pages = null;
 		try {
-			transform(
-					mongo.getDatabase("crestomazia"),
-					mongo.getDatabase("batcave")
-			);
+			pages = transform(
+						mongo.getDatabase("crestomazia"),
+						mongo.getDatabase("batcave")
+					);
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -64,13 +77,25 @@ public class DbTransform {
 		
 		//cleanup
 		mongo.close();
+		
+		//serialize pages list
+		try {
+			ObjectOutputStream oos = new ObjectOutputStream(
+					new FileOutputStream(new File("pagedocuments.list")));
+			oos.writeObject(pages);
+			oos.close();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 	
 	
-	private static void transform(MongoDatabase s, MongoDatabase t) throws Exception {
+	private static List<PageDocument> transform(MongoDatabase s, MongoDatabase t) throws Exception {
 		
-		//tokens list
-		Set<PageDocument> targetPages = new HashSet<PageDocument>();
+		//target pages set
+		Map<String, PageDocument> targetPages = new HashMap<String, PageDocument>();
 		
 		//get ARC words collection interator
 		MongoCursor<Document> words = s.getCollection("words").find().iterator();
@@ -81,19 +106,91 @@ public class DbTransform {
 		MongoCollection<Document> volumes = s.getCollection("volumes");
 		MongoCollection<Document> languages = s.getCollection("languages");
 		
-		//collect token data and generate PageDocument instances
+		//jsonpath config
+		Configuration conf = Configuration
+	              .builder()
+	              .options(Option.DEFAULT_PATH_LEAF_TO_NULL)
+	              .build();
+		
+		//collect token data and generate Token instances
+		Set<String> chapterIds = new HashSet<String>();
 		int count = 0;
 		try {
-		    while (words.hasNext() && count < 10) {
-		    	ReadContext json = JsonPath.parse(words.next().toJson());	//get json object
-		    	//TODO iterate words, construct pagedocuments
-		        System.out.println((Object)json.read("$.versions"));
+		    while (words.hasNext() && count < 1000) {
+		    	ReadContext json = JsonPath.using(conf).parse(words.next().toJson());	//get json object
+		    	
+		    	////gather data
+		    	//index
+		    	int index = json.read("$.index");
+		    	//page id
+		    	String pageId = json.read("$.pageId");
+		    	//volume id
+		    	String volumeId = json.read("$.volumeId");
+		    	//image file
+		    	String imageFile = ((String)pages.find(new BasicDBObject("_id", new ObjectId(pageId))).first().get("url")).replaceFirst("\\.xml", ".png");
+		    	//form
+		    	String form;
+		    	if (((JSONArray)json.read("$.versions[?(@.userId != 'OCR')].version")).size() == 0){
+		    		form = json.read("$.versions[0].version");
+		    	} else {
+		    		form = (String)((JSONArray)json.read("$.versions[?(@.userId != 'OCR')].version")).get(0);
+		    	}
+		    	//form == null?
+		    	if (form == null){
+		    		continue;
+		    	}
+		    	//scan positions
+		    	int x = json.read("$.rectangle.x");
+		    	int y = json.read("$.rectangle.y");
+		    	int width = json.read("$.rectangle.width");
+		    	int height = json.read("$.rectangle.height");
+		    	ScanPosition pos = new ScanPosition(x, y, width, height);
+		    	
+		    	//tags
+		    	Set<String> tags = new HashSet<String>();
+		    	if (((JSONArray)json.read("$.posList[?(@.userId != 'matcher')].posTag")).size() == 0){
+		    		tags.addAll((List)json.read("$.posList[*].posTag"));
+		    	} else {
+		    		tags.addAll((List)json.read("$.posList[?(@.userId != 'matcher' && @.posTag != 'NOT_TAGGED') ].posTag"));
+		    	}
+		    	
+		    	//construct Token instance
+		    	Token token = new Token(form, index, pos, tags);
+
+		    	//new PageDocument instance to construct
+		    	PageDocument page;
+		    	if (targetPages.containsKey(pageId)){
+		    		page = targetPages.get(pageId);
+		    	} else {
+		    		page = new PageDocument(pageId);
+		    		targetPages.put(pageId, page);
+		    		page.setVolume(volumes.find(new BasicDBObject("_id", new ObjectId(volumeId))).first().getString("title"));
+		    		page.setImageFile(imageFile);
+		    	}
+		    	
+		    	////add data to page
+		    	//token
+		    	page.addToken(token);
+		    	//chapter
+		    	BasicDBObject query = new BasicDBObject();
+		    	query.append("start", new BasicDBObject("$lt", index));
+		    	query.append("end", new BasicDBObject("$gt", index));
+	    		Document chapter = chapters.find(query).first();
+	    		if (chapter != null) page.addChapter(chapter.getString("title"));
+	    		//language
+	    		Document language = languages.find(query).first();
+	    		if (language != null) page.addLanguage(language.getString("title"));
+		    	
 		        count++;
 		    }
 		} finally {
 		    words.close();
 		}
 		
+		List<PageDocument> pagesList = new ArrayList<PageDocument>(targetPages.values());
+		targetPages = null;
+		
+		return pagesList;
 	}
 	
 	

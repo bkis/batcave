@@ -1,15 +1,18 @@
 package de.uni.koeln.spinfo.bkiss.batcave.db.data;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-public class PageDocument {
+public class PageDocument implements Serializable {
+	
+	private static final long serialVersionUID = 1L;
 	
 	private String id;
-	private String xmlFile;
+	private String imageFile;
 	private String volume;
 	private Set<String> chapters;
 	private Set<String> languages;
@@ -28,12 +31,12 @@ public class PageDocument {
     }
 
     
-    public String getXmlFile() {
-		return xmlFile;
+    public String getImageFile() {
+		return imageFile;
 	}
 
-	public void setXmlFile(String xmlFile) {
-		this.xmlFile = xmlFile;
+	public void setImageFile(String imageFile) {
+		this.imageFile = imageFile;
 	}
 
 	public String getVolume() {
@@ -63,6 +66,10 @@ public class PageDocument {
 	public void addLanguage(String language){
 		languages.add(language);
 	}
+	
+	public void addLanguages(List<String> languages){
+		languages.addAll(languages);
+	}
 
 	public List<Token> getTokens() {
 		return tokens;
@@ -79,9 +86,12 @@ public class PageDocument {
 
 	@Override
     public String toString() {
-        return String.format(
-                "Document[id=%s, title='%s', content='%s']",
-                id, xmlFile, volume);
+        return "PageDocument[" + id + "]\n"
+        		+ "\tvolume: " + volume + "\n"
+           		+ "\timageFile: " + imageFile + "\n"
+           		+ "\tchapters: " + chapters + "\n"
+           		+ "\tlanguages: " + languages + "\n"
+           		+ "\ttokens: " + tokens;
     }
 	
 	@Override

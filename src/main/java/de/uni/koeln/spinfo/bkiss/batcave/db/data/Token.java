@@ -1,9 +1,12 @@
 package de.uni.koeln.spinfo.bkiss.batcave.db.data;
 
+import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
-public class Token implements Comparable<Token> {
+public class Token implements Comparable<Token>, Serializable {
+	
+	private static final long serialVersionUID = 1L;
 	
 	private String form;
 	private int index;
@@ -15,11 +18,12 @@ public class Token implements Comparable<Token> {
 		this.tags = new HashSet<String>();
 	}
 	
-	public Token(String form, int index, ScanPosition pos){
+	public Token(String form, int index, ScanPosition pos, Set<String> tags){
 		this();
 		this.form = form;
 		this.index = index;
 		this.pos = pos;
+		this.tags = tags;
 	}
 
 
@@ -57,7 +61,7 @@ public class Token implements Comparable<Token> {
 	
 	@Override
 	public String toString() {
-		return form + "[index=" + index + "]";
+		return form + " " + index + " tags=" + tags + "";
 	}
 	
 	/**
