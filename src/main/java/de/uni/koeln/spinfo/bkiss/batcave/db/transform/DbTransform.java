@@ -66,13 +66,16 @@ public class DbTransform {
 		//start transformation
 		try {
 			//TODO run without test-mode
-			pages = transform(mongo.getDatabase("crestomazia"), true);
+			pages = transform(
+					mongo.getDatabase("crestomazia"),
+					mongo.getDatabase("batcave"),
+					true);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		
 		//write collected data to target db
-		writeNewDbData(pages, mongo.getDatabase("batcave"));
+		writeNewDbData(pages, mongo.getDatabase("batcave").getCollection("pages"));
 		
 		//cleanup
 		mongo.close();
@@ -80,7 +83,7 @@ public class DbTransform {
 	
 	
 	@SuppressWarnings("unchecked")
-	private static List<PageDocument> transform(MongoDatabase s, boolean testRun) throws Exception {
+	private static List<PageDocument> transform(MongoDatabase s, MongoDatabase t, boolean testRun) throws Exception {
 		
 		//target pages set
 		Map<String, PageDocument> targetPages = new HashMap<String, PageDocument>();
@@ -93,6 +96,10 @@ public class DbTransform {
 		MongoCollection<Document> chapters = s.getCollection("chapters");
 		MongoCollection<Document> volumes = s.getCollection("volumes");
 		MongoCollection<Document> languages = s.getCollection("languages");
+		
+		//words count
+		double wordsCount = s.getCollection("words").count();
+		double progress = 0;
 		
 		//jsonpath config
 		Configuration conf = Configuration
@@ -161,8 +168,8 @@ public class DbTransform {
 		    	page.addToken(token);
 		    	//chapter
 		    	BasicDBObject query = new BasicDBObject();
-		    	query.append("start", new BasicDBObject("$lt", index));
-		    	query.append("end", new BasicDBObject("$gt", index));
+		    	query.append("start", new BasicDBObject("$lte", index));
+		    	query.append("end", new BasicDBObject("$gte", index));
 	    		Document chapter = chapters.find(query).first();
 	    		if (chapter != null) page.addChapter(chapter.getString("title"));
 	    		//language
@@ -173,12 +180,22 @@ public class DbTransform {
 	    		//test run counter
 	    		if (testRun)
 	    			count++;
+	    		
+	    		//check if page is complete - if so, write to target db
+		    	int pageEndIndex = ((int)pages.find(new BasicDBObject("_id", new ObjectId(pageId))).first().get("end"));
+		    	if (pageEndIndex == index){
+		    		writeNewDbData(page, t.getCollection("pages"));
+		    		targetPages.remove(pageId);
+		    	}
+		    	
+	    		progress++;
+	    		System.out.println("[PROGRESS]\t" + (progress / wordsCount) + "\n[PAGES QUEUE]\t" + targetPages.size());
 		    }
 		} finally {
 		    words.close();
 		}
 		
-		//construct PageDocument list
+		//construct list of remaining PageDocuments
 		List<PageDocument> pagesList = new ArrayList<PageDocument>(targetPages.values());
 		Collections.sort(pagesList);
 		
@@ -186,14 +203,21 @@ public class DbTransform {
 	}
 	
 	
-	private static void writeNewDbData(List<PageDocument> docs, MongoDatabase db){
+	private static void writeNewDbData(List<PageDocument> docs, MongoCollection<Document> collection){
 		Gson gson = new GsonBuilder().create();
 		List<Document> converted = new ArrayList<Document>();
 		
 		for (PageDocument page : docs)
 			converted.add(Document.parse(gson.toJson(page)));
 		
-		db.getCollection("pages").insertMany(converted);
+		collection.insertMany(converted);
+	}
+	
+	
+	private static void writeNewDbData(PageDocument doc, MongoCollection<Document> collection){
+		Gson gson = new GsonBuilder().create();
+		Document dbDoc = Document.parse(gson.toJson(doc));
+		collection.insertOne(dbDoc);
 	}
 	
 	
