@@ -3,10 +3,13 @@
 	"imageFile" : "PPN345572629_0004-0008.png",
 	"volume" : "Band I",
 	"chapters" : [
-		"Daniel Bonifaci"
+		"Daniel Bonifaci",
+		"Dies ist ein Witz",
+		"Klaus und Klaus"
 	],
 	"languages" : [
-		"Sursilvan"
+		"Sursilvan",
+		"Plattdeutsch"
 	],
 	"tokens" : [
 		{

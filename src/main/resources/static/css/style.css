@@ -35,9 +35,8 @@ a:active {
     color: #229954;
 }
 
-.h {
-	font-weight: bold;
-}
+.b { font-weight: bold; }
+.i { font-style: italic; }
 
 div.noscript{
     width: 100%;
@@ -85,7 +84,8 @@ div.noframe-box{
 
 #bc-display {
     color: #363636;
-    font-size: 180%;
+    font-size: 130%;
+    line-height: 120%;
     overflow: auto;
     
     -webkit-touch-callout: text;
@@ -144,6 +144,7 @@ div.noframe-box{
     padding: 5px;
     padding-top: 8px;
     padding-bottom: 8px; 
+    line-height: 300%;
     border-left-style: solid;
     border-left-width: 20px;
     border-radius: 3px;
