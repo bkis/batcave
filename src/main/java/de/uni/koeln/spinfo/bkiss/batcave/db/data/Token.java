@@ -10,18 +10,21 @@ public class Token implements Comparable<Token> {
 	private int index;
 	private Set<String> tags;
 	private ScanPosition scanPosition;
+	private boolean newLine;
 
 	
 	public Token(){
 		this.tags = new HashSet<String>();
+		this.newLine = false;
 	}
 	
-	public Token(String form, int index, ScanPosition pos, Set<String> tags){
+	public Token(String form, int index, ScanPosition pos, Set<String> tags, boolean newLine){
 		this();
 		this.form = form;
 		this.index = index;
 		this.scanPosition = pos;
 		this.tags = tags;
+		this.newLine = newLine;
 	}
 
 
@@ -31,6 +34,14 @@ public class Token implements Comparable<Token> {
 
 	public void setForm(String form) {
 		this.form = form;
+	}
+	
+	public void setNewLine(boolean newLine){
+		this.newLine = newLine;
+	}
+	
+	public boolean isNewLine(){
+		return newLine;
 	}
 	
 	public int getIndex(){
