@@ -39,6 +39,8 @@ import net.minidev.json.JSONArray;
  *
  */
 public class DbTransform {
+	
+	private static final int NEW_LINE_PIXEL_THRESHOLD = 60;
 
 	public static void main(String[] args) {
 		
@@ -68,8 +70,7 @@ public class DbTransform {
 			//TODO run without test-mode
 			pages = transform(
 					mongo.getDatabase("crestomazia"),
-					mongo.getDatabase("batcave"),
-					true);
+					false);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -83,7 +84,7 @@ public class DbTransform {
 	
 	
 	@SuppressWarnings("unchecked")
-	private static List<PageDocument> transform(MongoDatabase s, MongoDatabase t, boolean testRun) throws Exception {
+	private static List<PageDocument> transform(MongoDatabase s, boolean testRun) throws Exception {
 		
 		//target pages set
 		Map<String, PageDocument> targetPages = new HashMap<String, PageDocument>();
@@ -108,6 +109,7 @@ public class DbTransform {
 	              .build();
 		
 		int count = 0;
+		int lastYPos = 0;
 		
 		//collect token data and generate Token instances
 		try {
@@ -141,6 +143,13 @@ public class DbTransform {
 		    	int height = json.read("$.rectangle.height");
 		    	ScanPosition pos = new ScanPosition(x, y, width, height);
 		    	
+		    	//new line?
+		    	boolean newLine = false;
+		    	if (y - lastYPos > NEW_LINE_PIXEL_THRESHOLD && lastYPos > 0){
+		    		newLine = true;
+		    	}
+		    	lastYPos = y;
+		    	
 		    	//tags
 		    	Set<String> tags = new HashSet<String>();
 		    	if (((JSONArray)json.read("$.posList[?(@.userId != 'matcher')].posTag")).size() == 0){
@@ -150,7 +159,7 @@ public class DbTransform {
 		    	}
 		    	
 		    	//construct Token instance
-		    	Token token = new Token(form, index, pos, tags);
+		    	Token token = new Token(form, index, pos, tags, newLine);
 
 		    	//new PageDocument instance to construct
 		    	PageDocument page;
@@ -182,11 +191,11 @@ public class DbTransform {
 	    			count++;
 	    		
 	    		//check if page is complete - if so, write to target db
-		    	int pageEndIndex = ((int)pages.find(new BasicDBObject("_id", new ObjectId(pageId))).first().get("end"));
-		    	if (pageEndIndex == index){
-		    		writeNewDbData(page, t.getCollection("pages"));
-		    		targetPages.remove(pageId);
-		    	}
+//		    	int pageEndIndex = ((int)pages.find(new BasicDBObject("_id", new ObjectId(pageId))).first().get("end"));
+//		    	if (pageEndIndex == index){
+//		    		writeNewDbData(page, t.getCollection("pages"));
+//		    		targetPages.remove(pageId);
+//		    	}
 		    	
 	    		progress++;
 	    		System.out.println("[PROGRESS]\t" + (progress / wordsCount) + "\n[PAGES QUEUE]\t" + targetPages.size());
@@ -195,8 +204,11 @@ public class DbTransform {
 		    words.close();
 		}
 		
-		//construct list of remaining PageDocuments
+//		//construct list of PageDocuments
 		List<PageDocument> pagesList = new ArrayList<PageDocument>(targetPages.values());
+		targetPages = null;
+		System.gc();
+		for (PageDocument doc : pagesList) doc.sortTokens();
 		Collections.sort(pagesList);
 		
 		return pagesList;
@@ -214,11 +226,11 @@ public class DbTransform {
 	}
 	
 	
-	private static void writeNewDbData(PageDocument doc, MongoCollection<Document> collection){
-		Gson gson = new GsonBuilder().create();
-		Document dbDoc = Document.parse(gson.toJson(doc));
-		collection.insertOne(dbDoc);
-	}
+//	private static void writeNewDbData(PageDocument doc, MongoCollection<Document> collection){
+//		Gson gson = new GsonBuilder().create();
+//		Document dbDoc = Document.parse(gson.toJson(doc));
+//		collection.insertOne(dbDoc);
+//	}
 	
 	
 }
