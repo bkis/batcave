@@ -55,6 +55,7 @@
 								 data-w=${token.scanPosition.width},
 								 data-h=${token.scanPosition.height}"
 						th:text="${token.form}"
+						th:classappend="${token.newLine ? 'new-line' : ''}"
 						class="bc-object"
 						data-locked="false">
 					</span>
@@ -63,7 +64,7 @@
 			</div>
 			<div class="column">
 				<div id="bc-extra" class="frame-box">
-					<img src="img/dummy.png" alt=""/>
+					<img id="scan-img" src="img/dummy.png" alt=""/>
 				</div>
 			</div>
 		</div>

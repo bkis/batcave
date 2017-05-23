@@ -54,7 +54,6 @@ div.noscript{
 div.frame-box {
     padding: 20px;
     background-color: #fff;
-    margin-bottom: 10px;
 
     border-left: 10px solid #ccc;
     border-top-left-radius: 8px;
@@ -67,12 +66,10 @@ div.frame-box {
 
 div.noframe-box{
 	padding: 20px;
-    margin-bottom: 10px;
 }
 
 #header {
     padding-left: 20px;
-    margin-bottom: 20px;
     font-size: 160%;
     font-weight: bold;
     font-variant: small-caps;
@@ -83,9 +80,12 @@ div.noframe-box{
 }
 
 #bc-display {
+	padding: 40px;
+	padding-right: 0px;
+	font-family: serif;
     color: #363636;
-    font-size: 130%;
-    line-height: 120%;
+    font-size: 110%;
+    line-height: 150%;
     overflow: auto;
     
     -webkit-touch-callout: text;
@@ -108,8 +108,8 @@ div.noframe-box{
 
 #scanbox {
 	position: absolute;
-	border: 2px solid #363636;
-	background-color: rgba(0,0,0,0.2);
+	border: 2px solid #0f0;
+	background-color: rgba(0,255,0,0.1);
 }
 
 #bc-tags {

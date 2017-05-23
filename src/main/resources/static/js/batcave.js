@@ -1,6 +1,9 @@
 //load color-hash util and set color lightness
 var colorHash = new ColorHash({lightness: 0.6});
 
+//original scan width (set when img loaded)
+var scanWidth = 1;
+
 //returns color based on tag-string
 function col(tagString){
 	return colorHash.hex(tagString);
@@ -43,15 +46,26 @@ function showScanPosition(x, y, w, h){
 	$("#bc-extra").prepend(
 		'<div id="scanbox"></div>'
 	);
+	var scaleFactor = getScaleFactor();
 	//set position and dimensions
-	$("#scanbox").css("top", y);
-	$("#scanbox").css("left", x);
-	$("#scanbox").css("width", w);
-	$("#scanbox").css("height", h);
+	$("#scanbox").css("width", (w * scaleFactor) + 20);
+	$("#scanbox").css("height", (h * scaleFactor) + 20);
+	$("#scanbox").css("top", (parseInt(y) * scaleFactor) - 10);
+	$("#scanbox").css("left", (parseInt(x) * scaleFactor) - 10);
 }
 //hide position in scan
-function hideScanBox(){
+function hideScanPosition(){
 	$("#scanbox").remove();
+}
+//calculate scan positions relative to scan size
+function getScaleFactor(){
+	return parseInt($("#scan-img").prop("width")) / scanWidth;
+}
+
+function getScanWidth(){
+	$("#scan-img").load(function(){
+		scanWidth = $(this).prop("naturalWidth");
+	});
 }
 
 
@@ -68,6 +82,9 @@ function prepareFrontend(json){
 	
 	//fill display
 	//$("#bc-display").append(getDisplayData(json));
+	
+	//insert line breaks
+	$(".bc-object.new-line").before("<br>");
 	
 	//set tags colors
 	$(".bc-tags-item").each(function() {
@@ -112,10 +129,10 @@ function prepareFrontend(json){
 		});
 		//var index = parseInt(target.attr("data-index"));
 		showScanPosition(
-				$(this).attr("data-scan-x"),
-				$(this).attr("data-scan-y"),
-				$(this).attr("data-scan-w"),
-				$(this).attr("data-scan-h")
+				$(this).attr("data-x"),
+				$(this).attr("data-y"),
+				$(this).attr("data-w"),
+				$(this).attr("data-h")
 		);
 	}, function() {
 		var target = $(this);
@@ -124,7 +141,7 @@ function prepareFrontend(json){
 				$(this).mouseout();
 			}
 		});
-		showScanPosition(false);
+		hideScanPosition();
 	});
 	
 	//set click actions for display objects
@@ -146,5 +163,6 @@ function prepareFrontend(json){
 //jQuery execute when doc fully loaded
 $(document).ready(function() {
 	prepareFrontend();
+	getScanWidth();
 });
 

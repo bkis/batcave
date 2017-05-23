@@ -1,3497 +1,3093 @@
 {
-	"_id" : "5622c29eef86d3c2f23fd62d",
-	"imageFile" : "PPN345572629_0004-0008.png",
+	"_id" : "5622c29eef86d3c2f23fd62f",
+	"imageFile" : "PPN345572629_0004-0010.png",
 	"volume" : "Band I",
 	"chapters" : [
-		"Daniel Bonifaci",
-		"Dies ist ein Witz",
-		"Klaus und Klaus"
+		"Daniel Bonifaci"
 	],
 	"languages" : [
-		"Sursilvan",
-		"Plattdeutsch"
+		"Sursilvan"
 	],
 	"tokens" : [
 		{
-			"form" : "reformạạ",
-			"index" : 399,
+			"form" : "4",
+			"index" : 1273,
 			"tags" : [
-				"V_PP"
+				"C_NUM"
 			],
 			"scanPosition" : {
-				"x" : 1376,
-				"y" : 891,
-				"width" : 291,
-				"height" : 66
-			}
+				"x" : 343,
+				"y" : 313,
+				"width" : 37,
+				"height" : 75
+			},
+			"newLine" : false
 		},
 		{
-			"form" : "Regemeint",
-			"index" : 400,
-			"tags" : [
-				"NN",
-				"V_PP"
-			],
-			"scanPosition" : {
-				"x" : 1700,
-				"y" : 891,
-				"width" : 346,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "&",
-			"index" : 401,
-			"tags" : [
-				"V_PP",
-				"CONJ_C"
-			],
-			"scanPosition" : {
-				"x" : 2086,
-				"y" : 891,
-				"width" : 55,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "Baselgia.",
-			"index" : 402,
-			"tags" : [
-				"NN",
-				"V_PP"
-			],
-			"scanPosition" : {
-				"x" : 2180,
-				"y" : 891,
-				"width" : 289,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "Quest",
-			"index" : 403,
-			"tags" : [
-				"ADJ_DEM"
-			],
-			"scanPosition" : {
-				"x" : 2546,
-				"y" : 891,
-				"width" : 179,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "fundameint",
-			"index" : 404,
-			"tags" : [
-				"NN"
-			],
-			"scanPosition" : {
-				"x" : 2783,
-				"y" : 891,
-				"width" : 183,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "…",
-			"index" : 405,
-			"tags" : [ ],
-			"scanPosition" : {
-				"x" : 332,
-				"y" : 990,
-				"width" : 178,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "vean",
-			"index" : 406,
-			"tags" : [
-				"V_GVRB"
-			],
-			"scanPosition" : {
-				"x" : 551,
-				"y" : 990,
-				"width" : 148,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "alura",
-			"index" : 407,
-			"tags" : [
-				"ADV"
-			],
-			"scanPosition" : {
-				"x" : 739,
-				"y" : 990,
-				"width" : 166,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "schantạạ",
-			"index" : 408,
-			"tags" : [
-				"V_PP"
-			],
-			"scanPosition" : {
-				"x" : 945,
-				"y" : 990,
-				"width" : 273,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "ünandretg,",
-			"index" : 409,
-			"tags" : [
-				"ADV"
-			],
-			"scanPosition" : {
-				"x" : 1262,
-				"y" : 990,
-				"width" : 353,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "cur",
-			"index" : 410,
-			"tags" : [
-				"ADV"
-			],
-			"scanPosition" : {
-				"x" : 1669,
-				"y" : 990,
-				"width" : 101,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "cha",
-			"index" : 411,
-			"tags" : [
-				"CONJ_S"
-			],
-			"scanPosition" : {
-				"x" : 1804,
-				"y" : 990,
-				"width" : 106,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "la",
-			"index" : 412,
-			"tags" : [
-				"ART"
-			],
-			"scanPosition" : {
-				"x" : 1953,
-				"y" : 990,
-				"width" : 56,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "divina",
-			"index" : 413,
-			"tags" : [
-				"ADJ"
-			],
-			"scanPosition" : {
-				"x" : 2051,
-				"y" : 990,
-				"width" : 198,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "verdad",
-			"index" : 414,
-			"tags" : [
-				"NN"
-			],
-			"scanPosition" : {
-				"x" : 2285,
-				"y" : 990,
-				"width" : 221,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "bichia",
-			"index" : 415,
-			"tags" : [
-				"ADV"
-			],
-			"scanPosition" : {
-				"x" : 2551,
-				"y" : 990,
-				"width" : 193,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "namæ",
-			"index" : 416,
-			"tags" : [
-				"ADV"
-			],
-			"scanPosition" : {
-				"x" : 2803,
-				"y" : 990,
-				"width" : 187,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "aveartameng",
-			"index" : 417,
-			"tags" : [
-				"ADV"
-			],
-			"scanPosition" : {
-				"x" : 334,
-				"y" : 1089,
-				"width" : 413,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "eintin",
-			"index" : 418,
-			"tags" : [
-				"PREP"
-			],
-			"scanPosition" : {
-				"x" : 812,
-				"y" : 1089,
-				"width" : 181,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "las",
-			"index" : 419,
-			"tags" : [
-				"ART"
-			],
-			"scanPosition" : {
-				"x" : 1050,
-				"y" : 1089,
-				"width" : 86,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "Baselgias",
-			"index" : 420,
-			"tags" : [
-				"NN"
-			],
-			"scanPosition" : {
-				"x" : 1197,
-				"y" : 1089,
-				"width" : 298,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "clær",
-			"index" : 421,
-			"tags" : [
-				"ADV"
-			],
-			"scanPosition" : {
-				"x" : 1563,
-				"y" : 1089,
-				"width" : 133,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "&",
-			"index" : 422,
-			"tags" : [
-				"CONJ_C"
-			],
-			"scanPosition" : {
-				"x" : 1756,
-				"y" : 1089,
-				"width" : 55,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "funsadameng",
-			"index" : 423,
-			"tags" : [
-				"ADV"
-			],
-			"scanPosition" : {
-				"x" : 1853,
-				"y" : 1089,
-				"width" : 418,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "cheara:",
-			"index" : 467,
-			"tags" : [
-				"ADJ"
-			],
-			"scanPosition" : {
-				"x" : 557,
-				"y" : 1491,
-				"width" : 249,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "scò",
-			"index" : 468,
-			"tags" : [
-				"CONJ_C"
-			],
-			"scanPosition" : {
-				"x" : 872,
-				"y" : 1491,
-				"width" : 91,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "Christus",
-			"index" : 469,
+			"form" : "Perche",
+			"index" : 1276,
 			"tags" : [
 				"NN_P"
 			],
 			"scanPosition" : {
-				"x" : 1023,
-				"y" : 1491,
-				"width" : 267,
+				"x" : 431,
+				"y" : 497,
+				"width" : 227,
 				"height" : 66
-			}
+			},
+			"newLine" : true
 		},
 		{
-			"form" : "setts",
-			"index" : 470,
+			"form" : "ans",
+			"index" : 1277,
 			"tags" : [
-				"PRON_REF"
+				"PREP_PRON"
 			],
 			"scanPosition" : {
-				"x" : 1355,
-				"y" : 1491,
-				"width" : 133,
+				"x" : 706,
+				"y" : 497,
+				"width" : 104,
 				"height" : 66
-			}
+			},
+			"newLine" : false
 		},
 		{
-			"form" : "confessa",
-			"index" : 471,
+			"form" : "ha",
+			"index" : 1278,
 			"tags" : [
-				"V_GVRB"
+				"INT"
 			],
 			"scanPosition" : {
-				"x" : 1551,
-				"y" : 1491,
-				"width" : 254,
+				"x" : 855,
+				"y" : 497,
+				"width" : 76,
 				"height" : 66
-			}
+			},
+			"newLine" : false
 		},
 		{
-			"form" : "S.",
-			"index" : 473,
-			"tags" : [ ],
-			"scanPosition" : {
-				"x" : 2040,
-				"y" : 1491,
-				"width" : 57,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "eint'",
-			"index" : 475,
+			"form" : "Christus",
+			"index" : 1279,
 			"tags" : [
-				"PREP"
+				"NN_P"
 			],
 			"scanPosition" : {
-				"x" : 2381,
-				"y" : 1491,
-				"width" : 143,
+				"x" : 978,
+				"y" : 497,
+				"width" : 262,
 				"height" : 66
-			}
+			},
+			"newLine" : false
 		},
 		{
-			"form" : "ilg",
-			"index" : 476,
+			"form" : "igl",
+			"index" : 1280,
 			"tags" : [
 				"ART"
 			],
 			"scanPosition" : {
-				"x" : 2569,
-				"y" : 1491,
+				"x" : 1301,
+				"y" : 497,
 				"width" : 82,
 				"height" : 66
-			}
+			},
+			"newLine" : false
 		},
 		{
-			"form" : "cap.",
-			"index" : 478,
+			"form" : "seu",
+			"index" : 1281,
 			"tags" : [
 				"NN"
 			],
 			"scanPosition" : {
-				"x" : 2856,
-				"y" : 1491,
-				"width" : 131,
+				"x" : 1435,
+				"y" : 497,
+				"width" : 102,
 				"height" : 66
-			}
+			},
+			"newLine" : false
 		},
 		{
-			"form" : "ch'  el",
-			"index" : 480,
-			"tags" : [ ],
-			"scanPosition" : {
-				"x" : 516,
-				"y" : 1590,
-				"width" : 147,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "nà",
-			"index" : 486,
+			"form" : "corp",
+			"index" : 1282,
 			"tags" : [
-				"ADV"
+				"NN"
 			],
 			"scanPosition" : {
-				"x" : 1868,
-				"y" : 1590,
-				"width" : 73,
+				"x" : 1589,
+				"y" : 497,
+				"width" : 142,
 				"height" : 66
-			}
+			},
+			"newLine" : false
 		},
 		{
 			"form" : "&",
-			"index" : 489,
+			"index" : 1283,
 			"tags" : [
 				"CONJ_C"
 			],
 			"scanPosition" : {
-				"x" : 2331,
-				"y" : 1590,
+				"x" : 1779,
+				"y" : 497,
 				"width" : 55,
 				"height" : 66
-			}
+			},
+			"newLine" : false
 		},
 		{
-			"form" : "ils",
-			"index" : 491,
-			"tags" : [
-				"PRON_PER"
-			],
-			"scanPosition" : {
-				"x" : 2602,
-				"y" : 1590,
-				"width" : 70,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "dusteies,",
-			"index" : 492,
-			"tags" : [
-				"V_GVRB"
-			],
-			"scanPosition" : {
-				"x" : 2717,
-				"y" : 1590,
-				"width" : 271,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "per",
-			"index" : 493,
-			"tags" : [ ],
-			"scanPosition" : {
-				"x" : 333,
-				"y" : 1689,
-				"width" : 102,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "che",
-			"index" : 494,
-			"tags" : [
-				"CONJ_S"
-			],
-			"scanPosition" : {
-				"x" : 483,
-				"y" : 1689,
-				"width" : 104,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "cha",
-			"index" : 495,
-			"tags" : [
-				"CONJ_S"
-			],
-			"scanPosition" : {
-				"x" : 636,
-				"y" : 1689,
-				"width" : 106,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "da",
-			"index" : 496,
-			"tags" : [
-				"PREP"
-			],
-			"scanPosition" : {
-				"x" : 791,
-				"y" : 1689,
-				"width" : 73,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "tals",
-			"index" : 497,
-			"tags" : [
-				"PRON_IND"
-			],
-			"scanPosition" : {
-				"x" : 912,
-				"y" : 1689,
-				"width" : 111,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "ees",
-			"index" : 498,
-			"tags" : [
-				"V_GVRB"
-			],
-			"scanPosition" : {
-				"x" : 1072,
-				"y" : 1689,
-				"width" : 93,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "igl",
-			"index" : 499,
-			"tags" : [
-				"ART"
-			],
-			"scanPosition" : {
-				"x" : 1215,
-				"y" : 1689,
-				"width" : 79,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "Reginạạ",
-			"index" : 500,
+			"form" : "sạung",
+			"index" : 1284,
 			"tags" : [
 				"NN"
 			],
 			"scanPosition" : {
-				"x" : 1343,
-				"y" : 1689,
-				"width" : 268,
+				"x" : 1878,
+				"y" : 497,
+				"width" : 183,
 				"height" : 66
-			}
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "tras",
+			"index" : 1285,
+			"tags" : [
+				"PREP"
+			],
+			"scanPosition" : {
+				"x" : 2121,
+				"y" : 497,
+				"width" : 123,
+				"height" : 66
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "igl",
+			"index" : 1286,
+			"tags" : [
+				"ART"
+			],
+			"scanPosition" : {
+				"x" : 2303,
+				"y" : 497,
+				"width" : 82,
+				"height" : 66
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "pạun",
+			"index" : 1287,
+			"tags" : [
+				"NN"
+			],
+			"scanPosition" : {
+				"x" : 2445,
+				"y" : 497,
+				"width" : 158,
+				"height" : 66
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "&",
+			"index" : 1288,
+			"tags" : [
+				"CONJ_C"
+			],
+			"scanPosition" : {
+				"x" : 2649,
+				"y" : 497,
+				"width" : 55,
+				"height" : 66
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "vign",
+			"index" : 1289,
+			"tags" : [
+				"NN"
+			],
+			"scanPosition" : {
+				"x" : 2752,
+				"y" : 497,
+				"width" : 141,
+				"height" : 66
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "figürạạ.",
+			"index" : 1290,
+			"tags" : [
+				"NN"
+			],
+			"scanPosition" : {
+				"x" : 1520,
+				"y" : 597,
+				"width" : 222,
+				"height" : 66
+			},
+			"newLine" : true
+		},
+		{
+			"form" : "Perquegl",
+			"index" : 1291,
+			"tags" : [
+				"NN"
+			],
+			"scanPosition" : {
+				"x" : 500,
+				"y" : 689,
+				"width" : 272,
+				"height" : 75
+			},
+			"newLine" : true
+		},
+		{
+			"form" : "cha",
+			"index" : 1292,
+			"tags" : [
+				"CONJ_S"
+			],
+			"scanPosition" : {
+				"x" : 854,
+				"y" : 689,
+				"width" : 103,
+				"height" : 75
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "ingualifmeng",
+			"index" : 1293,
+			"tags" : [
+				"NN"
+			],
+			"scanPosition" : {
+				"x" : 1008,
+				"y" : 689,
+				"width" : 393,
+				"height" : 75
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "scò",
+			"index" : 1294,
+			"tags" : [
+				"CONJ_C"
+			],
+			"scanPosition" : {
+				"x" : 1492,
+				"y" : 689,
+				"width" : 91,
+				"height" : 75
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "pạun",
+			"index" : 1296,
+			"tags" : [
+				"NN"
+			],
+			"scanPosition" : {
+				"x" : 1784,
+				"y" : 689,
+				"width" : 149,
+				"height" : 75
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "&",
+			"index" : 1297,
+			"tags" : [
+				"CONJ_C"
+			],
+			"scanPosition" : {
+				"x" : 1993,
+				"y" : 689,
+				"width" : 58,
+				"height" : 75
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "vign",
+			"index" : 1298,
+			"tags" : [
+				"NN"
+			],
+			"scanPosition" : {
+				"x" : 2074,
+				"y" : 689,
+				"width" : 145,
+				"height" : 75
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "han",
+			"index" : 1299,
+			"tags" : [
+				"V_AVAIR"
+			],
+			"scanPosition" : {
+				"x" : 2263,
+				"y" : 689,
+				"width" : 119,
+				"height" : 75
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "quella",
+			"index" : 1300,
+			"tags" : [
+				"ADJ_DEM"
+			],
+			"scanPosition" : {
+				"x" : 2431,
+				"y" : 689,
+				"width" : 185,
+				"height" : 75
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "natüra",
+			"index" : 1301,
+			"tags" : [
+				"NN"
+			],
+			"scanPosition" : {
+				"x" : 2667,
+				"y" : 689,
+				"width" : 198,
+				"height" : 75
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "&",
+			"index" : 1302,
+			"tags" : [
+				"CONJ_C"
+			],
+			"scanPosition" : {
+				"x" : 2932,
+				"y" : 689,
+				"width" : 57,
+				"height" : 75
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "virteu,",
+			"index" : 1303,
+			"tags" : [
+				"NN"
+			],
+			"scanPosition" : {
+				"x" : 335,
+				"y" : 789,
+				"width" : 228,
+				"height" : 75
+			},
+			"newLine" : true
+		},
+		{
+			"form" : "ils",
+			"index" : 1304,
+			"tags" : [
+				"ART"
+			],
+			"scanPosition" : {
+				"x" : 637,
+				"y" : 789,
+				"width" : 70,
+				"height" : 75
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "noss",
+			"index" : 1305,
+			"tags" : [
+				"PRON_POS"
+			],
+			"scanPosition" : {
+				"x" : 758,
+				"y" : 789,
+				"width" : 124,
+				"height" : 75
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "corps",
+			"index" : 1306,
+			"tags" : [
+				"NN"
+			],
+			"scanPosition" : {
+				"x" : 945,
+				"y" : 789,
+				"width" : 165,
+				"height" : 75
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "tier",
+			"index" : 1307,
+			"tags" : [
+				"PREP"
+			],
+			"scanPosition" : {
+				"x" : 1176,
+				"y" : 789,
+				"width" : 103,
+				"height" : 75
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "üna",
+			"index" : 1308,
+			"tags" : [
+				"ART"
+			],
+			"scanPosition" : {
+				"x" : 1331,
+				"y" : 789,
+				"width" : 111,
+				"height" : 75
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "vita",
+			"index" : 1309,
+			"tags" : [
+				"ADJ"
+			],
+			"scanPosition" : {
+				"x" : 1503,
+				"y" : 789,
+				"width" : 111,
+				"height" : 75
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "temporala",
+			"index" : 1310,
+			"tags" : [
+				"ADJ"
+			],
+			"scanPosition" : {
+				"x" : 1678,
+				"y" : 789,
+				"width" : 306,
+				"height" : 75
+			},
+			"newLine" : false
 		},
 		{
 			"form" : "da",
-			"index" : 501,
+			"index" : 1311,
+			"tags" : [
+				"PREP"
+			],
+			"scanPosition" : {
+				"x" : 2070,
+				"y" : 789,
+				"width" : 75,
+				"height" : 75
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "spysentar",
+			"index" : 1312,
+			"tags" : [
+				"V_GVRB"
+			],
+			"scanPosition" : {
+				"x" : 2176,
+				"y" : 789,
+				"width" : 269,
+				"height" : 75
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "&",
+			"index" : 1313,
+			"tags" : [
+				"CONJ_C"
+			],
+			"scanPosition" : {
+				"x" : 2564,
+				"y" : 789,
+				"width" : 58,
+				"height" : 75
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "bevrẽtar:",
+			"index" : 1314,
+			"tags" : [
+				"V_GVRB"
+			],
+			"scanPosition" : {
+				"x" : 2710,
+				"y" : 789,
+				"width" : 276,
+				"height" : 75
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "5  Aschija",
+			"index" : 1315,
+			"tags" : [
+				"NN_P"
+			],
+			"scanPosition" : {
+				"x" : 276,
+				"y" : 889,
+				"width" : 252,
+				"height" : 75
+			},
+			"newLine" : true
+		},
+		{
+			"form" : "ha",
+			"index" : 1316,
+			"tags" : [
+				"INT"
+			],
+			"scanPosition" : {
+				"x" : 639,
+				"y" : 889,
+				"width" : 74,
+				"height" : 75
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "ear",
+			"index" : 1317,
+			"tags" : [
+				"V_GVRB"
+			],
+			"scanPosition" : {
+				"x" : 765,
+				"y" : 889,
+				"width" : 99,
+				"height" : 75
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "la",
+			"index" : 1318,
+			"tags" : [
+				"ART"
+			],
+			"scanPosition" : {
+				"x" : 929,
+				"y" : 889,
+				"width" : 58,
+				"height" : 75
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "chiarn",
+			"index" : 1319,
+			"tags" : [
+				"NN"
+			],
+			"scanPosition" : {
+				"x" : 1047,
+				"y" : 889,
+				"width" : 190,
+				"height" : 75
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "&",
+			"index" : 1320,
+			"tags" : [
+				"CONJ_C"
+			],
+			"scanPosition" : {
+				"x" : 1316,
+				"y" : 889,
+				"width" : 58,
+				"height" : 75
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "sạung",
+			"index" : 1321,
+			"tags" : [
+				"NN"
+			],
+			"scanPosition" : {
+				"x" : 1399,
+				"y" : 889,
+				"width" : 169,
+				"height" : 75
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "da",
+			"index" : 1322,
 			"tags" : [
 				"PREP"
 			],
 			"scanPosition" : {
 				"x" : 1664,
-				"y" : 1689,
-				"width" : 73,
-				"height" : 66
-			}
+				"y" : 889,
+				"width" : 74,
+				"height" : 75
+			},
+			"newLine" : false
 		},
 		{
-			"form" : "Deu.",
-			"index" : 502,
+			"form" : "Christi",
+			"index" : 1323,
 			"tags" : [
 				"NN_P"
 			],
 			"scanPosition" : {
-				"x" : 1787,
-				"y" : 1689,
-				"width" : 150,
-				"height" : 66
-			}
+				"x" : 1796,
+				"y" : 889,
+				"width" : 198,
+				"height" : 75
+			},
+			"newLine" : false
 		},
 		{
-			"form" : "Sumgiạuntameng",
-			"index" : 503,
-			"tags" : [
-				"ADV"
-			],
-			"scanPosition" : {
-				"x" : 2033,
-				"y" : 1689,
-				"width" : 567,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "era:",
-			"index" : 504,
-			"tags" : [
-				"ADV"
-			],
-			"scanPosition" : {
-				"x" : 2665,
-				"y" : 1689,
-				"width" : 132,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "Mal",
-			"index" : 505,
-			"tags" : [
-				"NN"
-			],
-			"scanPosition" : {
-				"x" : 2868,
-				"y" : 1689,
-				"width" : 119,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "à",
-			"index" : 506,
-			"tags" : [
-				"PREP"
-			],
-			"scanPosition" : {
-				"x" : 334,
-				"y" : 1788,
-				"width" : 33,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "quell",
-			"index" : 507,
+			"form" : "quella",
+			"index" : 1324,
 			"tags" : [
 				"ADJ_DEM"
 			],
 			"scanPosition" : {
-				"x" : 404,
-				"y" : 1788,
-				"width" : 160,
-				"height" : 66
-			}
+				"x" : 2086,
+				"y" : 889,
+				"width" : 186,
+				"height" : 75
+			},
+			"newLine" : false
 		},
 		{
-			"form" : "igl",
-			"index" : 508,
+			"form" : "virteu,",
+			"index" : 1325,
+			"tags" : [
+				"NN"
+			],
+			"scanPosition" : {
+				"x" : 2337,
+				"y" : 889,
+				"width" : 192,
+				"height" : 75
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "las",
+			"index" : 1326,
 			"tags" : [
 				"ART"
 			],
 			"scanPosition" : {
-				"x" : 612,
-				"y" : 1788,
-				"width" : 79,
-				"height" : 66
-			}
+				"x" : 2627,
+				"y" : 889,
+				"width" : 94,
+				"height" : 75
+			},
+			"newLine" : false
 		},
 		{
-			"form" : "qual",
-			"index" : 509,
+			"form" : "nossas",
+			"index" : 1327,
 			"tags" : [
 				"PRON_DEM"
 			],
 			"scanPosition" : {
-				"x" : 741,
-				"y" : 1788,
-				"width" : 138,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "datt",
-			"index" : 510,
-			"tags" : [
-				"V_GVRB"
-			],
-			"scanPosition" : {
-				"x" : 929,
-				"y" : 1788,
-				"width" : 123,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "scandel",
-			"index" : 511,
-			"tags" : [
-				"NN"
-			],
-			"scanPosition" : {
-				"x" : 1099,
-				"y" : 1788,
-				"width" : 230,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "alla",
-			"index" : 512,
-			"tags" : [
-				"PREP_ART"
-			],
-			"scanPosition" : {
-				"x" : 1384,
-				"y" : 1788,
-				"width" : 117,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "Giuvẽtütna,",
-			"index" : 513,
-			"tags" : [
-				"NN"
-			],
-			"scanPosition" : {
-				"x" : 1544,
-				"y" : 1788,
-				"width" : 384,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "é",
-			"index" : 514,
-			"tags" : [
-				"CONJ_C"
-			],
-			"scanPosition" : {
-				"x" : 1978,
-				"y" : 1788,
-				"width" : 29,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "fuss",
-			"index" : 515,
-			"tags" : [
-				"V_ESSER"
-			],
-			"scanPosition" : {
-				"x" : 2060,
-				"y" : 1788,
-				"width" : 112,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "plij",
-			"index" : 516,
-			"tags" : [
-				"ADV"
-			],
-			"scanPosition" : {
-				"x" : 2223,
-				"y" : 1788,
-				"width" : 107,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "bien",
-			"index" : 517,
-			"tags" : [
-				"ADJ"
-			],
-			"scanPosition" : {
-				"x" : 2377,
-				"y" : 1788,
-				"width" : 135,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "ch'  ell",
-			"index" : 518,
-			"tags" : [ ],
-			"scanPosition" : {
-				"x" : 2562,
-				"y" : 1788,
-				"width" : 168,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "havess",
-			"index" : 519,
-			"tags" : [
-				"V_AVAIR"
-			],
-			"scanPosition" : {
-				"x" : 2788,
-				"y" : 1788,
-				"width" : 204,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "15",
-			"index" : 520,
-			"tags" : [
-				"C_NUM"
-			],
-			"scanPosition" : {
-				"x" : 231,
-				"y" : 1891,
-				"width" : 70,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "üna",
-			"index" : 521,
-			"tags" : [
-				"ART"
-			],
-			"scanPosition" : {
-				"x" : 334,
-				"y" : 1891,
-				"width" : 115,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "mola",
-			"index" : 522,
-			"tags" : [
-				"NN"
-			],
-			"scanPosition" : {
-				"x" : 496,
-				"y" : 1891,
-				"width" : 154,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "d'  mulin",
-			"index" : 523,
-			"tags" : [ ],
-			"scanPosition" : {
-				"x" : 709,
-				"y" : 1891,
-				"width" : 239,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "eintin",
-			"index" : 524,
-			"tags" : [
-				"PREP"
-			],
-			"scanPosition" : {
-				"x" : 1015,
-				"y" : 1891,
+				"x" : 2807,
+				"y" : 889,
 				"width" : 182,
-				"height" : 66
-			}
+				"height" : 75
+			},
+			"newLine" : false
 		},
 		{
-			"form" : "culiets",
-			"index" : 525,
+			"form" : "ormas",
+			"index" : 1328,
 			"tags" : [
 				"NN"
-			],
-			"scanPosition" : {
-				"x" : 1257,
-				"y" : 1891,
-				"width" : 206,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "&",
-			"index" : 526,
-			"tags" : [
-				"CONJ_C"
-			],
-			"scanPosition" : {
-				"x" : 1527,
-				"y" : 1891,
-				"width" : 55,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "fuss",
-			"index" : 527,
-			"tags" : [
-				"V_ESSER"
-			],
-			"scanPosition" : {
-				"x" : 1632,
-				"y" : 1891,
-				"width" : 114,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "stendschentạạ",
-			"index" : 528,
-			"tags" : [
-				"V_PP"
-			],
-			"scanPosition" : {
-				"x" : 1809,
-				"y" : 1891,
-				"width" : 435,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "in",
-			"index" : 529,
-			"tags" : [
-				"PREP"
-			],
-			"scanPosition" : {
-				"x" : 2315,
-				"y" : 1891,
-				"width" : 58,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "funs",
-			"index" : 530,
-			"tags" : [
-				"NN"
-			],
-			"scanPosition" : {
-				"x" : 2430,
-				"y" : 1891,
-				"width" : 131,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "quella",
-			"index" : 550,
-			"tags" : [
-				"ADJ_DEM"
-			],
-			"scanPosition" : {
-				"x" : 942,
-				"y" : 2089,
-				"width" : 197,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "vignig",
-			"index" : 551,
-			"tags" : [
-				"V_GVRB"
-			],
-			"scanPosition" : {
-				"x" : 1169,
-				"y" : 2089,
-				"width" : 201,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "tratchia",
-			"index" : 552,
-			"tags" : [
-				"V_PP"
-			],
-			"scanPosition" : {
-				"x" : 1407,
-				"y" : 2089,
-				"width" : 250,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "sij",
-			"index" : 553,
-			"tags" : [
-				"PART"
-			],
-			"scanPosition" : {
-				"x" : 1698,
-				"y" : 2089,
-				"width" : 62,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "ünandretg,",
-			"index" : 554,
-			"tags" : [
-				"ADV"
-			],
-			"scanPosition" : {
-				"x" : 1801,
-				"y" : 2089,
-				"width" : 350,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "damæ",
-			"index" : 574,
-			"tags" : [
-				"ADV"
-			],
-			"scanPosition" : {
-				"x" : 1042,
-				"y" : 2287,
-				"width" : 185,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "dellas",
-			"index" : 580,
-			"tags" : [
-				"PREP_ART"
-			],
-			"scanPosition" : {
-				"x" : 2446,
-				"y" : 2287,
-				"width" : 185,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "20",
-			"index" : 582,
-			"tags" : [
-				"C_NUM"
-			],
-			"scanPosition" : {
-				"x" : 230,
-				"y" : 2391,
-				"width" : 71,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "tras",
-			"index" : 583,
-			"tags" : [
-				"PREP"
-			],
-			"scanPosition" : {
-				"x" : 336,
-				"y" : 2391,
-				"width" : 120,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "da",
-			"index" : 584,
-			"tags" : [
-				"PREP"
-			],
-			"scanPosition" : {
-				"x" : 504,
-				"y" : 2391,
-				"width" : 73,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "quella",
-			"index" : 585,
-			"tags" : [
-				"ADJ_DEM"
-			],
-			"scanPosition" : {
-				"x" : 625,
-				"y" : 2391,
-				"width" : 196,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "sort",
-			"index" : 586,
-			"tags" : [
-				"NN"
-			],
-			"scanPosition" : {
-				"x" : 871,
-				"y" : 2391,
-				"width" : 112,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "cudischs,",
-			"index" : 587,
-			"tags" : [
-				"NN"
-			],
-			"scanPosition" : {
-				"x" : 1033,
-				"y" : 2391,
-				"width" : 286,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "numnadameng",
-			"index" : 588,
-			"tags" : [
-				"ADV"
-			],
-			"scanPosition" : {
-				"x" : 1369,
-				"y" : 2391,
-				"width" : 476,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "Catechisems,",
-			"index" : 589,
-			"tags" : [
-				"NN"
-			],
-			"scanPosition" : {
-				"x" : 1883,
-				"y" : 2391,
-				"width" : 411,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "portan",
-			"index" : 590,
-			"tags" : [
-				"V_GVRB"
-			],
-			"scanPosition" : {
-				"x" : 2347,
-				"y" : 2391,
-				"width" : 207,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "tạunt",
-			"index" : 591,
-			"tags" : [
-				"ADV"
-			],
-			"scanPosition" : {
-				"x" : 2600,
-				"y" : 2391,
-				"width" : 164,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "frütg,",
-			"index" : 592,
-			"tags" : [
-				"NN"
-			],
-			"scanPosition" : {
-				"x" : 2812,
-				"y" : 2391,
-				"width" : 177,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "&",
-			"index" : 593,
-			"tags" : [
-				"CONJ_C"
 			],
 			"scanPosition" : {
 				"x" : 338,
-				"y" : 2490,
-				"width" : 55,
-				"height" : 66
-			}
+				"y" : 989,
+				"width" : 186,
+				"height" : 75
+			},
+			"newLine" : true
 		},
 		{
-			"form" : "eintin",
-			"index" : 594,
+			"form" : "tier",
+			"index" : 1329,
 			"tags" : [
 				"PREP"
 			],
 			"scanPosition" : {
-				"x" : 435,
-				"y" : 2490,
-				"width" : 183,
-				"height" : 66
-			}
+				"x" : 591,
+				"y" : 989,
+				"width" : 103,
+				"height" : 75
+			},
+			"newLine" : false
 		},
 		{
-			"form" : "noss",
-			"index" : 595,
+			"form" : "la",
+			"index" : 1330,
 			"tags" : [
-				"PRON_POS"
+				"ART"
 			],
 			"scanPosition" : {
-				"x" : 677,
-				"y" : 2490,
-				"width" : 129,
-				"height" : 66
-			}
+				"x" : 753,
+				"y" : 989,
+				"width" : 58,
+				"height" : 75
+			},
+			"newLine" : false
 		},
 		{
-			"form" : "linguagh",
-			"index" : 596,
+			"form" : "vita",
+			"index" : 1331,
 			"tags" : [
-				"NN"
+				"ADJ"
 			],
 			"scanPosition" : {
-				"x" : 870,
-				"y" : 2490,
-				"width" : 284,
-				"height" : 66
-			}
+				"x" : 858,
+				"y" : 989,
+				"width" : 112,
+				"height" : 75
+			},
+			"newLine" : false
 		},
 		{
-			"form" : "mæ",
-			"index" : 597,
-			"tags" : [
-				"ADV"
-			],
-			"scanPosition" : {
-				"x" : 1205,
-				"y" : 2490,
-				"width" : 106,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "na",
-			"index" : 598,
-			"tags" : [
-				"ADV"
-			],
-			"scanPosition" : {
-				"x" : 1369,
-				"y" : 2490,
-				"width" : 74,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "nean",
-			"index" : 599,
+			"form" : "perpetua",
+			"index" : 1332,
 			"tags" : [
 				"V_GVRB"
 			],
 			"scanPosition" : {
-				"x" : 1490,
-				"y" : 2490,
-				"width" : 150,
-				"height" : 66
-			}
+				"x" : 1025,
+				"y" : 989,
+				"width" : 265,
+				"height" : 75
+			},
+			"newLine" : false
 		},
 		{
-			"form" : "ne",
-			"index" : 600,
+			"form" : "da",
+			"index" : 1333,
 			"tags" : [
-				"CONJ_S"
+				"PREP"
 			],
 			"scanPosition" : {
-				"x" : 1701,
-				"y" : 2490,
-				"width" : 72,
-				"height" : 66
-			}
+				"x" : 1380,
+				"y" : 989,
+				"width" : 74,
+				"height" : 75
+			},
+			"newLine" : false
 		},
 		{
-			"form" : "scritts",
-			"index" : 601,
+			"form" : "spysentar",
+			"index" : 1334,
 			"tags" : [
-				"V_PP"
+				"V_GVRB"
 			],
 			"scanPosition" : {
-				"x" : 1822,
-				"y" : 2490,
-				"width" : 185,
-				"height" : 66
-			}
+				"x" : 1489,
+				"y" : 989,
+				"width" : 268,
+				"height" : 75
+			},
+			"newLine" : false
 		},
 		{
-			"form" : "squitscheus,",
-			"index" : 603,
+			"form" : "&",
+			"index" : 1335,
 			"tags" : [
-				"V_PP"
+				"CONJ_C"
 			],
 			"scanPosition" : {
-				"x" : 2174,
-				"y" : 2490,
-				"width" : 386,
-				"height" : 66
-			}
+				"x" : 1876,
+				"y" : 989,
+				"width" : 58,
+				"height" : 75
+			},
+			"newLine" : false
 		},
 		{
-			"form" : "nossa",
-			"index" : 606,
+			"form" : "bevrentar.",
+			"index" : 1336,
 			"tags" : [
-				"PRON_POS"
+				"V_GVRB"
 			],
 			"scanPosition" : {
-				"x" : 2832,
-				"y" : 2490,
+				"x" : 2023,
+				"y" : 989,
+				"width" : 307,
+				"height" : 75
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "[pag.",
+			"index" : 1337,
+			"tags" : [
+				"NN"
+			],
+			"scanPosition" : {
+				"x" : 339,
+				"y" : 1135,
 				"width" : 160,
 				"height" : 66
-			}
-		},
-		{
-			"form" : "Giuventütna",
-			"index" : 607,
-			"tags" : [
-				"NN"
-			],
-			"scanPosition" : {
-				"x" : 336,
-				"y" : 2589,
-				"width" : 402,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "linguaghs",
-			"index" : 609,
-			"tags" : [
-				"NN"
-			],
-			"scanPosition" : {
-				"x" : 1056,
-				"y" : 2589,
-				"width" : 316,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "pò",
-			"index" : 611,
-			"tags" : [
-				"V_GVRB"
-			],
-			"scanPosition" : {
-				"x" : 1690,
-				"y" : 2589,
-				"width" : 74,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "sunt",
-			"index" : 613,
-			"tags" : [
-				"V_ESSER"
-			],
-			"scanPosition" : {
-				"x" : 2126,
-				"y" : 2589,
-				"width" : 126,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "eintin",
-			"index" : 626,
-			"tags" : [
-				"PREP"
-			],
-			"scanPosition" : {
-				"x" : 2405,
-				"y" : 2688,
-				"width" : 181,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "della",
-			"index" : 647,
-			"tags" : [
-				"PREP_ART"
-			],
-			"scanPosition" : {
-				"x" : 2111,
-				"y" : 2889,
-				"width" : 156,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "(cun",
-			"index" : 649,
-			"tags" : [
-				"PREP"
-			],
-			"scanPosition" : {
-				"x" : 2523,
-				"y" : 2889,
-				"width" : 139,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "da",
-			"index" : 651,
-			"tags" : [
-				"PREP"
-			],
-			"scanPosition" : {
-				"x" : 2918,
-				"y" : 2889,
-				"width" : 74,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "da",
-			"index" : 653,
-			"tags" : [
-				"PREP"
-			],
-			"scanPosition" : {
-				"x" : 550,
-				"y" : 2988,
-				"width" : 73,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "metter",
-			"index" : 655,
-			"tags" : [
-				"V_GVRB"
-			],
-			"scanPosition" : {
-				"x" : 982,
-				"y" : 2988,
-				"width" : 206,
-				"height" : 66
-			}
+			},
+			"newLine" : true
 		},
 		{
 			"form" : "&",
-			"index" : 657,
+			"index" : 1347,
 			"tags" : [
 				"CONJ_C"
 			],
 			"scanPosition" : {
-				"x" : 1399,
-				"y" : 2988,
+				"x" : 2298,
+				"y" : 1135,
 				"width" : 55,
 				"height" : 66
-			}
+			},
+			"newLine" : false
 		},
 		{
-			"form" : "squitschear",
-			"index" : 659,
-			"tags" : [
-				"V_GVRB"
-			],
-			"scanPosition" : {
-				"x" : 1631,
-				"y" : 2988,
-				"width" : 348,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "cudischet",
-			"index" : 661,
+			"form" : "schmidạạ,",
+			"index" : 1367,
 			"tags" : [
 				"NN"
 			],
 			"scanPosition" : {
-				"x" : 2269,
-				"y" : 2988,
-				"width" : 294,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "eintin",
-			"index" : 662,
-			"tags" : [
-				"PREP"
-			],
-			"scanPosition" : {
-				"x" : 2628,
-				"y" : 2988,
-				"width" : 180,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "natürâl",
-			"index" : 664,
-			"tags" : [
-				"ADJ"
-			],
-			"scanPosition" : {
-				"x" : 334,
-				"y" : 3087,
-				"width" : 231,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "linguagh",
-			"index" : 665,
-			"tags" : [
-				"NN"
-			],
-			"scanPosition" : {
-				"x" : 595,
-				"y" : 3087,
-				"width" : 285,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "da",
-			"index" : 666,
-			"tags" : [
-				"PREP"
-			],
-			"scanPosition" : {
-				"x" : 918,
-				"y" : 3087,
-				"width" : 73,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "Tumlgieschka:",
-			"index" : 667,
-			"tags" : [
-				"NN_P"
-			],
-			"scanPosition" : {
-				"x" : 1020,
-				"y" : 3087,
-				"width" : 489,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "Cunbein",
-			"index" : 668,
-			"tags" : [
-				"ADV"
-			],
-			"scanPosition" : {
-				"x" : 1564,
-				"y" : 3087,
-				"width" : 269,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "quell",
-			"index" : 669,
-			"tags" : [
-				"ADJ_DEM"
-			],
-			"scanPosition" : {
-				"x" : 1863,
-				"y" : 3087,
-				"width" : 158,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "ees",
-			"index" : 670,
-			"tags" : [
-				"V_ESSER"
-			],
-			"scanPosition" : {
-				"x" : 2058,
-				"y" : 3087,
-				"width" : 93,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "pitschen,",
-			"index" : 671,
-			"tags" : [
-				"V_GVRB",
-				"ADJ"
-			],
-			"scanPosition" : {
-				"x" : 2179,
-				"y" : 3087,
-				"width" : 280,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "cuntean",
-			"index" : 672,
-			"tags" : [
-				"V_GVRB",
-				"PRON_PER"
-			],
-			"scanPosition" : {
-				"x" : 2495,
-				"y" : 3087,
-				"width" : 247,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "ell",
-			"index" : 673,
-			"tags" : [
-				"PRON_PER"
-			],
-			"scanPosition" : {
-				"x" : 2777,
-				"y" : 3087,
-				"width" : 74,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "imprô",
-			"index" : 674,
-			"tags" : [
-				"ADV"
-			],
-			"scanPosition" : {
-				"x" : 2886,
-				"y" : 3087,
-				"width" : 80,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "…",
-			"index" : 675,
-			"tags" : [ ],
-			"scanPosition" : {
-				"x" : 333,
-				"y" : 3186,
-				"width" : 105,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "tutts",
-			"index" : 676,
-			"tags" : [
-				"ADJ"
-			],
-			"scanPosition" : {
-				"x" : 486,
-				"y" : 3186,
-				"width" : 140,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "ils",
-			"index" : 677,
-			"tags" : [
-				"ART"
-			],
-			"scanPosition" : {
-				"x" : 672,
-				"y" : 3186,
-				"width" : 71,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "principals",
-			"index" : 678,
-			"tags" : [
-				"ADJ"
-			],
-			"scanPosition" : {
-				"x" : 787,
-				"y" : 3186,
-				"width" : 319,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "punctgs",
-			"index" : 679,
-			"tags" : [
-				"NN"
-			],
-			"scanPosition" : {
-				"x" : 1157,
-				"y" : 3186,
-				"width" : 248,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "della",
-			"index" : 680,
-			"tags" : [
-				"PREP_ART"
-			],
-			"scanPosition" : {
-				"x" : 1456,
-				"y" : 3186,
-				"width" : 152,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "nossa",
-			"index" : 681,
-			"tags" : [
-				"PRON_POS"
-			],
-			"scanPosition" : {
-				"x" : 1658,
-				"y" : 3186,
-				"width" : 159,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "Christianevla",
-			"index" : 682,
-			"tags" : [
-				"ADJ"
-			],
-			"scanPosition" : {
-				"x" : 1870,
-				"y" : 3186,
-				"width" : 426,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "Religiun,",
-			"index" : 683,
-			"tags" : [
-				"NN"
-			],
-			"scanPosition" : {
-				"x" : 2359,
-				"y" : 3186,
-				"width" : 312,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "&",
-			"index" : 684,
-			"tags" : [
-				"CONJ_C"
-			],
-			"scanPosition" : {
-				"x" : 2721,
-				"y" : 3186,
-				"width" : 55,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "d'  üna",
-			"index" : 685,
-			"tags" : [
-				"PREP_ART"
-			],
-			"scanPosition" : {
-				"x" : 2820,
-				"y" : 3186,
-				"width" : 169,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "Christianevla",
-			"index" : 686,
-			"tags" : [
-				"ADJ"
-			],
-			"scanPosition" : {
-				"x" : 336,
-				"y" : 3285,
-				"width" : 424,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "desc(e)h[e]inta",
-			"index" : 687,
-			"tags" : [
-				"ADJ"
-			],
-			"scanPosition" : {
-				"x" : 806,
-				"y" : 3285,
-				"width" : 478,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "vita.",
-			"index" : 688,
-			"tags" : [
-				"NN"
-			],
-			"scanPosition" : {
-				"x" : 1328,
-				"y" : 3285,
-				"width" : 140,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "Mò",
-			"index" : 689,
-			"tags" : [
-				"ADV"
-			],
-			"scanPosition" : {
-				"x" : 1529,
-				"y" : 3285,
-				"width" : 98,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "per",
-			"index" : 690,
-			"tags" : [
-				"PREP"
-			],
-			"scanPosition" : {
-				"x" : 1656,
-				"y" : 3285,
-				"width" : 102,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "nott",
-			"index" : 691,
-			"tags" : [
-				"ADV"
-			],
-			"scanPosition" : {
-				"x" : 1784,
-				"y" : 3285,
-				"width" : 123,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "che",
-			"index" : 692,
-			"tags" : [
-				"CONJ_S"
-			],
-			"scanPosition" : {
-				"x" : 1940,
-				"y" : 3285,
-				"width" : 103,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "hagig",
-			"index" : 693,
-			"tags" : [
-				"V_GVRB"
-			],
-			"scanPosition" : {
-				"x" : 2081,
-				"y" : 3285,
-				"width" : 178,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "tạunt",
-			"index" : 694,
-			"tags" : [
-				"ADV"
-			],
-			"scanPosition" : {
-				"x" : 2294,
-				"y" : 3285,
-				"width" : 164,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "plij",
-			"index" : 695,
-			"tags" : [
-				"ADV"
-			],
-			"scanPosition" : {
-				"x" : 2486,
-				"y" : 3285,
-				"width" : 107,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "authoritad,",
-			"index" : 696,
-			"tags" : [
-				"NN"
-			],
-			"scanPosition" : {
-				"x" : 2634,
-				"y" : 3285,
-				"width" : 353,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "30",
-			"index" : 697,
-			"tags" : [
-				"C_NUM"
-			],
-			"scanPosition" : {
-				"x" : 229,
-				"y" : 3388,
-				"width" : 71,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "væ",
-			"index" : 698,
-			"tags" : [
-				"V_AVAIR"
-			],
-			"scanPosition" : {
-				"x" : 334,
-				"y" : 3388,
-				"width" : 86,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "Io",
-			"index" : 699,
-			"tags" : [
-				"ADV"
-			],
-			"scanPosition" : {
-				"x" : 469,
-				"y" : 3388,
-				"width" : 63,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "voleu",
-			"index" : 700,
-			"tags" : [
-				"V_PP"
-			],
-			"scanPosition" : {
-				"x" : 580,
-				"y" : 3388,
-				"width" : 170,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "scriver",
-			"index" : 701,
-			"tags" : [
-				"V_GVRB"
-			],
-			"scanPosition" : {
-				"x" : 799,
-				"y" : 3388,
-				"width" : 212,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "tiers",
-			"index" : 702,
-			"tags" : [
-				"PREP"
-			],
-			"scanPosition" : {
-				"x" : 1060,
-				"y" : 3388,
-				"width" : 137,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "à",
-			"index" : 703,
-			"tags" : [
-				"PREP"
-			],
-			"scanPosition" : {
-				"x" : 1245,
-				"y" : 3388,
-				"width" : 33,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "vus",
-			"index" : 704,
-			"tags" : [
-				"PRON_PER"
-			],
-			"scanPosition" : {
-				"x" : 1323,
-				"y" : 3388,
-				"width" : 107,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "numnạạs",
-			"index" : 705,
-			"tags" : [
-				"V_PP"
-			],
-			"scanPosition" : {
-				"x" : 1479,
-				"y" : 3388,
-				"width" : 284,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "Signurs",
-			"index" : 706,
-			"tags" : [
-				"NN"
-			],
-			"scanPosition" : {
-				"x" : 1813,
-				"y" : 3388,
-				"width" : 246,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "da",
-			"index" : 707,
-			"tags" : [
-				"PREP"
-			],
-			"scanPosition" : {
-				"x" : 2111,
-				"y" : 3388,
-				"width" : 73,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "quest",
-			"index" : 708,
-			"tags" : [
-				"ADJ_DEM"
-			],
-			"scanPosition" : {
-				"x" : 2232,
-				"y" : 3388,
-				"width" : 161,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "hundrevel",
-			"index" : 709,
-			"tags" : [
-				"ADJ"
-			],
-			"scanPosition" : {
-				"x" : 2444,
-				"y" : 3388,
-				"width" : 322,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "Commün:",
-			"index" : 710,
-			"tags" : [
-				"NN"
-			],
-			"scanPosition" : {
-				"x" : 2819,
-				"y" : 3388,
-				"width" : 148,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "…",
-			"index" : 711,
-			"tags" : [ ],
-			"scanPosition" : {
-				"x" : 335,
-				"y" : 3487,
-				"width" : 171,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "Sün",
-			"index" : 712,
-			"tags" : [
-				"PREP"
-			],
-			"scanPosition" : {
-				"x" : 582,
-				"y" : 3487,
-				"width" : 121,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "buna",
-			"index" : 713,
-			"tags" : [
-				"ADJ"
-			],
-			"scanPosition" : {
-				"x" : 752,
-				"y" : 3487,
-				"width" : 156,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "sperạunza",
-			"index" : 714,
-			"tags" : [
-				"NN"
-			],
-			"scanPosition" : {
-				"x" : 957,
-				"y" : 3487,
+				"x" : 1225,
+				"y" : 1353,
 				"width" : 317,
 				"height" : 66
-			}
-		},
-		{
-			"form" : "che",
-			"index" : 715,
-			"tags" : [
-				"CONJ_S"
-			],
-			"scanPosition" : {
-				"x" : 1341,
-				"y" : 3487,
-				"width" : 105,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "vignig",
-			"index" : 716,
-			"tags" : [
-				"V_GVRB"
-			],
-			"scanPosition" : {
-				"x" : 1497,
-				"y" : 3487,
-				"width" : 202,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "(cun",
-			"index" : 717,
-			"tags" : [
-				"PREP"
-			],
-			"scanPosition" : {
-				"x" : 1752,
-				"y" : 3487,
-				"width" : 137,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "agüd",
-			"index" : 718,
-			"tags" : [
-				"NN"
-			],
-			"scanPosition" : {
-				"x" : 1950,
-				"y" : 3487,
-				"width" : 153,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "da",
-			"index" : 719,
-			"tags" : [
-				"PREP"
-			],
-			"scanPosition" : {
-				"x" : 2155,
-				"y" : 3487,
-				"width" : 74,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "Deu)",
-			"index" : 720,
-			"tags" : [
-				"NN_P"
-			],
-			"scanPosition" : {
-				"x" : 2277,
-				"y" : 3487,
-				"width" : 155,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "portâr",
-			"index" : 721,
-			"tags" : [
-				"V_GVRB"
-			],
-			"scanPosition" : {
-				"x" : 2497,
-				"y" : 3487,
-				"width" : 198,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "grạund",
-			"index" : 722,
-			"tags" : [
-				"ADJ"
-			],
-			"scanPosition" : {
-				"x" : 2759,
-				"y" : 3487,
-				"width" : 228,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "bun",
-			"index" : 723,
-			"tags" : [
-				"ADJ"
-			],
-			"scanPosition" : {
-				"x" : 335,
-				"y" : 3587,
-				"width" : 117,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "frütg.",
-			"index" : 724,
-			"tags" : [
-				"NN"
-			],
-			"scanPosition" : {
-				"x" : 502,
-				"y" : 3587,
-				"width" : 175,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "Rogạund",
-			"index" : 725,
-			"tags" : [
-				"V_GVRB"
-			],
-			"scanPosition" : {
-				"x" : 768,
-				"y" : 3587,
-				"width" : 291,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "cha",
-			"index" : 726,
-			"tags" : [
-				"CONJ_S"
-			],
-			"scanPosition" : {
-				"x" : 1129,
-				"y" : 3587,
-				"width" : 105,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "la",
-			"index" : 727,
-			"tags" : [
-				"ART"
-			],
-			"scanPosition" : {
-				"x" : 1279,
-				"y" : 3587,
-				"width" : 57,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "V.",
-			"index" : 728,
-			"tags" : [ ],
-			"scanPosition" : {
-				"x" : 1389,
-				"y" : 3587,
-				"width" : 69,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "H.",
-			"index" : 729,
-			"tags" : [ ],
-			"scanPosition" : {
-				"x" : 1512,
-				"y" : 3587,
-				"width" : 72,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "viglig",
-			"index" : 730,
-			"tags" : [
-				"V_GVRB"
-			],
-			"scanPosition" : {
-				"x" : 1637,
-				"y" : 3587,
-				"width" : 182,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "questa",
-			"index" : 731,
-			"tags" : [
-				"ADJ_DEM"
-			],
-			"scanPosition" : {
-				"x" : 1880,
-				"y" : 3587,
-				"width" : 198,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "[fol.",
-			"index" : 732,
-			"tags" : [
-				"NN"
-			],
-			"scanPosition" : {
-				"x" : 2130,
-				"y" : 3587,
-				"width" : 126,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "cr]",
-			"index" : 733,
-			"tags" : [
-				"NN"
-			],
-			"scanPosition" : {
-				"x" : 2310,
-				"y" : 3587,
-				"width" : 83,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "chiạusa",
-			"index" : 734,
-			"tags" : [
-				"NN"
-			],
-			"scanPosition" : {
-				"x" : 2447,
-				"y" : 3587,
-				"width" : 232,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "bigchia",
-			"index" : 735,
-			"tags" : [
-				"ADV"
-			],
-			"scanPosition" : {
-				"x" : 2749,
-				"y" : 3587,
-				"width" : 237,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "virar",
-			"index" : 736,
-			"tags" : [
-				"V_GVRB"
-			],
-			"scanPosition" : {
-				"x" : 335,
-				"y" : 3686,
-				"width" : 156,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "in",
-			"index" : 737,
-			"tags" : [
-				"PREP"
-			],
-			"scanPosition" : {
-				"x" : 537,
-				"y" : 3686,
-				"width" : 59,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "mal,",
-			"index" : 738,
-			"tags" : [
-				"NN"
-			],
-			"scanPosition" : {
-				"x" : 644,
-				"y" : 3686,
-				"width" : 133,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "mò",
-			"index" : 739,
-			"tags" : [
-				"ADV"
-			],
-			"scanPosition" : {
-				"x" : 824,
-				"y" : 3686,
-				"width" : 93,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "prender",
-			"index" : 740,
-			"tags" : [
-				"V_GVRB"
-			],
-			"scanPosition" : {
-				"x" : 962,
-				"y" : 3686,
-				"width" : 253,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "la",
-			"index" : 741,
-			"tags" : [
-				"ART"
-			],
-			"scanPosition" : {
-				"x" : 1262,
-				"y" : 3686,
-				"width" : 57,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "buna",
-			"index" : 742,
-			"tags" : [
-				"ADJ"
-			],
-			"scanPosition" : {
-				"x" : 1367,
-				"y" : 3686,
-				"width" : 157,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "viglia",
-			"index" : 743,
-			"tags" : [
-				"NN"
-			],
-			"scanPosition" : {
-				"x" : 1572,
-				"y" : 3686,
-				"width" : 185,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "avạunt",
-			"index" : 744,
-			"tags" : [
-				"PREP"
-			],
-			"scanPosition" : {
-				"x" : 1804,
-				"y" : 3686,
-				"width" : 217,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "ils",
-			"index" : 745,
-			"tags" : [
-				"ART"
-			],
-			"scanPosition" : {
-				"x" : 2066,
-				"y" : 3686,
-				"width" : 71,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "fatgs,",
-			"index" : 746,
-			"tags" : [
-				"NN"
-			],
-			"scanPosition" : {
-				"x" : 2183,
-				"y" : 3686,
-				"width" : 176,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "&",
-			"index" : 747,
-			"tags" : [
-				"CONJ_C"
-			],
-			"scanPosition" : {
-				"x" : 2408,
-				"y" : 3686,
-				"width" : 55,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "me",
-			"index" : 748,
-			"tags" : [
-				"ADV"
-			],
-			"scanPosition" : {
-				"x" : 2483,
-				"y" : 3686,
-				"width" : 90,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "adüna",
-			"index" : 749,
-			"tags" : [
-				"ADV"
-			],
-			"scanPosition" : {
-				"x" : 2617,
-				"y" : 3686,
-				"width" : 194,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "eintin",
-			"index" : 750,
-			"tags" : [
-				"PREP"
-			],
-			"scanPosition" : {
-				"x" : 2865,
-				"y" : 3686,
-				"width" : 98,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "…",
-			"index" : 751,
-			"tags" : [ ],
-			"scanPosition" : {
-				"x" : 331,
-				"y" : 3785,
-				"width" : 83,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "tutt",
-			"index" : 752,
-			"tags" : [
-				"ADJ"
-			],
-			"scanPosition" : {
-				"x" : 461,
-				"y" : 3785,
-				"width" : 112,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "bien,",
-			"index" : 753,
-			"tags" : [
-				"ADJ"
-			],
-			"scanPosition" : {
-				"x" : 620,
-				"y" : 3785,
-				"width" : 164,
-				"height" : 66
-			}
+			},
+			"newLine" : true
 		},
 		{
 			"form" : "scò",
-			"index" : 754,
-			"tags" : [
-				"ADV"
-			],
-			"scanPosition" : {
-				"x" : 834,
-				"y" : 3785,
-				"width" : 90,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "buns",
-			"index" : 755,
-			"tags" : [
-				"ADJ"
-			],
-			"scanPosition" : {
-				"x" : 973,
-				"y" : 3785,
-				"width" : 149,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "Signurs",
-			"index" : 756,
-			"tags" : [
-				"NN"
-			],
-			"scanPosition" : {
-				"x" : 1173,
-				"y" : 3785,
-				"width" : 244,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "&",
-			"index" : 757,
+			"index" : 1368,
 			"tags" : [
 				"CONJ_C"
 			],
 			"scanPosition" : {
-				"x" : 1469,
-				"y" : 3785,
-				"width" : 55,
+				"x" : 1589,
+				"y" : 1353,
+				"width" : 91,
 				"height" : 66
-			}
+			},
+			"newLine" : false
 		},
 		{
-			"form" : "Patruns",
-			"index" : 758,
+			"form" : "ünchüns",
+			"index" : 1369,
 			"tags" : [
 				"NN"
 			],
 			"scanPosition" : {
-				"x" : 1563,
-				"y" : 3785,
-				"width" : 252,
+				"x" : 1728,
+				"y" : 1353,
+				"width" : 266,
 				"height" : 66
-			}
+			},
+			"newLine" : false
 		},
 		{
-			"form" : "laschar",
-			"index" : 759,
+			"form" : "manegian?",
+			"index" : 1370,
 			"tags" : [
 				"V_GVRB"
 			],
 			"scanPosition" : {
-				"x" : 1881,
-				"y" : 3785,
-				"width" : 222,
+				"x" : 2051,
+				"y" : 1353,
+				"width" : 358,
 				"height" : 66
-			}
+			},
+			"newLine" : false
 		},
 		{
-			"form" : "esser",
-			"index" : 760,
-			"tags" : [
-				"V_ESSER"
-			],
-			"scanPosition" : {
-				"x" : 2155,
-				"y" : 3785,
-				"width" : 144,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "per",
-			"index" : 761,
-			"tags" : [
-				"PREP"
-			],
-			"scanPosition" : {
-				"x" : 2347,
-				"y" : 3785,
-				"width" : 101,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "recommendạạ.",
-			"index" : 762,
-			"tags" : [
-				"V_PP"
-			],
-			"scanPosition" : {
-				"x" : 2515,
-				"y" : 3785,
-				"width" : 471,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "35",
-			"index" : 763,
-			"tags" : [
-				"C_NUM"
-			],
-			"scanPosition" : {
-				"x" : 230,
-				"y" : 3889,
-				"width" : 74,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "Deus",
-			"index" : 764,
-			"tags" : [
-				"NN_P"
-			],
-			"scanPosition" : {
-				"x" : 334,
-				"y" : 3889,
-				"width" : 159,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "dettig",
-			"index" : 765,
-			"tags" : [
-				"V_GVRB"
-			],
-			"scanPosition" : {
-				"x" : 540,
-				"y" : 3889,
-				"width" : 183,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "gratia",
-			"index" : 766,
+			"form" : "bigchia:",
+			"index" : 1373,
 			"tags" : [
 				"NN"
 			],
 			"scanPosition" : {
-				"x" : 771,
-				"y" : 3889,
-				"width" : 189,
-				"height" : 66
-			}
+				"x" : 702,
+				"y" : 1454,
+				"width" : 248,
+				"height" : 75
+			},
+			"newLine" : true
 		},
 		{
-			"form" : "che",
-			"index" : 767,
-			"tags" : [
-				"CONJ_S"
-			],
-			"scanPosition" : {
-				"x" : 1008,
-				"y" : 3889,
-				"width" : 104,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "portig",
-			"index" : 768,
-			"tags" : [
-				"V_GVRB"
-			],
-			"scanPosition" : {
-				"x" : 1161,
-				"y" : 3889,
-				"width" : 192,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "bun",
-			"index" : 769,
-			"tags" : [
-				"ADJ"
-			],
-			"scanPosition" : {
-				"x" : 1391,
-				"y" : 3889,
-				"width" : 120,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "frütgh,",
-			"index" : 770,
-			"tags" : [
-				"NN"
-			],
-			"scanPosition" : {
-				"x" : 1547,
-				"y" : 3889,
-				"width" : 219,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "&",
-			"index" : 771,
-			"tags" : [
-				"CONJ_C"
-			],
-			"scanPosition" : {
-				"x" : 1818,
-				"y" : 3889,
-				"width" : 55,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "siervig",
-			"index" : 772,
-			"tags" : [
-				"V_GVRB"
-			],
-			"scanPosition" : {
-				"x" : 1902,
-				"y" : 3889,
-				"width" : 207,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "tier",
-			"index" : 773,
-			"tags" : [
-				"PREP"
-			],
-			"scanPosition" : {
-				"x" : 2160,
-				"y" : 3889,
-				"width" : 109,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "seu",
-			"index" : 774,
-			"tags" : [
-				"PRON_POS"
-			],
-			"scanPosition" : {
-				"x" : 2319,
-				"y" : 3889,
-				"width" : 94,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "lạud",
-			"index" : 775,
-			"tags" : [
-				"NN"
-			],
-			"scanPosition" : {
-				"x" : 2461,
-				"y" : 3889,
-				"width" : 139,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "&",
-			"index" : 776,
-			"tags" : [
-				"CONJ_C"
-			],
-			"scanPosition" : {
-				"x" : 2633,
-				"y" : 3889,
-				"width" : 55,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "honur",
-			"index" : 777,
-			"tags" : [
-				"NN"
-			],
-			"scanPosition" : {
-				"x" : 2712,
-				"y" : 3889,
-				"width" : 190,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "&",
-			"index" : 778,
-			"tags" : [
-				"CONJ_C"
-			],
-			"scanPosition" : {
-				"x" : 2934,
-				"y" : 3889,
-				"width" : 55,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "tier",
-			"index" : 779,
-			"tags" : [
-				"PREP"
-			],
-			"scanPosition" : {
-				"x" : 333,
-				"y" : 3988,
-				"width" : 109,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "igl",
-			"index" : 780,
+			"form" : "in",
+			"index" : 1376,
 			"tags" : [
 				"ART"
 			],
 			"scanPosition" : {
-				"x" : 487,
-				"y" : 3988,
-				"width" : 81,
-				"height" : 66
-			}
+				"x" : 1449,
+				"y" : 1454,
+				"width" : 58,
+				"height" : 75
+			},
+			"newLine" : false
 		},
 		{
-			"form" : "noss",
-			"index" : 781,
+			"form" : "quella",
+			"index" : 1377,
 			"tags" : [
-				"PRON_POS"
+				"ADJ_DEM"
 			],
 			"scanPosition" : {
-				"x" : 617,
-				"y" : 3988,
-				"width" : 128,
-				"height" : 66
-			}
+				"x" : 1559,
+				"y" : 1454,
+				"width" : 186,
+				"height" : 75
+			},
+			"newLine" : false
 		},
 		{
-			"form" : "salüd",
-			"index" : 782,
+			"form" : "fuss",
+			"index" : 1379,
 			"tags" : [
-				"NN"
+				"V_ESSER"
 			],
 			"scanPosition" : {
-				"x" : 795,
-				"y" : 3988,
-				"width" : 161,
-				"height" : 66
-			}
+				"x" : 2012,
+				"y" : 1454,
+				"width" : 108,
+				"height" : 75
+			},
+			"newLine" : false
 		},
 		{
-			"form" : "Amẽ.",
-			"index" : 783,
-			"tags" : [
-				"NN"
-			],
-			"scanPosition" : {
-				"x" : 1007,
-				"y" : 3988,
-				"width" : 169,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "Datum",
-			"index" : 784,
+			"form" : "nagün",
+			"index" : 1381,
 			"tags" : [
 				"NN"
 			],
 			"scanPosition" : {
-				"x" : 1252,
-				"y" : 3988,
-				"width" : 218,
-				"height" : 66
-			}
+				"x" : 2330,
+				"y" : 1454,
+				"width" : 185,
+				"height" : 75
+			},
+			"newLine" : false
 		},
 		{
-			"form" : "Fürstno",
-			"index" : 785,
+			"form" : "Sacrameint.",
+			"index" : 1382,
 			"tags" : [
 				"NN_P"
 			],
 			"scanPosition" : {
-				"x" : 1518,
-				"y" : 3988,
-				"width" : 246,
-				"height" : 66
-			}
+				"x" : 2635,
+				"y" : 1454,
+				"width" : 357,
+				"height" : 75
+			},
+			"newLine" : false
 		},
 		{
-			"form" : "à",
-			"index" : 786,
+			"form" : "Perche",
+			"index" : 1383,
 			"tags" : [
-				"PREP"
+				"NN"
 			],
 			"scanPosition" : {
-				"x" : 1817,
-				"y" : 3988,
-				"width" : 33,
+				"x" : 978,
+				"y" : 1571,
+				"width" : 226,
 				"height" : 66
-			}
+			},
+			"newLine" : true
 		},
 		{
-			"form" : "miets",
-			"index" : 787,
+			"form" : "numn'  ell",
+			"index" : 1384,
+			"tags" : [
+				"NN"
+			],
+			"scanPosition" : {
+				"x" : 1251,
+				"y" : 1571,
+				"width" : 278,
+				"height" : 66
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "pija",
+			"index" : 1385,
+			"tags" : [
+				"NN"
+			],
+			"scanPosition" : {
+				"x" : 1576,
+				"y" : 1571,
+				"width" : 123,
+				"height" : 66
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "in",
+			"index" : 1386,
+			"tags" : [
+				"ART"
+			],
+			"scanPosition" : {
+				"x" : 1748,
+				"y" : 1571,
+				"width" : 58,
+				"height" : 66
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "quella",
+			"index" : 1387,
+			"tags" : [
+				"ADJ_DEM"
+			],
+			"scanPosition" : {
+				"x" : 1851,
+				"y" : 1571,
+				"width" : 200,
+				"height" : 66
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "guisa?",
+			"index" : 1388,
+			"tags" : [
+				"NN"
+			],
+			"scanPosition" : {
+				"x" : 2110,
+				"y" : 1571,
+				"width" : 210,
+				"height" : 66
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "Sün",
+			"index" : 1389,
+			"tags" : [
+				"NN"
+			],
+			"scanPosition" : {
+				"x" : 499,
+				"y" : 1672,
+				"width" : 111,
+				"height" : 75
+			},
+			"newLine" : true
+		},
+		{
+			"form" : "quegl",
+			"index" : 1390,
+			"tags" : [
+				"NN"
+			],
+			"scanPosition" : {
+				"x" : 679,
+				"y" : 1672,
+				"width" : 165,
+				"height" : 75
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "ch'  ell",
+			"index" : 1391,
+			"tags" : [
+				"NN"
+			],
+			"scanPosition" : {
+				"x" : 903,
+				"y" : 1672,
+				"width" : 157,
+				"height" : 75
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "cha",
+			"index" : 1394,
+			"tags" : [
+				"CONJ_S"
+			],
+			"scanPosition" : {
+				"x" : 1596,
+				"y" : 1672,
+				"width" : 103,
+				"height" : 75
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "nus",
+			"index" : 1395,
+			"tags" : [
+				"PRON_PER"
+			],
+			"scanPosition" : {
+				"x" : 1757,
+				"y" : 1672,
+				"width" : 103,
+				"height" : 75
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "veerameng",
+			"index" : 1397,
+			"tags" : [
+				"NN"
+			],
+			"scanPosition" : {
+				"x" : 2133,
+				"y" : 1672,
+				"width" : 326,
+				"height" : 75
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "digl",
+			"index" : 1398,
+			"tags" : [
+				"PREP_ART"
+			],
+			"scanPosition" : {
+				"x" : 2542,
+				"y" : 1672,
+				"width" : 115,
+				"height" : 75
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "veer",
+			"index" : 1400,
+			"tags" : [
+				"V_GVRB"
+			],
+			"scanPosition" : {
+				"x" : 2854,
+				"y" : 1672,
+				"width" : 134,
+				"height" : 75
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "corp",
+			"index" : 1401,
+			"tags" : [
+				"NN"
+			],
+			"scanPosition" : {
+				"x" : 337,
+				"y" : 1781,
+				"width" : 136,
+				"height" : 75
+			},
+			"newLine" : true
+		},
+		{
+			"form" : "eintin",
+			"index" : 1403,
+			"tags" : [
+				"NN"
+			],
+			"scanPosition" : {
+				"x" : 824,
+				"y" : 1781,
+				"width" : 170,
+				"height" : 75
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "Cretta",
+			"index" : 1405,
+			"tags" : [
+				"NN"
+			],
+			"scanPosition" : {
+				"x" : 1150,
+				"y" : 1781,
+				"width" : 189,
+				"height" : 75
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "daventein  persnavels,  scò",
+			"index" : 1406,
+			"tags" : [
+				"NN"
+			],
+			"scanPosition" : {
+				"x" : 1389,
+				"y" : 1781,
+				"width" : 708,
+				"height" : 75
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "questas",
+			"index" : 1408,
+			"tags" : [
+				"ADJ_DEM"
+			],
+			"scanPosition" : {
+				"x" : 2435,
+				"y" : 1781,
+				"width" : 214,
+				"height" : 75
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "visiblas,",
+			"index" : 1409,
 			"tags" : [
 				"ADJ"
 			],
 			"scanPosition" : {
-				"x" : 1899,
-				"y" : 3988,
-				"width" : 167,
-				"height" : 66
-			}
+				"x" : 2754,
+				"y" : 1781,
+				"width" : 238,
+				"height" : 75
+			},
+			"newLine" : false
 		},
 		{
-			"form" : "Martz,",
-			"index" : 788,
+			"form" : "sạnghias",
+			"index" : 1410,
+			"tags" : [
+				"NN"
+			],
+			"scanPosition" : {
+				"x" : 319,
+				"y" : 1889,
+				"width" : 252,
+				"height" : 75
+			},
+			"newLine" : true
+		},
+		{
+			"form" : "cun",
+			"index" : 1412,
+			"tags" : [
+				"PREP"
+			],
+			"scanPosition" : {
+				"x" : 1054,
+				"y" : 1889,
+				"width" : 108,
+				"height" : 75
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "quegl",
+			"index" : 1434,
+			"tags" : [
+				"NN"
+			],
+			"scanPosition" : {
+				"x" : 2056,
+				"y" : 2226,
+				"width" : 165,
+				"height" : 75
+			},
+			"newLine" : true
+		},
+		{
+			"form" : "ees",
+			"index" : 1435,
+			"tags" : [
+				"NN"
+			],
+			"scanPosition" : {
+				"x" : 2287,
+				"y" : 2226,
+				"width" : 94,
+				"height" : 75
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "üna",
+			"index" : 1436,
+			"tags" : [
+				"ART"
+			],
+			"scanPosition" : {
+				"x" : 2429,
+				"y" : 2226,
+				"width" : 111,
+				"height" : 75
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "figürala",
+			"index" : 1437,
+			"tags" : [
+				"NN"
+			],
+			"scanPosition" : {
+				"x" : 2585,
+				"y" : 2226,
+				"width" : 239,
+				"height" : 75
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "scò",
+			"index" : 1441,
+			"tags" : [
+				"CONJ_C"
+			],
+			"scanPosition" : {
+				"x" : 1129,
+				"y" : 2330,
+				"width" : 90,
+				"height" : 75
+			},
+			"newLine" : true
+		},
+		{
+			"form" : "manegian,",
+			"index" : 1443,
+			"tags" : [
+				"V_GVRB"
+			],
+			"scanPosition" : {
+				"x" : 1640,
+				"y" : 2330,
+				"width" : 312,
+				"height" : 75
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "or",
+			"index" : 1447,
+			"tags" : [
+				"ADV"
+			],
+			"scanPosition" : {
+				"x" : 2766,
+				"y" : 2330,
+				"width" : 66,
+				"height" : 75
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "commünas",
+			"index" : 1449,
+			"tags" : [
+				"NN"
+			],
+			"scanPosition" : {
+				"x" : 336,
+				"y" : 2432,
+				"width" : 318,
+				"height" : 75
+			},
+			"newLine" : true
+		},
+		{
+			"form" : "intzennas",
+			"index" : 1450,
+			"tags" : [
+				"NN"
+			],
+			"scanPosition" : {
+				"x" : 745,
+				"y" : 2432,
+				"width" : 281,
+				"height" : 75
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "vignan",
+			"index" : 1451,
+			"tags" : [
+				"NN"
+			],
+			"scanPosition" : {
+				"x" : 1124,
+				"y" : 2432,
+				"width" : 202,
+				"height" : 75
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "à",
+			"index" : 1452,
+			"tags" : [
+				"PREP"
+			],
+			"scanPosition" : {
+				"x" : 1419,
+				"y" : 2432,
+				"width" : 37,
+				"height" : 75
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "chiạusas",
+			"index" : 1464,
+			"tags" : [
+				"NN"
+			],
+			"scanPosition" : {
+				"x" : 1103,
+				"y" : 2536,
+				"width" : 248,
+				"height" : 75
+			},
+			"newLine" : true
+		},
+		{
+			"form" : "&",
+			"index" : 1465,
+			"tags" : [
+				"CONJ_C"
+			],
+			"scanPosition" : {
+				"x" : 1416,
+				"y" : 2536,
+				"width" : 58,
+				"height" : 75
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "intzennas:",
+			"index" : 1466,
+			"tags" : [
+				"NN"
+			],
+			"scanPosition" : {
+				"x" : 1494,
+				"y" : 2536,
+				"width" : 305,
+				"height" : 75
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "Nundarnâ",
+			"index" : 1467,
+			"tags" : [
+				"NN_P"
+			],
+			"scanPosition" : {
+				"x" : 1898,
+				"y" : 2536,
+				"width" : 302,
+				"height" : 75
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "retschevan",
+			"index" : 1468,
+			"tags" : [
+				"V_GVRB"
+			],
+			"scanPosition" : {
+				"x" : 2293,
+				"y" : 2536,
+				"width" : 309,
+				"height" : 75
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "[pag.",
+			"index" : 1469,
+			"tags" : [
+				"NN"
+			],
+			"scanPosition" : {
+				"x" : 2667,
+				"y" : 2536,
+				"width" : 159,
+				"height" : 75
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "62]",
+			"index" : 1470,
+			"tags" : [
+				"C_NUM"
+			],
+			"scanPosition" : {
+				"x" : 2885,
+				"y" : 2536,
+				"width" : 103,
+				"height" : 75
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "ellas",
+			"index" : 1471,
+			"tags" : [
+				"PREP_ART"
+			],
+			"scanPosition" : {
+				"x" : 335,
+				"y" : 2638,
+				"width" : 140,
+				"height" : 75
+			},
+			"newLine" : true
+		},
+		{
+			"form" : "igl",
+			"index" : 1472,
+			"tags" : [
+				"ART"
+			],
+			"scanPosition" : {
+				"x" : 533,
+				"y" : 2638,
+				"width" : 78,
+				"height" : 75
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "numm",
+			"index" : 1473,
+			"tags" : [
+				"NN"
+			],
+			"scanPosition" : {
+				"x" : 671,
+				"y" : 2638,
+				"width" : 182,
+				"height" : 75
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "da",
+			"index" : 1474,
+			"tags" : [
+				"PREP"
+			],
+			"scanPosition" : {
+				"x" : 936,
+				"y" : 2638,
+				"width" : 75,
+				"height" : 75
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "quegl",
+			"index" : 1475,
+			"tags" : [
+				"NN"
+			],
+			"scanPosition" : {
+				"x" : 1064,
+				"y" : 2638,
+				"width" : 166,
+				"height" : 75
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "ch'  ellas",
+			"index" : 1476,
+			"tags" : [
+				"NN"
+			],
+			"scanPosition" : {
+				"x" : 1286,
+				"y" : 2638,
+				"width" : 222,
+				"height" : 75
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "muntan,",
+			"index" : 1477,
+			"tags" : [
+				"ADJ"
+			],
+			"scanPosition" : {
+				"x" : 1590,
+				"y" : 2638,
+				"width" : 233,
+				"height" : 75
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "&",
+			"index" : 1478,
+			"tags" : [
+				"CONJ_C"
+			],
+			"scanPosition" : {
+				"x" : 1938,
+				"y" : 2638,
+				"width" : 58,
+				"height" : 75
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "vignan",
+			"index" : 1479,
+			"tags" : [
+				"NN"
+			],
+			"scanPosition" : {
+				"x" : 2048,
+				"y" : 2638,
+				"width" : 203,
+				"height" : 75
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "bigchia",
+			"index" : 1480,
+			"tags" : [
+				"NN"
+			],
+			"scanPosition" : {
+				"x" : 2334,
+				"y" : 2638,
+				"width" : 223,
+				"height" : 75
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "namæ",
+			"index" : 1481,
+			"tags" : [
+				"NN"
+			],
+			"scanPosition" : {
+				"x" : 2640,
+				"y" : 2638,
+				"width" : 177,
+				"height" : 75
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "igl",
+			"index" : 1482,
+			"tags" : [
+				"ART"
+			],
+			"scanPosition" : {
+				"x" : 2909,
+				"y" : 2638,
+				"width" : 78,
+				"height" : 75
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "pạun,",
+			"index" : 1483,
+			"tags" : [
+				"NN"
+			],
+			"scanPosition" : {
+				"x" : 323,
+				"y" : 2742,
+				"width" : 194,
+				"height" : 75
+			},
+			"newLine" : true
+		},
+		{
+			"form" : "mò",
+			"index" : 1484,
+			"tags" : [
+				"CONJ_C"
+			],
+			"scanPosition" : {
+				"x" : 565,
+				"y" : 2742,
+				"width" : 91,
+				"height" : 75
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "ear",
+			"index" : 1485,
+			"tags" : [
+				"V_GVRB"
+			],
+			"scanPosition" : {
+				"x" : 708,
+				"y" : 2742,
+				"width" : 99,
+				"height" : 75
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "igl",
+			"index" : 1486,
+			"tags" : [
+				"ART"
+			],
+			"scanPosition" : {
+				"x" : 859,
+				"y" : 2742,
+				"width" : 79,
+				"height" : 75
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "corp",
+			"index" : 1487,
+			"tags" : [
+				"NN"
+			],
+			"scanPosition" : {
+				"x" : 998,
+				"y" : 2742,
+				"width" : 137,
+				"height" : 75
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "da",
+			"index" : 1488,
+			"tags" : [
+				"PREP"
+			],
+			"scanPosition" : {
+				"x" : 1196,
+				"y" : 2742,
+				"width" : 74,
+				"height" : 75
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "Christi",
+			"index" : 1489,
+			"tags" : [
+				"NN_P"
+			],
+			"scanPosition" : {
+				"x" : 1325,
+				"y" : 2742,
+				"width" : 198,
+				"height" : 75
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "numnadas.",
+			"index" : 1490,
+			"tags" : [
+				"V_PP"
+			],
+			"scanPosition" : {
+				"x" : 1674,
+				"y" : 2742,
+				"width" : 324,
+				"height" : 75
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "Ees",
+			"index" : 1491,
+			"tags" : [
+				"NN"
+			],
+			"scanPosition" : {
+				"x" : 591,
+				"y" : 2884,
+				"width" : 114,
+				"height" : 66
+			},
+			"newLine" : true
+		},
+		{
+			"form" : "igl",
+			"index" : 1492,
+			"tags" : [
+				"ART"
+			],
+			"scanPosition" : {
+				"x" : 755,
+				"y" : 2884,
+				"width" : 80,
+				"height" : 66
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "noss",
+			"index" : 1493,
+			"tags" : [
+				"PRON_POS"
+			],
+			"scanPosition" : {
+				"x" : 885,
+				"y" : 2884,
+				"width" : 129,
+				"height" : 66
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "Salvader",
+			"index" : 1494,
+			"tags" : [
+				"NN"
+			],
+			"scanPosition" : {
+				"x" : 1064,
+				"y" : 2884,
+				"width" : 285,
+				"height" : 66
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "Christus",
+			"index" : 1495,
+			"tags" : [
+				"NN_P"
+			],
+			"scanPosition" : {
+				"x" : 1403,
+				"y" : 2884,
+				"width" : 257,
+				"height" : 66
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "bigch'  ear",
+			"index" : 1496,
+			"tags" : [
+				"V_GVRB"
+			],
+			"scanPosition" : {
+				"x" : 1715,
+				"y" : 2884,
+				"width" : 299,
+				"height" : 66
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "eintin",
+			"index" : 1497,
+			"tags" : [
+				"NN"
+			],
+			"scanPosition" : {
+				"x" : 2063,
+				"y" : 2884,
+				"width" : 182,
+				"height" : 66
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "la",
+			"index" : 1498,
+			"tags" : [
+				"ART"
+			],
+			"scanPosition" : {
+				"x" : 2289,
+				"y" : 2884,
+				"width" : 57,
+				"height" : 66
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "Bein.",
+			"index" : 1500,
+			"tags" : [
+				"ADV"
+			],
+			"scanPosition" : {
+				"x" : 498,
+				"y" : 2974,
+				"width" : 153,
+				"height" : 75
+			},
+			"newLine" : true
+		},
+		{
+			"form" : "25",
+			"index" : 1501,
+			"tags" : [
+				"C_NUM"
+			],
+			"scanPosition" : {
+				"x" : 228,
+				"y" : 3083,
+				"width" : 75,
+				"height" : 66
+			},
+			"newLine" : true
+		},
+		{
+			"form" : "Cò.",
+			"index" : 1502,
+			"tags" : [
+				"ADV"
+			],
+			"scanPosition" : {
+				"x" : 1610,
+				"y" : 3083,
+				"width" : 109,
+				"height" : 66
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "Cun",
+			"index" : 1503,
+			"tags" : [
+				"PREP"
+			],
+			"scanPosition" : {
+				"x" : 502,
+				"y" : 3174,
+				"width" : 124,
+				"height" : 75
+			},
+			"newLine" : true
+		},
+		{
+			"form" : "seas",
+			"index" : 1504,
+			"tags" : [
+				"NN"
+			],
+			"scanPosition" : {
+				"x" : 661,
+				"y" : 3174,
+				"width" : 120,
+				"height" : 75
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "Spiert,",
+			"index" : 1505,
+			"tags" : [
+				"NN_P"
+			],
+			"scanPosition" : {
+				"x" : 843,
+				"y" : 3174,
+				"width" : 196,
+				"height" : 75
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "virteu",
+			"index" : 1506,
+			"tags" : [
+				"NN"
+			],
+			"scanPosition" : {
+				"x" : 1117,
+				"y" : 3174,
+				"width" : 173,
+				"height" : 75
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "&",
+			"index" : 1507,
+			"tags" : [
+				"CONJ_C"
+			],
+			"scanPosition" : {
+				"x" : 1347,
+				"y" : 3174,
+				"width" : 58,
+				"height" : 75
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "operatiun",
+			"index" : 1508,
+			"tags" : [
+				"NN"
+			],
+			"scanPosition" : {
+				"x" : 1434,
+				"y" : 3174,
+				"width" : 289,
+				"height" : 75
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "eint'",
+			"index" : 1509,
+			"tags" : [
+				"NN"
+			],
+			"scanPosition" : {
+				"x" : 1812,
+				"y" : 3174,
+				"width" : 112,
+				"height" : 75
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "ils",
+			"index" : 1510,
+			"tags" : [
+				"ART"
+			],
+			"scanPosition" : {
+				"x" : 2001,
+				"y" : 3174,
+				"width" : 71,
+				"height" : 75
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "côrs",
+			"index" : 1511,
 			"tags" : [
 				"NN"
 			],
 			"scanPosition" : {
 				"x" : 2113,
-				"y" : 3988,
-				"width" : 209,
-				"height" : 66
-			}
+				"y" : 3174,
+				"width" : 128,
+				"height" : 75
+			},
+			"newLine" : false
 		},
 		{
-			"form" : "digl",
-			"index" : 789,
+			"form" : "dels",
+			"index" : 1512,
 			"tags" : [
 				"PREP_ART"
 			],
 			"scanPosition" : {
-				"x" : 2373,
-				"y" : 3988,
-				"width" : 120,
-				"height" : 66
-			}
+				"x" : 2294,
+				"y" : 3174,
+				"width" : 119,
+				"height" : 75
+			},
+			"newLine" : false
 		},
 		{
-			"form" : "Ann",
-			"index" : 790,
+			"form" : "seas",
+			"index" : 1513,
 			"tags" : [
 				"NN"
 			],
 			"scanPosition" : {
-				"x" : 2546,
-				"y" : 3988,
-				"width" : 131,
-				"height" : 66
-			}
+				"x" : 2457,
+				"y" : 3174,
+				"width" : 119,
+				"height" : 75
+			},
+			"newLine" : false
 		},
 		{
-			"form" : "sueinter",
-			"index" : 791,
+			"form" : "fidêls,  scò",
+			"index" : 1514,
 			"tags" : [
-				"PREP"
+				"NN"
 			],
 			"scanPosition" : {
-				"x" : 2738,
-				"y" : 3988,
-				"width" : 249,
-				"height" : 66
-			}
+				"x" : 2648,
+				"y" : 3174,
+				"width" : 342,
+				"height" : 75
+			},
+			"newLine" : false
 		},
 		{
-			"form" : "la",
-			"index" : 792,
+			"form" : "eint'",
+			"index" : 1515,
+			"tags" : [
+				"NN"
+			],
+			"scanPosition" : {
+				"x" : 335,
+				"y" : 3274,
+				"width" : 127,
+				"height" : 75
+			},
+			"newLine" : true
+		},
+		{
+			"form" : "igl",
+			"index" : 1516,
 			"tags" : [
 				"ART"
 			],
 			"scanPosition" : {
-				"x" : 332,
-				"y" : 4087,
-				"width" : 56,
-				"height" : 66
-			}
+				"x" : 520,
+				"y" : 3274,
+				"width" : 78,
+				"height" : 75
+			},
+			"newLine" : false
 		},
 		{
-			"form" : "Na[s]c(s)hientscha",
-			"index" : 793,
+			"form" : "seu",
+			"index" : 1517,
 			"tags" : [
 				"NN"
 			],
 			"scanPosition" : {
-				"x" : 440,
-				"y" : 4087,
-				"width" : 583,
+				"x" : 641,
+				"y" : 3274,
+				"width" : 91,
+				"height" : 75
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "sạngh",
+			"index" : 1518,
+			"tags" : [
+				"NN"
+			],
+			"scanPosition" : {
+				"x" : 790,
+				"y" : 3274,
+				"width" : 170,
+				"height" : 75
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "tempel.",
+			"index" : 1519,
+			"tags" : [
+				"NN"
+			],
+			"scanPosition" : {
+				"x" : 1093,
+				"y" : 3274,
+				"width" : 216,
+				"height" : 75
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "Schinavạunt",
+			"index" : 1520,
+			"tags" : [
+				"NN"
+			],
+			"scanPosition" : {
+				"x" : 333,
+				"y" : 3400,
+				"width" : 403,
 				"height" : 66
-			}
+			},
+			"newLine" : true
+		},
+		{
+			"form" : "ch'  igl",
+			"index" : 1521,
+			"tags" : [
+				"NN"
+			],
+			"scanPosition" : {
+				"x" : 772,
+				"y" : 3400,
+				"width" : 172,
+				"height" : 66
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "corp",
+			"index" : 1522,
+			"tags" : [
+				"NN"
+			],
+			"scanPosition" : {
+				"x" : 987,
+				"y" : 3400,
+				"width" : 139,
+				"height" : 66
+			},
+			"newLine" : false
 		},
 		{
 			"form" : "da",
-			"index" : 794,
+			"index" : 1523,
 			"tags" : [
 				"PREP"
 			],
 			"scanPosition" : {
-				"x" : 1087,
-				"y" : 4087,
-				"width" : 74,
+				"x" : 1164,
+				"y" : 3400,
+				"width" : 72,
 				"height" : 66
-			}
+			},
+			"newLine" : false
 		},
 		{
-			"form" : "(G)[C]hristi",
-			"index" : 795,
+			"form" : "Christi",
+			"index" : 1524,
 			"tags" : [
 				"NN_P"
 			],
 			"scanPosition" : {
-				"x" : 1208,
-				"y" : 4087,
-				"width" : 381,
+				"x" : 1264,
+				"y" : 3400,
+				"width" : 209,
 				"height" : 66
-			}
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "substantialameng,",
+			"index" : 1525,
+			"tags" : [
+				"NN"
+			],
+			"scanPosition" : {
+				"x" : 1515,
+				"y" : 3400,
+				"width" : 575,
+				"height" : 66
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "bigch'  ees",
+			"index" : 1526,
+			"tags" : [
+				"NN"
+			],
+			"scanPosition" : {
+				"x" : 2146,
+				"y" : 3400,
+				"width" : 296,
+				"height" : 66
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "&",
+			"index" : 1530,
+			"tags" : [
+				"CONJ_C"
+			],
+			"scanPosition" : {
+				"x" : 2937,
+				"y" : 3400,
+				"width" : 55,
+				"height" : 66
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "Cò",
+			"index" : 1532,
+			"tags" : [
+				"ADV"
+			],
+			"scanPosition" : {
+				"x" : 592,
+				"y" : 3502,
+				"width" : 85,
+				"height" : 66
+			},
+			"newLine" : true
+		},
+		{
+			"form" : "ün",
+			"index" : 1534,
+			"tags" : [
+				"ART"
+			],
+			"scanPosition" : {
+				"x" : 841,
+				"y" : 3502,
+				"width" : 79,
+				"height" : 66
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "pija",
+			"index" : 1535,
+			"tags" : [
+				"NN"
+			],
+			"scanPosition" : {
+				"x" : 965,
+				"y" : 3502,
+				"width" : 123,
+				"height" : 66
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "landarvij",
+			"index" : 1537,
+			"tags" : [
+				"NN"
+			],
+			"scanPosition" : {
+				"x" : 1466,
+				"y" : 3502,
+				"width" : 294,
+				"height" : 66
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "İudicij",
+			"index" : 1539,
+			"tags" : [
+				"NN_P"
+			],
+			"scanPosition" : {
+				"x" : 1948,
+				"y" : 3502,
+				"width" : 216,
+				"height" : 66
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "bigchia",
+			"index" : 1559,
+			"tags" : [
+				"NN"
+			],
+			"scanPosition" : {
+				"x" : 753,
+				"y" : 3842,
+				"width" : 235,
+				"height" : 66
+			},
+			"newLine" : true
+		},
+		{
+			"form" : "üna",
+			"index" : 1560,
+			"tags" : [
+				"ART"
+			],
+			"scanPosition" : {
+				"x" : 1036,
+				"y" : 3842,
+				"width" : 116,
+				"height" : 66
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "dretchia",
+			"index" : 1561,
+			"tags" : [
+				"NN"
+			],
+			"scanPosition" : {
+				"x" : 1191,
+				"y" : 3842,
+				"width" : 263,
+				"height" : 66
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "igl",
+			"index" : 1564,
+			"tags" : [
+				"ART"
+			],
+			"scanPosition" : {
+				"x" : 2259,
+				"y" : 3842,
+				"width" : 79,
+				"height" : 66
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "da",
+			"index" : 1566,
+			"tags" : [
+				"PREP"
+			],
+			"scanPosition" : {
+				"x" : 2580,
+				"y" : 3842,
+				"width" : 73,
+				"height" : 66
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "Christi?",
+			"index" : 1567,
+			"tags" : [
+				"NN_P"
+			],
+			"scanPosition" : {
+				"x" : 2693,
+				"y" : 3842,
+				"width" : 258,
+				"height" : 66
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "Tutts",
+			"index" : 1568,
+			"tags" : [
+				"NN"
+			],
+			"scanPosition" : {
+				"x" : 501,
+				"y" : 3952,
+				"width" : 149,
+				"height" : 75
+			},
+			"newLine" : true
+		},
+		{
+			"form" : "quels",
+			"index" : 1569,
+			"tags" : [
+				"ADJ_DEM"
+			],
+			"scanPosition" : {
+				"x" : 720,
+				"y" : 3952,
+				"width" : 157,
+				"height" : 75
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "ils",
+			"index" : 1570,
+			"tags" : [
+				"ART"
+			],
+			"scanPosition" : {
+				"x" : 933,
+				"y" : 3952,
+				"width" : 71,
+				"height" : 75
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "quals",
+			"index" : 1571,
+			"tags" : [
+				"PRON_REL"
+			],
+			"scanPosition" : {
+				"x" : 1050,
+				"y" : 3952,
+				"width" : 161,
+				"height" : 75
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "igl",
+			"index" : 1572,
+			"tags" : [
+				"ART"
+			],
+			"scanPosition" : {
+				"x" : 1268,
+				"y" : 3952,
+				"width" : 78,
+				"height" : 75
+			},
+			"newLine" : false
 		},
 		{
 			"form" : "noss",
-			"index" : 796,
+			"index" : 1573,
 			"tags" : [
 				"PRON_POS"
 			],
 			"scanPosition" : {
-				"x" : 1643,
-				"y" : 4087,
-				"width" : 129,
-				"height" : 66
-			}
+				"x" : 1404,
+				"y" : 3952,
+				"width" : 124,
+				"height" : 75
+			},
+			"newLine" : false
 		},
 		{
-			"form" : "Signer.",
-			"index" : 797,
+			"form" : "Signer",
+			"index" : 1574,
+			"tags" : [
+				"NN_P"
+			],
+			"scanPosition" : {
+				"x" : 1573,
+				"y" : 3952,
+				"width" : 194,
+				"height" : 75
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "Iesum",
+			"index" : 1575,
+			"tags" : [
+				"NN_P"
+			],
+			"scanPosition" : {
+				"x" : 1839,
+				"y" : 3952,
+				"width" : 169,
+				"height" : 75
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "Christum,",
+			"index" : 1576,
+			"tags" : [
+				"NN_P"
+			],
+			"scanPosition" : {
+				"x" : 2079,
+				"y" : 3952,
+				"width" : 287,
+				"height" : 75
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "bigchia",
+			"index" : 1577,
 			"tags" : [
 				"NN"
 			],
 			"scanPosition" : {
-				"x" : 1821,
-				"y" : 4087,
-				"width" : 231,
-				"height" : 66
-			}
+				"x" : 2457,
+				"y" : 3952,
+				"width" : 223,
+				"height" : 75
+			},
+			"newLine" : false
 		},
 		{
-			"form" : "M.",
-			"index" : 798,
-			"tags" : [ ],
-			"scanPosition" : {
-				"x" : 2115,
-				"y" : 4087,
-				"width" : 81,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "DC.",
-			"index" : 799,
-			"tags" : [ ],
-			"scanPosition" : {
-				"x" : 2245,
-				"y" : 4087,
-				"width" : 119,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "I.",
-			"index" : 800,
-			"tags" : [ ],
-			"scanPosition" : {
-				"x" : 2441,
-				"y" : 4087,
-				"width" : 45,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "D.",
-			"index" : 801,
-			"tags" : [ ],
-			"scanPosition" : {
-				"x" : 921,
-				"y" : 4210,
-				"width" : 72,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "V.",
-			"index" : 802,
-			"tags" : [ ],
-			"scanPosition" : {
-				"x" : 1047,
-				"y" : 4210,
-				"width" : 68,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "H.",
-			"index" : 803,
-			"tags" : [ ],
-			"scanPosition" : {
-				"x" : 1172,
-				"y" : 4210,
-				"width" : 75,
-				"height" : 66
-			}
-		},
-		{
-			"form" : "Voluntûs,",
-			"index" : 804,
+			"form" : "per",
+			"index" : 1578,
 			"tags" : [
-				"ADJ"
+				"CONJ_S"
 			],
 			"scanPosition" : {
-				"x" : 1178,
-				"y" : 4337,
-				"width" : 314,
-				"height" : 66
-			}
+				"x" : 2726,
+				"y" : 3952,
+				"width" : 99,
+				"height" : 75
+			},
+			"newLine" : false
 		},
 		{
-			"form" : "subiett",
-			"index" : 805,
+			"form" : "lur",
+			"index" : 1579,
+			"tags" : [
+				"PRON_POS"
+			],
+			"scanPosition" : {
+				"x" : 2901,
+				"y" : 3952,
+				"width" : 87,
+				"height" : 75
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "solett",
+			"index" : 1580,
 			"tags" : [
 				"NN"
 			],
 			"scanPosition" : {
-				"x" : 1532,
-				"y" : 4337,
-				"width" : 212,
-				"height" : 66
-			}
+				"x" : 312,
+				"y" : 4051,
+				"width" : 153,
+				"height" : 75
+			},
+			"newLine" : true
+		},
+		{
+			"form" : "Spindrader",
+			"index" : 1581,
+			"tags" : [
+				"NN"
+			],
+			"scanPosition" : {
+				"x" : 548,
+				"y" : 4051,
+				"width" : 334,
+				"height" : 75
+			},
+			"newLine" : false
 		},
 		{
 			"form" : "&",
-			"index" : 806,
+			"index" : 1582,
 			"tags" : [
 				"CONJ_C"
 			],
 			"scanPosition" : {
-				"x" : 1776,
-				"y" : 4337,
-				"width" : 55,
-				"height" : 66
-			}
+				"x" : 977,
+				"y" : 4051,
+				"width" : 58,
+				"height" : 75
+			},
+			"newLine" : false
 		},
 		{
-			"form" : "obiedig",
-			"index" : 807,
+			"form" : "[pag. 63]",
+			"index" : 1583,
 			"tags" : [
-				"ADJ"
+				"NN"
 			],
 			"scanPosition" : {
-				"x" : 1867,
-				"y" : 4337,
-				"width" : 237,
-				"height" : 66
-			}
+				"x" : 1059,
+				"y" : 4051,
+				"width" : 263,
+				"height" : 75
+			},
+			"newLine" : false
 		},
 		{
-			"form" : "40",
-			"index" : 808,
+			"form" : "Salvader",
+			"index" : 1584,
+			"tags" : [
+				"NN"
+			],
+			"scanPosition" : {
+				"x" : 1407,
+				"y" : 4051,
+				"width" : 264,
+				"height" : 75
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "incognuschan",
+			"index" : 1585,
+			"tags" : [
+				"NN"
+			],
+			"scanPosition" : {
+				"x" : 1765,
+				"y" : 4051,
+				"width" : 401,
+				"height" : 75
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "&",
+			"index" : 1586,
+			"tags" : [
+				"CONJ_C"
+			],
+			"scanPosition" : {
+				"x" : 2263,
+				"y" : 4051,
+				"width" : 57,
+				"height" : 75
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "creen,",
+			"index" : 1587,
+			"tags" : [
+				"NN"
+			],
+			"scanPosition" : {
+				"x" : 2363,
+				"y" : 4051,
+				"width" : 198,
+				"height" : 75
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "remischiun",
+			"index" : 1588,
+			"tags" : [
+				"NN"
+			],
+			"scanPosition" : {
+				"x" : 2667,
+				"y" : 4051,
+				"width" : 322,
+				"height" : 75
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "35",
+			"index" : 1589,
 			"tags" : [
 				"C_NUM"
 			],
 			"scanPosition" : {
-				"x" : 230,
-				"y" : 4438,
-				"width" : 76,
-				"height" : 66
-			}
+				"x" : 225,
+				"y" : 4150,
+				"width" : 78,
+				"height" : 75
+			},
+			"newLine" : true
 		},
 		{
-			"form" : "Servieint",
-			"index" : 809,
+			"form" : "dels",
+			"index" : 1590,
+			"tags" : [
+				"PREP_ART"
+			],
+			"scanPosition" : {
+				"x" : 332,
+				"y" : 4150,
+				"width" : 120,
+				"height" : 75
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "peccạạs",
+			"index" : 1591,
 			"tags" : [
 				"NN"
 			],
 			"scanPosition" : {
-				"x" : 1221,
-				"y" : 4438,
-				"width" : 295,
-				"height" : 66
-			}
+				"x" : 496,
+				"y" : 4150,
+				"width" : 239,
+				"height" : 75
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "eint'",
+			"index" : 1592,
+			"tags" : [
+				"NN"
+			],
+			"scanPosition" : {
+				"x" : 827,
+				"y" : 4150,
+				"width" : 125,
+				"height" : 75
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "igl",
+			"index" : 1593,
+			"tags" : [
+				"ART"
+			],
+			"scanPosition" : {
+				"x" : 1011,
+				"y" : 4150,
+				"width" : 79,
+				"height" : 75
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "seu",
+			"index" : 1594,
+			"tags" : [
+				"NN"
+			],
+			"scanPosition" : {
+				"x" : 1144,
+				"y" : 4150,
+				"width" : 90,
+				"height" : 75
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "sạung",
+			"index" : 1595,
+			"tags" : [
+				"NN"
+			],
+			"scanPosition" : {
+				"x" : 1301,
+				"y" : 4150,
+				"width" : 169,
+				"height" : 75
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "bigchia",
+			"index" : 1596,
+			"tags" : [
+				"NN"
+			],
+			"scanPosition" : {
+				"x" : 1569,
+				"y" : 4150,
+				"width" : 223,
+				"height" : 75
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "tschearchian,",
+			"index" : 1597,
+			"tags" : [
+				"NN"
+			],
+			"scanPosition" : {
+				"x" : 1872,
+				"y" : 4150,
+				"width" : 390,
+				"height" : 75
+			},
+			"newLine" : false
 		},
 		{
 			"form" : "&",
-			"index" : 810,
+			"index" : 1598,
 			"tags" : [
 				"CONJ_C"
 			],
 			"scanPosition" : {
-				"x" : 1566,
-				"y" : 4438,
-				"width" : 55,
-				"height" : 66
-			}
+				"x" : 2393,
+				"y" : 4150,
+				"width" : 57,
+				"height" : 75
+			},
+			"newLine" : false
 		},
 		{
-			"form" : "cunvischign",
-			"index" : 811,
+			"form" : "nagutta",
+			"index" : 1599,
 			"tags" : [
 				"NN"
 			],
 			"scanPosition" : {
-				"x" : 1673,
-				"y" : 4438,
-				"width" : 378,
-				"height" : 66
-			}
+				"x" : 2493,
+				"y" : 4150,
+				"width" : 227,
+				"height" : 75
+			},
+			"newLine" : false
 		},
 		{
-			"form" : "DANİEL",
-			"index" : 812,
+			"form" : "tạunt",
+			"index" : 1600,
 			"tags" : [
-				"NN_P"
+				"NN"
 			],
 			"scanPosition" : {
-				"x" : 1927,
-				"y" : 4567,
-				"width" : 308,
-				"height" : 66
-			}
+				"x" : 2833,
+				"y" : 4150,
+				"width" : 153,
+				"height" : 75
+			},
+			"newLine" : false
 		},
 		{
-			"form" : "BONİFACİUS.",
-			"index" : 813,
+			"form" : "meints",
+			"index" : 1601,
 			"tags" : [
-				"NN_P"
+				"NN"
 			],
 			"scanPosition" : {
-				"x" : 2304,
-				"y" : 4567,
-				"width" : 515,
-				"height" : 66
-			}
+				"x" : 331,
+				"y" : 4250,
+				"width" : 194,
+				"height" : 75
+			},
+			"newLine" : true
+		},
+		{
+			"form" : "per",
+			"index" : 1602,
+			"tags" : [
+				"CONJ_S"
+			],
+			"scanPosition" : {
+				"x" : 593,
+				"y" : 4250,
+				"width" : 99,
+				"height" : 75
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "members",
+			"index" : 1603,
+			"tags" : [
+				"NN"
+			],
+			"scanPosition" : {
+				"x" : 756,
+				"y" : 4250,
+				"width" : 268,
+				"height" : 75
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "digl",
+			"index" : 1604,
+			"tags" : [
+				"PREP_ART"
+			],
+			"scanPosition" : {
+				"x" : 1095,
+				"y" : 4250,
+				"width" : 116,
+				"height" : 75
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "seu",
+			"index" : 1605,
+			"tags" : [
+				"NN"
+			],
+			"scanPosition" : {
+				"x" : 1258,
+				"y" : 4250,
+				"width" : 90,
+				"height" : 75
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "corp",
+			"index" : 1606,
+			"tags" : [
+				"NN"
+			],
+			"scanPosition" : {
+				"x" : 1430,
+				"y" : 4250,
+				"width" : 136,
+				"height" : 75
+			},
+			"newLine" : false
+		},
+		{
+			"form" : "40",
+			"index" : 1643,
+			"tags" : [
+				"C_NUM"
+			],
+			"scanPosition" : {
+				"x" : 224,
+				"y" : 4683,
+				"width" : 80,
+				"height" : 75
+			},
+			"newLine" : true
 		}
 	]
 }
