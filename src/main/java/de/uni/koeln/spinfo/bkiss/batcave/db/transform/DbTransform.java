@@ -190,13 +190,6 @@ public class DbTransform {
 	    		if (testRun)
 	    			count++;
 	    		
-	    		//check if page is complete - if so, write to target db
-//		    	int pageEndIndex = ((int)pages.find(new BasicDBObject("_id", new ObjectId(pageId))).first().get("end"));
-//		    	if (pageEndIndex == index){
-//		    		writeNewDbData(page, t.getCollection("pages"));
-//		    		targetPages.remove(pageId);
-//		    	}
-		    	
 	    		progress++;
 	    		System.out.println("[PROGRESS]\t" + (progress / wordsCount) + "\n[PAGES QUEUE]\t" + targetPages.size());
 		    }
@@ -204,7 +197,7 @@ public class DbTransform {
 		    words.close();
 		}
 		
-//		//construct list of PageDocuments
+		//construct list of PageDocuments
 		List<PageDocument> pagesList = new ArrayList<PageDocument>(targetPages.values());
 		targetPages = null;
 		System.gc();
@@ -224,13 +217,6 @@ public class DbTransform {
 		
 		collection.insertMany(converted);
 	}
-	
-	
-//	private static void writeNewDbData(PageDocument doc, MongoCollection<Document> collection){
-//		Gson gson = new GsonBuilder().create();
-//		Document dbDoc = Document.parse(gson.toJson(doc));
-//		collection.insertOne(dbDoc);
-//	}
 	
 	
 }
