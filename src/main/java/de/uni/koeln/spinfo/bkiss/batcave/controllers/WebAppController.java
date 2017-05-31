@@ -6,8 +6,11 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Scanner;
+import java.util.Set;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ClassPathResource;
+import org.springframework.data.domain.Example;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,20 +20,42 @@ import com.jayway.jsonpath.JsonPath;
 import com.mongodb.BasicDBObject;
 import com.mongodb.util.JSON;
 
+import de.uni.koeln.spinfo.bkiss.batcave.db.data.PageDocument;
+import de.uni.koeln.spinfo.bkiss.batcave.db.data.PageDocumentRepository;
+import de.uni.koeln.spinfo.bkiss.batcave.db.data.Token;
 import net.minidev.json.JSONArray;
-import net.minidev.json.JSONObject;
 
 @Controller
 public class WebAppController {
+	
+	@Autowired
+	private PageDocumentRepository pageRepo;
+	
 
     @RequestMapping("/")
-    public String greeting() {
+    public String index() {
         return "index";
     }
     
     @RequestMapping("*")
     public String defaultRequest() {
         return "index";
+    }
+    
+    @RequestMapping("/rndpage")
+    public String rndPageView(Model model) {
+    	PageDocument page = pageRepo.findById("5622c29eef86d3c2f23fd63f");
+    	System.out.println("REPO COUNT: " + pageRepo.count());
+    	System.out.println("PAGE: " + page);
+    	//add page id
+    	model.addAttribute("id", page.getPageId());
+    	//add page object
+    	model.addAttribute("page", page);
+    	//add page title string
+    	model.addAttribute("title", "Seitenansicht");
+    	//add tags array
+    	model.addAttribute("tags", extractTags(page));
+        return "page";
     }
     
     @RequestMapping("/page")
@@ -72,5 +97,14 @@ public class WebAppController {
     	
         return "page";
     }
+    
+    
+    private String[] extractTags(PageDocument doc){
+    	Set<String> tags = new HashSet<String>();
+    	for (Token t : doc.getTokens())
+    		tags.addAll(t.getTags());
+    	return tags.toArray(new String[0]);
+    }
+    
     
 }
