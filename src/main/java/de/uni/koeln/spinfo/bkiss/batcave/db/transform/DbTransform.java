@@ -70,6 +70,7 @@ public class DbTransform {
 			//TODO run without test-mode
 			pages = transform(
 					mongo.getDatabase("crestomazia"),
+					mongo.getDatabase("batcave"),
 					false);
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -84,7 +85,7 @@ public class DbTransform {
 	
 	
 	@SuppressWarnings("unchecked")
-	private static List<PageDocument> transform(MongoDatabase s, boolean testRun) throws Exception {
+	private static List<PageDocument> transform(MongoDatabase s, MongoDatabase t, boolean testRun) throws Exception {
 		
 		//target pages set
 		Map<String, PageDocument> targetPages = new HashMap<String, PageDocument>();
@@ -97,6 +98,9 @@ public class DbTransform {
 		MongoCollection<Document> chapters = s.getCollection("chapters");
 		MongoCollection<Document> volumes = s.getCollection("volumes");
 		MongoCollection<Document> languages = s.getCollection("languages");
+		
+		//get scans collection
+		MongoCollection<Document> scans = t.getCollection("scans");
 		
 		//words count
 		double wordsCount = s.getCollection("words").count();
@@ -125,6 +129,8 @@ public class DbTransform {
 		    	String volumeId = json.read("$.volumeId");
 		    	//image file
 		    	String imageFile = ((String)pages.find(new BasicDBObject("_id", new ObjectId(pageId))).first().get("url")).replaceFirst("\\.xml", ".png");
+		    	//scan id
+		    	String scanId = ((ObjectId)scans.find(new BasicDBObject("imageFile", imageFile)).first().get("_id")).toString();
 		    	//form
 		    	String form;
 		    	if (((JSONArray)json.read("$.versions[?(@.userId != 'OCR')].version")).size() == 0){
@@ -170,6 +176,7 @@ public class DbTransform {
 		    		targetPages.put(pageId, page);
 		    		page.setVolume(volumes.find(new BasicDBObject("_id", new ObjectId(volumeId))).first().getString("title"));
 		    		page.setImageFile(imageFile);
+		    		page.setScanId(scanId);
 		    	}
 		    	
 		    	////add data to page
