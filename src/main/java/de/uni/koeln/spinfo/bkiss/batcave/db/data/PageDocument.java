@@ -6,11 +6,17 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
+@Document(collection="pages")
 public class PageDocument implements Comparable<PageDocument> {
 	
-	private String _id;
+	@Id
+	private String id;
+	
 	private String imageFile;
+	private String scanId;
 	private String volume;
 	private Set<String> chapters;
 	private Set<String> languages;
@@ -25,7 +31,7 @@ public class PageDocument implements Comparable<PageDocument> {
 
     public PageDocument(String id) {
     	this();
-        this._id = id;
+        this.id = id;
     }
 
     
@@ -35,6 +41,14 @@ public class PageDocument implements Comparable<PageDocument> {
 
 	public void setImageFile(String imageFile) {
 		this.imageFile = imageFile;
+	}
+	
+	public String getScanId() {
+		return scanId;
+	}
+
+	public void setScanId(String scanId) {
+		this.scanId = scanId;
 	}
 
 	public String getVolume() {
@@ -46,7 +60,7 @@ public class PageDocument implements Comparable<PageDocument> {
 	}
 
 	public String getPageId() {
-		return _id;
+		return id;
 	}
 
 	public Set<String> getChapters() {
@@ -84,7 +98,7 @@ public class PageDocument implements Comparable<PageDocument> {
 
 	@Override
     public String toString() {
-        return "PageDocument[" + _id + "]\n"
+        return "PageDocument[" + id + "]\n"
         		+ "\tvolume: " + volume + "\n"
            		+ "\timageFile: " + imageFile + "\n"
            		+ "\tchapters: " + chapters + "\n"
@@ -95,7 +109,7 @@ public class PageDocument implements Comparable<PageDocument> {
 	@Override
 	public boolean equals(Object obj) {
 		return obj instanceof PageDocument
-				&& ((PageDocument)obj).getPageId().equals(_id);
+				&& ((PageDocument)obj).getPageId().equals(id);
 	}
 
 	@Override
