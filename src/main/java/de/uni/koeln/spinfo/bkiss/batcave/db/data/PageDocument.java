@@ -59,7 +59,7 @@ public class PageDocument implements Comparable<PageDocument> {
 		this.volume = volume;
 	}
 
-	public String getPageId() {
+	public String getId() {
 		return id;
 	}
 
@@ -109,7 +109,7 @@ public class PageDocument implements Comparable<PageDocument> {
 	@Override
 	public boolean equals(Object obj) {
 		return obj instanceof PageDocument
-				&& ((PageDocument)obj).getPageId().equals(id);
+				&& ((PageDocument)obj).getId().equals(id);
 	}
 
 	@Override

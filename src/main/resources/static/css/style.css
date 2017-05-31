@@ -66,10 +66,10 @@ div.frame-box {
 
 div.noframe-box{
 	padding: 20px;
+	padding-top: 10px;
 }
 
 #header {
-    padding-left: 20px;
     font-size: 160%;
     font-weight: bold;
     font-variant: small-caps;

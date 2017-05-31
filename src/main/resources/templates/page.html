@@ -7,22 +7,6 @@
 	<div th:replace="common/toolbar :: toolBar"></div>
 
 	<div class="container">
-	
-		<!-- PAGE META DATA -->
-		<div class="frame-box">
-			<span class="b">Band:</span>
-			<span class="i" th:text="${page.volume}">nicht verfügbar</span>
-			<br>
-			<span class="b">Kapitel:</span>
-			<span class="i" th:each="chapter, iter : ${page.chapters}" th:text="${iter.last} ? ${chapter} : ${chapter} + ', '">
-				nicht verfügbar
-			</span>
-			<br>
-			<span class="b">Sprachen:</span>
-			<span class="i" th:each="language, iter : ${page.languages}" th:text="${iter.last} ? ${language} : ${language} + ', '">
-				nicht verfügbar
-			</span>
-		</div>
 		
 		<!-- TAGS -->	
 		<div class="row">
@@ -64,7 +48,7 @@
 			</div>
 			<div class="column">
 				<div id="bc-extra" class="frame-box">
-					<img id="scan-img" src="img/dummy.png" alt=""/>
+					<img id="scan-img" th:src="'/scan/' + ${page.scanId}" alt=""/>
 				</div>
 			</div>
 		</div>
