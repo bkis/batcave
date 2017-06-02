@@ -1,6 +1,7 @@
 package de.uni.koeln.spinfo.bkiss.batcave.controllers;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,6 +30,7 @@ public class WebAppController {
     public String defaultRequest() {
         return "index";
     }
+    
     
 
     @RequestMapping("/page/{id}")

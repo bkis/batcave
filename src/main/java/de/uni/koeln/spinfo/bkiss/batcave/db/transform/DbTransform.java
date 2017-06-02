@@ -40,7 +40,7 @@ import net.minidev.json.JSONArray;
  */
 public class DbTransform {
 	
-	private static final int NEW_LINE_PIXEL_THRESHOLD = 60;
+	private static final int NEW_LINE_PIXEL_THRESHOLD = 50;
 
 	public static void main(String[] args) {
 		
@@ -113,7 +113,6 @@ public class DbTransform {
 	              .build();
 		
 		int count = 0;
-		int lastYPos = 0;
 		
 		//collect token data and generate Token instances
 		try {
@@ -149,13 +148,6 @@ public class DbTransform {
 		    	int height = json.read("$.rectangle.height");
 		    	ScanPosition pos = new ScanPosition(x, y, width, height);
 		    	
-		    	//new line?
-		    	boolean newLine = false;
-		    	if (y - lastYPos > NEW_LINE_PIXEL_THRESHOLD && lastYPos > 0){
-		    		newLine = true;
-		    	}
-		    	lastYPos = y;
-		    	
 		    	//tags
 		    	Set<String> tags = new HashSet<String>();
 		    	if (((JSONArray)json.read("$.posList[?(@.userId != 'matcher')].posTag")).size() == 0){
@@ -165,7 +157,7 @@ public class DbTransform {
 		    	}
 		    	
 		    	//construct Token instance
-		    	Token token = new Token(form, index, pos, tags, newLine);
+		    	Token token = new Token(form, index, pos, tags, false);
 
 		    	//new PageDocument instance to construct
 		    	PageDocument page;
@@ -208,7 +200,10 @@ public class DbTransform {
 		List<PageDocument> pagesList = new ArrayList<PageDocument>(targetPages.values());
 		targetPages = null;
 		System.gc();
-		for (PageDocument doc : pagesList) doc.sortTokens();
+		for (PageDocument doc : pagesList){
+			doc.sortTokens();
+			correctNewLines(doc); //correct newline detection
+		}
 		Collections.sort(pagesList);
 		
 		return pagesList;
@@ -225,5 +220,21 @@ public class DbTransform {
 		collection.insertMany(converted);
 	}
 	
+	
+	private static void correctNewLines(PageDocument page){
+		System.out.println("Generating newline markers...");
+		List<Token> tokens;
+		
+		tokens = page.getTokens();
+		for (int i = 0; i < tokens.size(); i++) {
+			if (i > 0
+					&& tokens.get(i).getScanPosition().getY()
+					- tokens.get(i-1).getScanPosition().getY() > NEW_LINE_PIXEL_THRESHOLD){
+				tokens.get(i).setNewLine(true);
+			} else {
+				tokens.get(i).setNewLine(false);
+			}
+		}
+	}
 	
 }
