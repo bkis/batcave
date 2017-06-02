@@ -58,7 +58,6 @@ function showScanPosition(x, y, w, h){
 //hide position in scan
 function hideScanPosition(){
 	$("#scanbox").remove();
-	$("#scan-img").css("margin-top", "0px");
 }
 //calculate scan positions relative to scan size
 function getScaleFactor(){
@@ -160,6 +159,10 @@ function prepareFrontend(json){
 	//set click action for tag-reset button
 	$("#bc-tags-reset").click(function() {
 		$(".bc-tags-item[data-locked='true']").click().mouseout();
+	});
+	
+	$("#bc-display").mouseleave(function(){
+		$("#scan-img").css("margin-top", "0px");
 	});
 }
 

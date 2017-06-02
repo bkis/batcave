@@ -104,11 +104,12 @@ div.noframe-box{
 }
 
 #bc-scan.stick {
-    margin-top: 20px !important;
+    margin-top: 0px !important;
     margin-right: 32px;
     position: fixed;
     top: 0;
     z-index: 10000;
+    border-top-left-radius: 0px;
 }
 
 #bc-extra img {
@@ -118,8 +119,8 @@ div.noframe-box{
 
 #scanbox {
 	position: absolute;
-	border: 2px solid #0f0;
-	background-color: rgba(0,255,0,0.1);
+	border: 4px solid rgba(0,255,0,0.6);
+	background-color: rgba(0,255,0,0.2);
 }
 
 #bc-tags {
