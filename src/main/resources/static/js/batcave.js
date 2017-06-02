@@ -42,20 +42,23 @@ function col(tagString){
 
 //show position in scan
 function showScanPosition(x, y, w, h){
+	var scaleFactor = getScaleFactor();
 	//draw box
-	$("#bc-extra").prepend(
+	$("#bc-scan").prepend(
 		'<div id="scanbox"></div>'
 	);
-	var scaleFactor = getScaleFactor();
+	//show image portion
+	$("#scan-img").css("margin-top", "-" + parseInt((y-200) * scaleFactor) + "px");
 	//set position and dimensions
 	$("#scanbox").css("width", (w * scaleFactor) + 20);
 	$("#scanbox").css("height", (h * scaleFactor) + 20);
-	$("#scanbox").css("top", (parseInt(y) * scaleFactor) - 10);
-	$("#scanbox").css("left", (parseInt(x) * scaleFactor) - 10);
+	$("#scanbox").css("top", (200 * scaleFactor) - 10);
+	$("#scanbox").css("left", (x * scaleFactor) - 10);
 }
 //hide position in scan
 function hideScanPosition(){
 	$("#scanbox").remove();
+	$("#scan-img").css("margin-top", "0px");
 }
 //calculate scan positions relative to scan size
 function getScaleFactor(){

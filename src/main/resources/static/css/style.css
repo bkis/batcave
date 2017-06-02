@@ -96,9 +96,19 @@ div.noframe-box{
               user-select: text;
 }
 
-#bc-extra {
+#bc-scan {
 	position: relative;
 	padding: 0px;
+	overflow: hidden;
+	min-height: 100%;
+}
+
+#bc-scan.stick {
+    margin-top: 20px !important;
+    margin-right: 32px;
+    position: fixed;
+    top: 0;
+    z-index: 10000;
 }
 
 #bc-extra img {
