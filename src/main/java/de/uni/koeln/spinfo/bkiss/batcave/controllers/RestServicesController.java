@@ -20,11 +20,6 @@ public class RestServicesController {
 	ScanDocumentRepository scanRepo;
 	
 	
-	@RequestMapping("/search")
-    public String search() {
-        return "nothing here.";
-    }
-	
 	@ResponseBody
 	@RequestMapping(value = "/scan/{id}", method = RequestMethod.GET, produces = MediaType.IMAGE_PNG_VALUE)
 	public byte[] serveImage(@PathVariable String id) throws IOException {

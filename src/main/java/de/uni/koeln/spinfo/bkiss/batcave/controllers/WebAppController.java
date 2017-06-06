@@ -1,5 +1,7 @@
 package de.uni.koeln.spinfo.bkiss.batcave.controllers;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -32,11 +34,27 @@ public class WebAppController {
     }
     
     
-
+    @RequestMapping("/action/{id}")
+    public String action(@PathVariable String id, Model model) {
+    	List<String> actions = new ArrayList<String>(Arrays.asList(id.split("\\+")));
+    	
+    	for (String action : actions){
+    		if (action.equalsIgnoreCase("index")){
+        		
+        	}
+    	}
+    	
+    	model.addAttribute("actions", actions);
+        return "action";
+    }
+    
+    @RequestMapping(value={"/search/", "/search"})
+    public String searchView(Model model) {
+        return "search";
+    }
+    
     @RequestMapping("/page/{id}")
-    public String pageView(
-    		@PathVariable String id,
-    		Model model) {
+    public String pageView(@PathVariable String id,	Model model) {
     	
     	PageDocument page = pageRepo.findById(id);
     	//add page object
