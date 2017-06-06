@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="common/head :: head"></head>
+
+<body>
+
+	<br>
+
+		<div class="container">
+		<div class="row">
+			<div class="frame-box">
+			
+				ACTIONS COMPLETED:&nbsp;
+				
+				<span class="i" th:each="action, iter : ${actions}" th:text="${iter.last} ? ${action} : ${action} + ', '">
+				</span>
+				
+			</div>
+		</div>
+	</div>
+	
+</body>
+</html>
