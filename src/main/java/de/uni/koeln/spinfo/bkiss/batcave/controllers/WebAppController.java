@@ -11,16 +11,21 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import de.uni.koeln.spinfo.bkiss.batcave.db.data.PageDocument;
 import de.uni.koeln.spinfo.bkiss.batcave.db.data.PageDocumentRepository;
 import de.uni.koeln.spinfo.bkiss.batcave.db.data.Token;
+import de.uni.koeln.spinfo.bkiss.batcave.search.SearchService;
 
 @Controller
 public class WebAppController {
 	
 	@Autowired
 	private PageDocumentRepository pageRepo;
+	
+	@Autowired
+	private SearchService lucene;
 	
 
     @RequestMapping("/")
@@ -40,7 +45,9 @@ public class WebAppController {
     	
     	for (String action : actions){
     		if (action.equalsIgnoreCase("index")){
-        		
+        		System.out.println(lucene.createIndex(pageRepo.findAll()));
+        	} else if (action.equalsIgnoreCase("reindex")){
+        		System.out.println(lucene.updateIndex(pageRepo.findAll()));
         	}
     	}
     	
@@ -48,10 +55,26 @@ public class WebAppController {
         return "action";
     }
     
-    @RequestMapping(value={"/search/", "/search"})
-    public String searchView(Model model) {
+    
+    @RequestMapping("/search")
+    public String searchView(
+    		@RequestParam(required = false) String token,
+    		@RequestParam(required = false) String tag,
+    		Model model) {
+    	
+    	if (token == null && tag == null)
+    		return "search";
+    	//search docs
+    	List<String> hits = lucene.search(token, tag, 100);
+    	//get docs data from db
+    	List<PageDocument> pages = new ArrayList<PageDocument>();
+    	for (String hit : hits) pages.add(pageRepo.findOne(hit));
+    	
+    	model.addAttribute("results", pages);
+    	
         return "search";
     }
+    
     
     @RequestMapping("/page/{id}")
     public String pageView(@PathVariable String id,	Model model) {

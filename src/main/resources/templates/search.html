@@ -17,9 +17,14 @@
 				<form>
 				<div class="row">
 					<div class="column">
-						<label>Suche</label>
-						<input name="q" placeholder="Giuventütna" id="searchQ" type="text">
+						<label>Begriff</label>
+						<input name="token" placeholder="Giuventütna" id="searchQ" type="text">
 					</div>
+					<div class="column">
+						<label>Annotation</label>
+						<input name="tag" placeholder="NN" id="searchQ" type="text">
+					</div>
+					<!-- 
 					<div class="column">
 						<label>Optionen</label>
 						<select id="searchO" name="o">
@@ -29,6 +34,7 @@
 							<option value="24+">24+</option>
 						</select>
 					</div>
+					-->
 					<div class="column">
 						<label>&nbsp;</label>
 						<input class="button-primary" value="Suchen" type="submit">
@@ -45,6 +51,13 @@
 			<div class="column">
 				<div id="bc-results" class="frame-box">
 				
+					<table>
+						<tr th:each="result : ${results}">
+							<td th:text="${result.id}"></td>
+							<td th:text="${result.volume}"></td>
+							<td th:text="${result.chapters}"></td>
+						</tr>
+					</table>
 					<!--
 					<span
 						th:each="token : ${page.tokens}"
