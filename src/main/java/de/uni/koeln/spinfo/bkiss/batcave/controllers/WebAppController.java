@@ -2,8 +2,10 @@ package de.uni.koeln.spinfo.bkiss.batcave.controllers;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import de.uni.koeln.spinfo.bkiss.batcave.db.data.PageDocument;
 import de.uni.koeln.spinfo.bkiss.batcave.db.data.PageDocumentRepository;
 import de.uni.koeln.spinfo.bkiss.batcave.db.data.Token;
+import de.uni.koeln.spinfo.bkiss.batcave.search.SearchResult;
 import de.uni.koeln.spinfo.bkiss.batcave.search.SearchService;
 
 @Controller
@@ -25,7 +28,7 @@ public class WebAppController {
 	private PageDocumentRepository pageRepo;
 	
 	@Autowired
-	private SearchService lucene;
+	private SearchService searchService;
 	
 
     @RequestMapping("/")
@@ -45,9 +48,9 @@ public class WebAppController {
     	
     	for (String action : actions){
     		if (action.equalsIgnoreCase("index")){
-        		System.out.println(lucene.createIndex(pageRepo.findAll()));
+        		System.out.println(searchService.createIndex(pageRepo.findAll()));
         	} else if (action.equalsIgnoreCase("reindex")){
-        		System.out.println(lucene.updateIndex(pageRepo.findAll()));
+        		System.out.println(searchService.updateIndex(pageRepo.findAll()));
         	}
     	}
     	
@@ -60,34 +63,53 @@ public class WebAppController {
     public String searchView(
     		@RequestParam(required = false) String token,
     		@RequestParam(required = false) String tag,
+    		@RequestParam(required = false) String mode,
     		Model model) {
     	
-    	if (token == null && tag == null)
-    		return "search";
-    	//search docs
-    	List<String> hits = lucene.search(token, tag, 100);
-    	//get docs data from db
-    	List<PageDocument> pages = new ArrayList<PageDocument>();
-    	for (String hit : hits) pages.add(pageRepo.findOne(hit));
+    	if (token == null && tag == null) return "search";
+    	if (tag == null) tag = "";
+    	if (mode == null) mode = "normal";
     	
-    	model.addAttribute("results", pages);
+    	//search state
+    	model.addAttribute("searchToken", token);
+    	model.addAttribute("searchTag", tag);
+    	model.addAttribute("searchMode", mode);
+    	
+    	//apply fuzzy search
+    	if (mode.equalsIgnoreCase("fuzzy"))
+    		token = token + "~";
+    	
+    	//search docs
+    	List<SearchResult> results = searchService.search(token, tag, 3);
+    	
+    	//results
+    	model.addAttribute("results", results);
     	
         return "search";
     }
     
     
-    @RequestMapping("/page/{id}")
-    public String pageView(@PathVariable String id,	Model model) {
+    @RequestMapping("/page")
+    public String pageView(
+    		@RequestParam(required = false) String id,
+    		@RequestParam(required = false) String hl,
+    		Model model) {
+    	
+    	if (id == null)
+    		return pageRndView(model);
     	
     	PageDocument page = pageRepo.findById(id);
     	//add page object
     	model.addAttribute("page", page);
     	//add tags array
     	model.addAttribute("tags", extractTags(page));
+    	//add highlight index
+   		model.addAttribute("highlight", hl != null ? Integer.valueOf(hl) : -1);
+    	
         return "page";
     }
     
-    @RequestMapping(value={"/page/", "/page"})
+    @RequestMapping(value={"/page/"})
     public String pageRndView(Model model) {
     	
     	PageDocument page = pageRepo.findByVolume("Band I");
@@ -99,11 +121,11 @@ public class WebAppController {
     }
     
     
-    private String[] extractTags(PageDocument doc){
+    private Set<String> extractTags(PageDocument doc){
     	Set<String> tags = new HashSet<String>();
     	for (Token t : doc.getTokens())
     		tags.addAll(t.getTags());
-    	return tags.toArray(new String[0]);
+    	return tags;
     }
     
     

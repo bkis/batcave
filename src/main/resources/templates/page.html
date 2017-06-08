@@ -42,6 +42,7 @@
 								 data-h=${token.scanPosition.height}"
 						th:text="${token.form}"
 						th:classappend="${token.newLine ? 'new-line' : ''}"
+						th:classappend="${token.index == highlight ? 'highlighted' : ''}"
 						class="bc-object"
 						data-locked="false">
 					</span>
@@ -58,6 +59,8 @@
 			
 	</div>
 	
+	<script type="text/javascript" th:src="@{~/js/color-hash.js}"></script>
+	<script type="text/javascript" th:src="@{~/js/sticky.js}"></script>
 	<script type="text/javascript" th:src="@{~/js/batcave-page.js}"></script>
 
 </body>

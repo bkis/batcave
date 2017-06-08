@@ -18,6 +18,11 @@ public class Token implements Comparable<Token> {
 		this.newLine = false;
 	}
 	
+	public Token(int index){
+		super();
+		this.index = index;
+	}
+	
 	public Token(String form, int index, ScanPosition pos, Set<String> tags, boolean newLine){
 		this();
 		this.form = form;
@@ -79,6 +84,12 @@ public class Token implements Comparable<Token> {
 	@Override
 	public int compareTo(Token o) {
 		return index - o.getIndex();
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		return obj instanceof Token
+				&& ((Token)obj).getIndex() == index;
 	}
 
 }

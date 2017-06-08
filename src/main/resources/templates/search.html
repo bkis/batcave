@@ -16,25 +16,25 @@
 
 				<form>
 				<div class="row">
+				
 					<div class="column">
 						<label>Begriff</label>
-						<input name="token" placeholder="Giuventütna" id="searchQ" type="text">
+						<input name="token" placeholder="Giuventütna" id="search-token" type="text" th:value="${searchToken}">
 					</div>
+					
 					<div class="column">
 						<label>Annotation</label>
-						<input name="tag" placeholder="NN" id="searchQ" type="text">
+						<input name="tag" placeholder="NN" id="search-tag" type="text" th:value="${searchTag}">
 					</div>
-					<!-- 
+				
 					<div class="column">
-						<label>Optionen</label>
-						<select id="searchO" name="o">
-							<option value="0-13">0-13</option>
-							<option value="14-17">14-17</option>
-							<option value="18-23">18-23</option>
-							<option value="24+">24+</option>
+						<label>Suchmodus</label>
+						<select id="search-mode" name="mode">
+							<option value="nomal" th:selected="${searchMode == 'normal'}">normal</option>
+							<option value="fuzzy" th:selected="${searchMode == 'fuzzy'}">unscharf</option>
 						</select>
 					</div>
-					-->
+
 					<div class="column">
 						<label>&nbsp;</label>
 						<input class="button-primary" value="Suchen" type="submit">
@@ -52,10 +52,22 @@
 				<div id="bc-results" class="frame-box">
 				
 					<table>
-						<tr th:each="result : ${results}">
-							<td th:text="${result.id}"></td>
-							<td th:text="${result.volume}"></td>
-							<td th:text="${result.chapters}"></td>
+						<tr>
+							<th>Fundstelle</th>
+							<th>Annotation</th>
+							<th>Kontext</th>
+							<th>Band</th>
+							<th>Kapitel</th>
+							<th>Sprache</th>
+						</tr>
+						<tr class="bc-result" th:each="result : ${results}"
+							th:attr="data-id=${result.pageId}, data-index=${result.index}">
+							<td th:text="${result.hit}">N/A</td>
+							<td th:text="${result.tag}">N/A</td>
+							<td th:text="${result.context}">N/A</td>
+							<td th:text="${result.volume}">N/A</td>
+							<td th:text="${result.chapter}">N/A</td>
+							<td th:text="${result.language}">N/A</td>
 						</tr>
 					</table>
 					<!--
@@ -81,6 +93,7 @@
 			
 	</div>
 	
+	<script type="text/javascript" th:src="@{~/js/batcave-search.js}"></script>
 
 </body>
 </html>

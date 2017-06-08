@@ -4,12 +4,12 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 import org.apache.lucene.analysis.Analyzer;
 import org.apache.lucene.analysis.standard.StandardAnalyzer;
 import org.apache.lucene.document.Document;
 import org.apache.lucene.document.Field.Store;
+import org.apache.lucene.document.StoredField;
 import org.apache.lucene.document.TextField;
 import org.apache.lucene.index.DirectoryReader;
 import org.apache.lucene.index.IndexReader;
@@ -20,17 +20,23 @@ import org.apache.lucene.queryparser.classic.ParseException;
 import org.apache.lucene.search.IndexSearcher;
 import org.apache.lucene.search.Query;
 import org.apache.lucene.search.ScoreDoc;
+import org.apache.lucene.search.Sort;
 import org.apache.lucene.search.TopDocs;
 import org.apache.lucene.store.Directory;
 import org.apache.lucene.store.FSDirectory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import de.uni.koeln.spinfo.bkiss.batcave.db.data.PageDocument;
+import de.uni.koeln.spinfo.bkiss.batcave.db.data.PageDocumentRepository;
 import de.uni.koeln.spinfo.bkiss.batcave.db.data.Token;
 
 
 @Service
 public class SearchService {
+	
+	@Autowired
+	private PageDocumentRepository pageRepo;
 	
 	private Directory ramDirectory;
 	private IndexReader indexReader;
@@ -60,6 +66,7 @@ public class SearchService {
 				Document doc = new Document();
 				doc.add(new TextField("id", page.getId(), Store.YES));
 				doc.add(new TextField("token", t.getForm(), Store.YES));
+				doc.add(new StoredField("index", t.getIndex()));
 				
 				for (String tag : t.getTags()){
 					doc.add(new TextField("tag", tag, Store.YES));
@@ -89,7 +96,7 @@ public class SearchService {
 	}
 	
 	
-	public List<String> search(String token, String tag, int limit){
+	public List<SearchResult> search(String token, String tag, int contextWindow){
 		if (this.searcher == null)
 			initIndexSearcher();
 		
@@ -107,21 +114,21 @@ public class SearchService {
 		
 		TopDocs topDocs = null;
         try {
-			topDocs = searcher.search(q, limit);
+			topDocs = searcher.search(q, 20, Sort.RELEVANCE);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
         
-        List<String> docs = new ArrayList<String>();
+        List<SearchResult> results = new ArrayList<SearchResult>();
         for (ScoreDoc sd : topDocs.scoreDocs){
         	try {
-				docs.add(searcher.doc(sd.doc).get("id"));
+				results.add(generateResult(sd, contextWindow));
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
         }
         
-        return docs;
+        return results;
 	}
 	
 	
@@ -147,6 +154,47 @@ public class SearchService {
 		if (this.searcher == null){
 			this.searcher = new IndexSearcher(indexReader);
 		}
+	}
+	
+	
+	private SearchResult generateResult(ScoreDoc scoreDoc, int contextWindow) throws IOException{
+		Document doc = searcher.doc(scoreDoc.doc);
+		
+		SearchResult result = new SearchResult(
+				doc.get("id"),
+				doc.get("token"),
+				doc.get("tag"),
+				Integer.valueOf(doc.get("index")));
+		
+		PageDocument page = pageRepo.findOne(result.getPageId());
+		
+		result.setContext(getContext(page,
+				result.getIndex(),
+				contextWindow));
+		
+		result.setChapter(page.getChapters().toString());
+		result.setVolume(page.getVolume());
+		result.setLanguage(page.getLanguages().toString());
+		
+		return result; 
+	}
+	
+	
+	private String getContext(PageDocument page, int tokenIndex, int contextWindow){
+		if (page == null)
+			return "";
+		
+		int index = page.getTokens().indexOf(new Token(tokenIndex));
+		StringBuilder sb = new StringBuilder();
+		
+		for (int i = Math.max(0, index - contextWindow);
+				i < Math.min(page.getTokens().size(), index + contextWindow);
+				i++) {
+			sb.append(page.getTokens().get(i).getForm());
+			sb.append(" ");
+		}
+		
+		return sb.toString().trim();
 	}
 	
 	
