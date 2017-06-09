@@ -46,12 +46,12 @@
 		</div>
 		
 		<!-- SEARCH RESULTS -->
-		<div class="row">
+		<div class="row" th:if="${results != null}">
 		
 			<div class="column">
 				<div id="bc-results" class="frame-box">
 				
-					<table>
+					<table class="bc-results-table">
 						<tr>
 							<th>Fundstelle</th>
 							<th>Annotation</th>
