@@ -102,7 +102,7 @@ public class SearchService {
 		
 		//construct query string
 		String queryString = "";
-		queryString += (token.length() > 0 ? "token:" + token : "") + " ";
+		queryString += (token.length() > 0 ? "token:" + token : "") + (tag.length() > 0 ? " AND " : "");
 		queryString += tag.length() > 0 ? "tag:" + tag.toUpperCase() : "";
 		
 		Query q = null;
