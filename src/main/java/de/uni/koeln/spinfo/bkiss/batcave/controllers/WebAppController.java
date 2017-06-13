@@ -8,7 +8,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -31,14 +34,9 @@ public class WebAppController {
 	private SearchService searchService;
 	
 
-    @RequestMapping("/")
-    public String index() {
-        return "index";
-    }
-    
     @RequestMapping("*")
     public String defaultRequest() {
-        return "index";
+        return "search";
     }
     
     
@@ -64,26 +62,30 @@ public class WebAppController {
     		@RequestParam(required = false) String token,
     		@RequestParam(required = false) String tag,
     		@RequestParam(required = false) String mode,
-    		Model model) {
+    		Model model,
+    		HttpServletRequest request) {
     	
-    	if (token == null && tag == null) return "search";
+    	//param defaults
+    	if ((token == null || token.length() == 0)
+    			&& (tag == null || tag.length() == 0)) return "search";
+    	if (token == null) token = "";
     	if (tag == null) tag = "";
     	if (mode == null) mode = "normal";
+    	token = token.replaceAll("\\P{L}", "");
     	
-    	//search state
-    	model.addAttribute("searchToken", token);
-    	model.addAttribute("searchTag", tag);
-    	model.addAttribute("searchMode", mode);
+    	//update session
+    	updateSession(token, tag, mode, request);
     	
     	//apply fuzzy search
     	if (mode.equalsIgnoreCase("fuzzy"))
-    		token = token + "~";
+    		token = token.concat("~");
     	
     	//search docs
     	List<SearchResult> results = searchService.search(token, tag, 3);
     	
     	//results
     	model.addAttribute("results", results);
+    	model.addAttribute("resultsCount", results.size());
     	
         return "search";
     }
@@ -128,5 +130,14 @@ public class WebAppController {
     	return tags;
     }
     
+    
+    private void updateSession(String searchToken,
+    		String searchTag,
+    		String searchMode,
+    		HttpServletRequest request){
+    	request.getSession().setAttribute("searchToken", searchToken);
+    	request.getSession().setAttribute("searchTag", searchTag);
+    	request.getSession().setAttribute("searchMode", searchMode);
+    }
     
 }

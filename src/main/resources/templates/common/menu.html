@@ -1,15 +1,38 @@
-<div th:fragment="menu" class="container">
+<div th:fragment="menu" class="menu container">
 	
-	<div class="row">
-		<div class="column column-33">
-			<div class="menu-item">Suche</div>
-		</div>
-		<div class="column column-33">
-			<div class="menu-item">Dokument</div>
-		</div>
-		<div class="column column-33">
-			<div class="menu-item">Analyse</div>
-		</div>
-	</div>
+	<form action="/search">
+		<div class="row">
+
+				<div class="column column-50">
+					<div></div>
+				</div>
+				
+			
+				<div class="column">
+					<label>Begriff</label> <input name="token"
+						placeholder="Giuventütna" id="search-token" type="text"
+						th:value="${session.searchToken}">
+				</div>
 	
+				<div class="column">
+					<label>Annotation</label> <input name="tag" placeholder="NN"
+						id="search-tag" type="text" th:value="${session.searchTag}">
+				</div>
+	
+				<div class="column">
+					<label>Suchmodus</label> <select id="search-mode" name="mode">
+						<option value="nomal" th:selected="${session.searchMode == 'normal'}">normal</option>
+						<option value="fuzzy" th:selected="${session.searchMode == 'fuzzy'}">unscharf</option>
+					</select>
+				</div>
+	
+				<div class="column">
+					<label>&nbsp;</label>
+					<button class="button-primary bc-search-btn" type="submit">
+						<img th:src="@{~/img/icon-search.png}" alt="Suchen"/>
+					</button>
+				</div>
+			
+		</div>
+	</form>
 </div>

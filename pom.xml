@@ -77,7 +77,13 @@
 		    <version>6.5.0</version>
 		</dependency>
 			    
-		
+		<!-- https://mvnrepository.com/artifact/org.apache.lucene/lucene-queries -->
+		<dependency>
+		    <groupId>org.apache.lucene</groupId>
+		    <artifactId>lucene-queries</artifactId>
+		    <version>6.5.0</version>
+		</dependency>
+				
 	</dependencies>
 
 	<build>

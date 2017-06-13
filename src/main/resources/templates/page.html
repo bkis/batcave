@@ -3,12 +3,35 @@
 
 <head th:replace="common/head :: head"></head>
 
+
 <body>
 
+	<noscript th:replace="common/head :: noscript"></noscript>
 	<div th:replace="common/menu :: menu"></div>
-	<div th:replace="common/pageheader :: pageHeader"></div>
+	
+	
 
 	<div class="container">
+	
+		<!--  PAGE INFO -->
+		<div class="row">
+			<div class="column">
+				<div class="noframe-box">
+					<span id="header" class="marg-r" th:each="chapter, iter : ${page.chapters}"
+						th:text="${iter.last} ? ${chapter} : ${chapter} + ', '"> </span>
+					
+					<span class="b">Band:</span>
+					<span class="marg-r i" th:text="${page.volume}">nicht verfügbar</span>
+					
+					<span class="b">Sprachen:</span>
+					<span class="marg-r i"
+						th:each="language, iter : ${page.languages}"
+						th:text="${iter.last} ? ${language} : ${language} + ', '">
+						nicht verfügbar
+					</span>
+				</div>
+			</div>
+		</div>
 		
 		<!-- TAGS -->	
 		<div class="row">

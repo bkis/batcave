@@ -37,6 +37,7 @@ a:active {
 
 .b { font-weight: bold; }
 .i { font-style: italic; }
+.gray { color: #777; }
 
 div.noscript{
     width: 100%;
@@ -44,11 +45,27 @@ div.noscript{
     position: absolute;
     top: 0px;
     left: 0px;
-    background-color: rgba(0,0,0,0.7);
+    background-color: rgba(0,0,0,0.8);
     z-index: 9999;
     color: #fff;
     font-size: 200%;
     text-align: center;
+    text-shadow: 0px 0px 4px #000;
+}
+
+.absolute-center {
+	position: relative;
+	 top: 50%;
+	 -webkit-transform: translateY(-50%);
+	 -ms-transform: translateY(-50%);
+	 transform: translateY(-50%);
+	 margin: 0 auto;
+	 text-align: center;
+}
+
+.h-center {
+	 margin: 0 auto;
+	 text-align: center;
 }
 
 div.frame-box {
@@ -67,6 +84,7 @@ div.frame-box {
 div.noframe-box{
 	padding: 20px;
 	padding-top: 10px;
+	padding-bottom: 0px;
 }
 
 #header {
@@ -75,25 +93,47 @@ div.noframe-box{
     font-variant: small-caps;
 }
 
+.menu {
+	background-color: #666;
+	color: #fff;
+	margin-bottom: 10px;
+	
+	-webkit-box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.4);
+    -moz-box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.4);
+    box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.4);
+}
+
 .menu-item {
 	text-align: center;
-	margin-top: 10px;
-	padding: 5px;
-	
-	background-color: #aaa;
-	border-radius: .2em;
-
-    -webkit-box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.2);
-    -moz-box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.2);
-    box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.2);
+	margin: 0px;
+	padding: 8px;
 }
 
 .menu-item-active {
 	background-color: #ddd;
 }
 
-#bc-toolbar {
+.menu input, select {
+	-webkit-box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.3);
+    -moz-box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.3);
+    box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.3);
+}
+
+span.marg-r {
+	margin-right: 40px;
+}
+
+button.bc-search-btn {
+	padding: 0 1.0rem;;
+	line-height: 70%;
 	
+	-webkit-box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.3);
+    -moz-box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.3);
+    box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.3);
+}
+
+button.bc-search-btn img {
+	height: 70%;
 }
 
 #bc-display {
@@ -136,13 +176,14 @@ div.noframe-box{
 
 #scanbox {
 	position: absolute;
-	border: 4px solid rgba(0,255,0,0.6);
+	border: 2px solid rgba(0,255,0,0.6);
 	background-color: rgba(0,255,0,0.2);
 }
 
 #bc-tags {
     font-size: 100%;
     font-variant: small-caps;
+    margin-bottom: 20px;
 }
 
 #bc-tags-reset {
@@ -220,6 +261,10 @@ div.noframe-box{
     padding-right: 5px;
 }
 
+#bc-results {
+	margin-top: 20px;
+}
+
 .bc-results-table {
 	width: 100%;
 }
@@ -236,7 +281,7 @@ div.noframe-box{
 }
 
 .bc-result:hover {
-	background-color: #eee;
+	background-color: #e5e5e5;
 }
 
 .bc-result td {
