@@ -68,13 +68,16 @@ div.noscript{
 	 text-align: center;
 }
 
+#logo {
+	margin-top: 20px;
+	line-height: 100%;
+}
+
 div.frame-box {
     padding: 20px;
     background-color: #fff;
 
-    border-left: 10px solid #ccc;
-    border-top-left-radius: 8px;
-    border-bottom-left-radius: 8px;
+    margin-bottom: 20px;
 
     -webkit-box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.2);
     -moz-box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.2);
@@ -87,16 +90,17 @@ div.noframe-box{
 	padding-bottom: 0px;
 }
 
-#header {
-    font-size: 160%;
+#page-title {
+    font-size: 130%;
     font-weight: bold;
     font-variant: small-caps;
 }
 
 .menu {
-	background-color: #666;
+	background-color: #363636;
 	color: #fff;
 	margin-bottom: 10px;
+	padding-bottom: 10px;
 	
 	-webkit-box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.4);
     -moz-box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.4);
@@ -117,10 +121,6 @@ div.noframe-box{
 	-webkit-box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.3);
     -moz-box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.3);
     box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.3);
-}
-
-span.marg-r {
-	margin-right: 40px;
 }
 
 button.bc-search-btn {
@@ -188,7 +188,6 @@ button.bc-search-btn img {
 
 #bc-tags-reset {
     padding: 8px;
-    border-radius: 3px;
     margin-right: 20px;
     background-color: #fff;
     cursor: pointer;
@@ -216,7 +215,6 @@ button.bc-search-btn img {
     line-height: 300%;
     border-left-style: solid;
     border-left-width: 20px;
-    border-radius: 3px;
     margin-right: 20px;
     background-color: #fff;
     color: #555;
@@ -256,7 +254,6 @@ button.bc-search-btn img {
 	float: left;
     border: none;
     cursor: pointer;
-    border-radius: 2px;
     padding-left: 5px;
     padding-right: 5px;
 }
@@ -271,8 +268,8 @@ button.bc-search-btn img {
 
 .bc-results-table th {
 	font-variant: small-caps;
+	font-weight: bold;
 	font-size: 130%;
-	border-bottom: 2px solid #e1e1e1;
 }
 
 .bc-result {
@@ -285,10 +282,19 @@ button.bc-search-btn img {
 }
 
 .bc-result td {
-	
+	padding-left: 10px;
 }
 
 .highlighted {
 	border: 2px dotted #0a0;
 	margin-top: -4px;
+}
+
+#search-placeholder {
+	text-align: center;
+}
+
+#search-placeholder img {
+	width: 256px;
+	max-width: 50%;
 }

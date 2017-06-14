@@ -4,7 +4,25 @@
 		<div class="row">
 
 				<div class="column column-50">
-					<div></div>
+					<div th:if="${page != null}">
+						<span id="page-title" class="marg-r" th:each="chapter, iter : ${page.chapters}"
+							th:text="${iter.last} ? ${chapter} : ${chapter} + ', '">
+						</span>
+						
+						<br>
+						
+						<span class="b">Band:</span>
+						<span class="i" th:text="${page.volume}">nicht verfügbar</span>
+						
+						<br>
+						
+						<span class="b">Sprachen:</span>
+						<span class="i"
+							th:each="language, iter : ${page.languages}"
+							th:text="${iter.last} ? ${language} : ${language} + ', '">
+							nicht verfügbar
+						</span>
+					</div>
 				</div>
 				
 			
