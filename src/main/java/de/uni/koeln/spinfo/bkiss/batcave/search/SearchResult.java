@@ -5,6 +5,8 @@ public class SearchResult {
 	private String pageId;
 	private String hit;
 	private String tag;
+	private String tagPrev;
+	private String tagNext;
 	private int index;
 	private String context;
 	private String chapter;
@@ -12,16 +14,45 @@ public class SearchResult {
 	private String language;
 	
 	
-	public SearchResult(String pageId, String hit, String tag, int index) {
+	public SearchResult(
+			String pageId,
+			String hit,
+			String tag,
+			String tagPrev,
+			String tagNext,
+			int index) {
+		
 		super();
 		this.pageId = pageId;
 		this.hit = hit;
 		this.tag = tag;
+		this.tagPrev = tagPrev;
+		this.tagNext = tagNext;
 		this.index = index;
 		this.context = "";
 	}
+	
+	
+	public String getTagPrev() {
+		return tagPrev;
+	}
 
+	
+	public void setTagPrev(String tagPrev) {
+		this.tagPrev = tagPrev;
+	}
 
+	
+	public String getTagNext() {
+		return tagNext;
+	}
+
+	
+	public void setTagNext(String tagNext) {
+		this.tagNext = tagNext;
+	}
+
+	
 	public String getPageId() {
 		return pageId;
 	}

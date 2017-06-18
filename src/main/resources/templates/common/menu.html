@@ -3,26 +3,26 @@
 	<form action="/search">
 		<div class="row">
 
-				<div class="column column-50">
-					<div th:if="${page != null}">
-						<span id="page-title" class="marg-r" th:each="chapter, iter : ${page.chapters}"
-							th:text="${iter.last} ? ${chapter} : ${chapter} + ', '">
-						</span>
-						
-						<br>
-						
-						<span class="b">Band:</span>
-						<span class="i" th:text="${page.volume}">nicht verfügbar</span>
-						
-						<br>
-						
-						<span class="b">Sprachen:</span>
-						<span class="i"
-							th:each="language, iter : ${page.languages}"
-							th:text="${iter.last} ? ${language} : ${language} + ', '">
-							nicht verfügbar
-						</span>
+				<div id="page-header" class="column column-50" th:if="${page != null}">
+					<div id="page-title" th:each="chapter, iter : ${page.chapters}"
+						th:text="${iter.last} ? ${chapter} : ${chapter} + ', '">
 					</div>
+					
+					<span class="b">Band:</span>
+					<span class="i" th:text="${page.volume}">nicht verfügbar</span>
+					
+					<span class="menu-spacer">&mdash;</span>
+					
+					<span class="b">Sprachen:</span>
+					<span class="i"
+						th:each="language, iter : ${page.languages}"
+						th:text="${iter.last} ? ${language} : ${language} + ', '">
+						nicht verfügbar
+					</span>
+				</div>
+				
+				
+				<div class="column column-50" th:if="${page == null}">
 				</div>
 				
 			
@@ -44,13 +44,32 @@
 					</select>
 				</div>
 	
+		</div>
+		
+		<div class="row">
+
+				<div class="column column-50">
+				</div>
+			
+				<div class="column">
+					<label>vorherige Annotation</label> <input name="tagPrev"
+						id="search-tag-prev" type="text"
+						th:value="${session.searchTagPrev}">
+				</div>
+	
+				<div class="column">
+					<label>folgende Annotation</label> <input name="tagNext"
+						id="search-tag-next" type="text" th:value="${session.searchTagNext}">
+				</div>
+	
 				<div class="column">
 					<label>&nbsp;</label>
 					<button class="button-primary bc-search-btn" type="submit">
 						<img th:src="@{~/img/icon-search.png}" alt="Suchen"/>
 					</button>
 				</div>
-			
+	
 		</div>
 	</form>
+	
 </div>

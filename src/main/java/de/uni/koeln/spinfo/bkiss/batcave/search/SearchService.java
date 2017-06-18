@@ -3,6 +3,7 @@ package de.uni.koeln.spinfo.bkiss.batcave.search;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import org.apache.lucene.analysis.Analyzer;
@@ -62,15 +63,31 @@ public class SearchService {
 		IndexWriter w = getIndexWriter();
 		
 		for (PageDocument page : pages){
-			for (Token t : page.getTokens()){
+			for (int i = 0; i < page.getTokens().size(); i++){
+				Token t = page.getTokens().get(i);
 				Document doc = new Document();
 				doc.add(new TextField("id", page.getId(), Store.YES));
 				doc.add(new TextField("token", t.getForm(), Store.YES));
 				doc.add(new StoredField("index", t.getIndex()));
 				
+				//token tags
 				for (String tag : t.getTags()){
 					doc.add(new TextField("tag", tag, Store.YES));
 				}
+				
+				//prev tags
+				if (i > 0)
+					for (String tag : page.getTokens().get(i-1).getTags()){
+						doc.add(new TextField("tagPrev", tag, Store.YES));
+						System.out.println("PREV: " + tag);
+					}
+				
+				//next tags
+				if (i < page.getTokens().size() - 1)
+					for (String tag : page.getTokens().get(i+1).getTags()){
+						doc.add(new TextField("tagNext", tag, Store.YES));
+						System.out.println("NEXT: " + tag);
+					}
 				
 				try {
 					w.addDocument(doc);
@@ -96,14 +113,21 @@ public class SearchService {
 	}
 	
 	
-	public List<SearchResult> search(String token, String tag, int contextWindow){
+	public List<SearchResult> search(
+			String token,
+			String tag,
+			String tagPrev,
+			String tagNext,
+			int contextWindow){
 		if (this.searcher == null)
 			initIndexSearcher();
 		
 		//construct query string
 		String queryString = "";
 		queryString += (token.length() > 0 ? "token:" + token : "") + (tag.length() > 0 ? " AND " : "");
-		queryString += tag.length() > 0 ? "tag:" + tag.toUpperCase() : "";
+		queryString += (tag.length() > 0 ? "tag:" + tag.toUpperCase() : "") + (tagPrev.length() > 0 ? " AND " : "");
+		queryString += (tagPrev.length() > 0 ? "tagPrev:" + tagPrev.toUpperCase() : "") + (tagNext.length() > 0 ? " AND " : "");
+		queryString += (tagNext.length() > 0 ? "tagNext:" + tagNext.toUpperCase() : "");
 		
 		Query q = null;
 		try {
@@ -130,6 +154,21 @@ public class SearchService {
         
         return results;
 	}
+	
+	
+//	public List<SearchResult> filterByContext(
+//			List<SearchResult> results,
+//			String tagPrev,
+//			String tagNext){
+//		
+//		Iterator<SearchResult> iter = results.iterator();
+//		while (iter.hasNext()){
+//			SearchResult result = iter.next();
+//			//TODO
+//		}
+//		
+//		return results;
+//	}
 	
 	
 	private IndexWriter getIndexWriter(){
@@ -164,6 +203,8 @@ public class SearchService {
 				doc.get("id"),
 				doc.get("token"),
 				doc.get("tag"),
+				doc.get("tagPrev"),
+				doc.get("tagNext"),
 				Integer.valueOf(doc.get("index")));
 		
 		PageDocument page = pageRepo.findOne(result.getPageId());

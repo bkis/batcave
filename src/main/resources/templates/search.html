@@ -29,7 +29,7 @@
 						<tr class="bc-result" th:each="result : ${results}"
 							th:attr="data-id=${result.pageId}, data-index=${result.index}">
 							<td th:text="${result.hit}">N/A</td>
-							<td th:text="${result.tag}">N/A</td>
+							<td th:text="${'(' + result.tagPrev + ') > ' + result.tag + ' > (' + result.tagNext + ')'}">N/A</td>
 							<td th:text="${result.context}">N/A</td>
 							<td th:text="${result.volume}">N/A</td>
 							<td th:text="${result.chapter}">N/A</td>

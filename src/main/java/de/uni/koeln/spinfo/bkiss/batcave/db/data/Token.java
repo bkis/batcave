@@ -73,6 +73,10 @@ public class Token implements Comparable<Token> {
 		tags.add(tag);
 	}
 	
+	public boolean hasTag(String tag){
+		return tags.contains(tag);
+	}
+	
 	@Override
 	public String toString() {
 		return form + " " + index + " tags=" + tags + "";
