@@ -81,10 +81,8 @@ function initPageJS(){
 	//set hover actions for display objects
 	$(".bc-object").hover(function() {
 		var target = $(this);
-		$(".bc-tags-item").each(function(){
-			if (target.attr("data-tag").includes($(this).attr("data-tag"))){
-				$(this).mouseenter();
-			}
+		$(".bc-tags-item[data-tag*='" + $(this).attr("data-tag") + "']").each(function(){
+			$(this).mouseenter();
 		});
 		//var index = parseInt(target.attr("data-index"));
 		showScanPosition(
@@ -95,10 +93,8 @@ function initPageJS(){
 		);
 	}, function() {
 		var target = $(this);
-		$(".bc-tags-item").each(function(){
-			if (target.attr("data-tag").includes($(this).attr("data-tag"))){
-				$(this).mouseout();
-			}
+		$(".bc-tags-item[data-tag*='" + $(this).attr("data-tag") + "']").each(function(){
+			$(this).mouseout();
 		});
 		hideScanPosition();
 	});

@@ -26,8 +26,8 @@ public class SearchResult {
 		this.pageId = pageId;
 		this.hit = hit;
 		this.tag = tag;
-		this.tagPrev = tagPrev;
-		this.tagNext = tagNext;
+		this.tagPrev = tagPrev != null ? tagPrev : "";
+		this.tagNext = tagNext != null ? tagNext : "";
 		this.index = index;
 		this.context = "";
 	}
