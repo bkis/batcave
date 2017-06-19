@@ -1,6 +1,6 @@
 <div th:fragment="menu" class="menu container">
 	
-	<form action="/search">
+	<form action="/search" id="search-form">
 		<div class="row">
 
 				<div id="page-header" class="column column-50" th:if="${page != null}">
@@ -64,8 +64,13 @@
 	
 				<div class="column">
 					<label>&nbsp;</label>
-					<button class="button-primary bc-search-btn" type="submit">
+					
+					<button class="button-primary bc-search-btn" type="submit" value="" form="search-form">
 						<img th:src="@{~/img/icon-search.png}" alt="Suchen"/>
+					</button>
+					
+					<button id="bc-search-reset-btn" class="button-primary bc-search-btn" type="button">
+						<img th:src="@{~/img/icon-reset.png}" alt="Zurücksetzen"/>
 					</button>
 				</div>
 	
