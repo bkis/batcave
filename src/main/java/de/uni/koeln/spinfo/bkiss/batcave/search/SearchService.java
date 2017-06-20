@@ -117,17 +117,22 @@ public class SearchService {
 			String tag,
 			String tagPrev,
 			String tagNext,
+			boolean fuzzy,
 			int contextWindow){
 		
 		if (this.searcher == null)
 			initIndexSearcher();
 		
+		//apply fuzzy search
+		if (fuzzy && token != null && token.length() > 0)
+			token.concat("~");
+		
 		//construct query string
 		String queryString = "";
-		queryString += (token.length() > 0 ? "token:" + token : "") + (tag.length() > 0 ? " AND " : "");
-		queryString += (tag.length() > 0 ? "tag:" + tag.toUpperCase() : "") + (tagPrev.length() > 0 ? " AND " : "");
-		queryString += (tagPrev.length() > 0 ? "tagPrev:" + tagPrev.toUpperCase() : "") + (tagNext.length() > 0 ? " AND " : "");
-		queryString += (tagNext.length() > 0 ? "tagNext:" + tagNext.toUpperCase() : "");
+		queryString += (token.length() > 0 ? "token:" + token : "");
+		queryString += (tag.length() > 0 ? (queryString.length() > 0 ? " AND " : "") + "tag:" + tag.toUpperCase() : "");
+		queryString += (tagPrev.length() > 0 ? (queryString.length() > 0 ? " AND " : "") + "tagPrev:" + tagPrev.toUpperCase() : "");
+		queryString += (tagNext.length() > 0 ? (queryString.length() > 0 ? " AND " : "") + "tagNext:" + tagNext.toUpperCase() : "");
 		
 		Query q = null;
 		try {
@@ -138,7 +143,7 @@ public class SearchService {
 		
 		TopDocs topDocs = null;
         try {
-			topDocs = searcher.search(q, 20, Sort.RELEVANCE);
+			topDocs = searcher.search(q, 50, Sort.RELEVANCE);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

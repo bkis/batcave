@@ -56,6 +56,7 @@ public class WebAppController {
     
     @RequestMapping("/search")
     public String searchView(
+    		@RequestParam(required = false) String search,
     		@RequestParam(required = false) String token,
     		@RequestParam(required = false) String tag,
     		@RequestParam(required = false) String tagPrev,
@@ -65,22 +66,26 @@ public class WebAppController {
     		HttpServletRequest request) {
     	
     	//param defaults
-    	if ((token == null || token.length() == 0)
-    			&& (tag == null || tag.length() == 0)) return "search";
+    	if (search == null || !search.equalsIgnoreCase("true"))
+    		return "search";
     	if (token == null) token = "";
     	if (tag == null) tag = "";
+    	if (tagPrev == null) tagPrev = "";
+    	if (tagNext == null) tagNext = "";
     	if (mode == null) mode = "normal";
     	token = token.replaceAll("\\P{L}", "");
     	
     	//update session
     	updateSession(token, tag, tagPrev, tagNext, mode, request);
     	
-    	//apply fuzzy search
-    	if (mode.equalsIgnoreCase("fuzzy"))
-    		token = token.concat("~");
-    	
     	//search docs
-    	List<SearchResult> results = searchService.search(token, tag, tagPrev, tagNext, 3);
+    	List<SearchResult> results = searchService.search(
+    			token, 
+    			tag, 
+    			tagPrev, 
+    			tagNext, 
+    			mode.equalsIgnoreCase("fuzzy"), 
+    			3);
     	
     	//results
     	model.addAttribute("results", results);
