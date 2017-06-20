@@ -3,7 +3,6 @@ package de.uni.koeln.spinfo.bkiss.batcave.search;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 import org.apache.lucene.analysis.Analyzer;
@@ -119,6 +118,7 @@ public class SearchService {
 			String tagPrev,
 			String tagNext,
 			int contextWindow){
+		
 		if (this.searcher == null)
 			initIndexSearcher();
 		
