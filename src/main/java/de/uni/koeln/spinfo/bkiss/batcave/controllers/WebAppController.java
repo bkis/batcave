@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import de.uni.koeln.spinfo.bkiss.batcave.db.data.ControlsAction;
 import de.uni.koeln.spinfo.bkiss.batcave.db.data.PageDocument;
 import de.uni.koeln.spinfo.bkiss.batcave.db.data.PageDocumentRepository;
 import de.uni.koeln.spinfo.bkiss.batcave.db.data.Token;
@@ -37,20 +38,15 @@ public class WebAppController {
     }
     
     
-    @RequestMapping("/action/{id}")
-    public String action(@PathVariable String id, Model model) {
-    	List<String> actions = new ArrayList<String>(Arrays.asList(id.split("\\+")));
+    @RequestMapping("/system")
+    public String action(Model model) {
+    	List<ControlsAction> actions = new ArrayList<ControlsAction>();
     	
-    	for (String action : actions){
-    		if (action.equalsIgnoreCase("index")){
-        		System.out.println(searchService.createIndex(pageRepo.findAll()));
-        	} else if (action.equalsIgnoreCase("reindex")){
-        		System.out.println(searchService.updateIndex(pageRepo.findAll()));
-        	}
-    	}
+    	actions.add(new ControlsAction("index", "Such-Index erstellen / aktualisieren"));
+    	actions.add(new ControlsAction("wait", "Warte mal kurz!"));
     	
     	model.addAttribute("actions", actions);
-        return "action";
+        return "system";
     }
     
     

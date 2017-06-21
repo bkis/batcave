@@ -135,9 +135,7 @@ div.noframe-box{
 }
 
 .menu input, select {
-	-webkit-box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.3);
-    -moz-box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.3);
-    box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.3);
+	
 }
 
 button.bc-search-btn {
@@ -151,6 +149,13 @@ button.bc-search-btn {
 
 button.bc-search-btn img {
 	height: 70%;
+}
+
+button.controls-btn-disabled {
+	color: #999;
+	background-color: #888;
+	border-color: #888;
+	cursor: default;
 }
 
 #bc-display {
@@ -274,16 +279,11 @@ button.bc-search-btn img {
     padding-right: 5px;
 }
 
-#bc-results {
-	margin-top: 20px;
-}
-
 .bc-results-table {
 	width: 100%;
 }
 
 .bc-results-table th {
-	font-variant: small-caps;
 	font-weight: bold;
 	font-size: 130%;
 }

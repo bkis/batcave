@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="common/head :: head"></head>
+
+<body>
+
+	<noscript th:replace="common/head :: noscript"></noscript>
+	<div th:replace="common/menu :: menu"></div>
+
+
+	<div class="container">
+		<div class="row">
+			<div class="column"><h4>System</h4></div>
+		</div>
+		
+		<div class="row" th:each="action : ${actions}">
+			<div class="column" th:text="${action.description}"></div>
+			
+			<div class="column">
+				<button class="controls-btn" th:attr="data-action=${action.id}">Durchführen</button>
+			</div>	
+			
+			<div class="column">
+				<img class="controls-icon" th:src="@{~/img/icon-empty.png}" alt="" />
+			</div>
+			
+			<div class="column">
+				<span class="controls-result"></span>
+			</div>	
+		</div>
+		
+	</div>
+	
+	
+	<script type="text/javascript" th:src="@{~/js/batcave-controls.js}"></script>
+	
+	
+</body>
+</html>

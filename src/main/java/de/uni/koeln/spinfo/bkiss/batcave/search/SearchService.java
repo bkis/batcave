@@ -38,7 +38,7 @@ public class SearchService {
 	@Autowired
 	private PageDocumentRepository pageRepo;
 	
-	private Directory ramDirectory;
+	private Directory indexDirectory;
 	private IndexReader indexReader;
 	private IndexSearcher searcher;
 	private Analyzer analyzer;
@@ -51,7 +51,7 @@ public class SearchService {
                 new String[] {"token", "tag"},
                 analyzer);
 		try {
-			this.ramDirectory = FSDirectory.open(new File("index").toPath());
+			this.indexDirectory = FSDirectory.open(new File("index").toPath());
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -60,6 +60,15 @@ public class SearchService {
 	
 	public String createIndex(List<PageDocument> pages){
 		IndexWriter w = getIndexWriter();
+		
+		if (indexExists()){
+			try {
+				w.deleteAll();
+				w.commit();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
 		
 		for (PageDocument page : pages){
 			for (int i = 0; i < page.getTokens().size(); i++){
@@ -78,14 +87,12 @@ public class SearchService {
 				if (i > 0)
 					for (String tag : page.getTokens().get(i-1).getTags()){
 						doc.add(new TextField("tagPrev", tag, Store.YES));
-						System.out.println("PREV: " + tag);
 					}
 				
 				//next tags
 				if (i < page.getTokens().size() - 1)
 					for (String tag : page.getTokens().get(i+1).getTags()){
 						doc.add(new TextField("tagNext", tag, Store.YES));
-						System.out.println("NEXT: " + tag);
 					}
 				
 				try {
@@ -103,12 +110,7 @@ public class SearchService {
 			e.printStackTrace();
 		}
 		
-		return "index created";
-	}
-	
-	
-	public String updateIndex(List<PageDocument> pages){
-		return "index updated";
+		return "Such-Index wurde erstellt.";
 	}
 	
 	
@@ -125,7 +127,7 @@ public class SearchService {
 		
 		//apply fuzzy search
 		if (fuzzy && token != null && token.length() > 0)
-			token.concat("~");
+			token = token.concat("~");
 		
 		//construct query string
 		String queryString = "";
@@ -179,7 +181,7 @@ public class SearchService {
 	private IndexWriter getIndexWriter(){
 		IndexWriterConfig config = new IndexWriterConfig(analyzer);
 		try {
-			return new IndexWriter(this.ramDirectory, config);
+			return new IndexWriter(this.indexDirectory, config);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -190,7 +192,7 @@ public class SearchService {
 	private void initIndexSearcher(){
 		if (this.indexReader == null){
 			try {
-				this.indexReader = DirectoryReader.open(ramDirectory);
+				this.indexReader = DirectoryReader.open(indexDirectory);
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
@@ -241,6 +243,16 @@ public class SearchService {
 		}
 		
 		return sb.toString().trim();
+	}
+	
+	
+	private boolean indexExists(){
+		try {
+			return DirectoryReader.indexExists(indexDirectory);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return false;
 	}
 	
 	
