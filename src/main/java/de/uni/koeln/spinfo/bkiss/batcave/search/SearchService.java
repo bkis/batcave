@@ -25,6 +25,7 @@ import org.apache.lucene.search.TopDocs;
 import org.apache.lucene.store.Directory;
 import org.apache.lucene.store.FSDirectory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import de.uni.koeln.spinfo.bkiss.batcave.db.data.PageDocument;
@@ -38,6 +39,9 @@ public class SearchService {
 	@Autowired
 	private PageDocumentRepository pageRepo;
 	
+	@Value("${data.index}")
+	private String indexDirPath;
+	
 	private Directory indexDirectory;
 	private IndexReader indexReader;
 	private IndexSearcher searcher;
@@ -46,20 +50,12 @@ public class SearchService {
 	private MultiFieldQueryParser queryParser;
 	
 	public SearchService(){
-		this.analyzer = new StandardAnalyzer();
-		this.queryParser = new MultiFieldQueryParser(
-                new String[] {"token", "tag"},
-                analyzer);
-		try {
-			this.indexDirectory = FSDirectory.open(
-					initIndexDirectory().toPath());
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+		
 	}
 	
 	
 	public String createIndex(List<PageDocument> pages){
+		init();
 		IndexWriter w = getIndexWriter();
 		
 		if (indexExists()){
@@ -122,6 +118,8 @@ public class SearchService {
 			String tagNext,
 			boolean fuzzy,
 			int contextWindow){
+		
+		init();
 		
 		if (this.searcher == null)
 			initIndexSearcher();
@@ -257,8 +255,22 @@ public class SearchService {
 	}
 	
 	private File initIndexDirectory(){
-		File indexDir = new File("data/index");
+		File indexDir = new File(indexDirPath);
 		if (!indexDir.exists()) indexDir.mkdirs();
 		return indexDir;
+	}
+	
+	private void init(){
+		if (this.analyzer != null) return;
+		this.analyzer = new StandardAnalyzer();
+		this.queryParser = new MultiFieldQueryParser(
+                new String[] {"token", "tag", "tagPrev, tagNext"},
+                analyzer);
+		try {
+			this.indexDirectory = FSDirectory.open(
+					initIndexDirectory().toPath());
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 }
