@@ -279,6 +279,10 @@ button.controls-btn-disabled {
     padding-right: 5px;
 }
 
+#bc-results {
+	margin-top: 20px;
+}
+
 .bc-results-table {
 	width: 100%;
 }
