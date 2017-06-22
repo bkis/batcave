@@ -51,7 +51,8 @@ public class SearchService {
                 new String[] {"token", "tag"},
                 analyzer);
 		try {
-			this.indexDirectory = FSDirectory.open(new File("index").toPath());
+			this.indexDirectory = FSDirectory.open(
+					initIndexDirectory().toPath());
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -255,5 +256,9 @@ public class SearchService {
 		return false;
 	}
 	
-	
+	private File initIndexDirectory(){
+		File indexDir = new File("data/index");
+		if (!indexDir.exists()) indexDir.mkdirs();
+		return indexDir;
+	}
 }
