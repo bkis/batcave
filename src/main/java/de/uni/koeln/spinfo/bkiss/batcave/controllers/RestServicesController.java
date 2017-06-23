@@ -53,6 +53,8 @@ public class RestServicesController {
 				e.printStackTrace();
 			}
 			result = "OK, jetzt ist mir langweilig.";
+		} else if (action.equalsIgnoreCase("create-vspace-tag-neighbors")){
+			
 		}
 		
 	    return result;

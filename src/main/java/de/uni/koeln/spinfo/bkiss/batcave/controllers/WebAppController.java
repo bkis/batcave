@@ -43,6 +43,8 @@ public class WebAppController {
     	List<ControlsAction> actions = new ArrayList<ControlsAction>();
     	
     	actions.add(new ControlsAction("index", "Such-Index erstellen / aktualisieren"));
+    	actions.add(new ControlsAction("load-vspace-tag-neighbors", "Vektor-Raum \"benachbarte Annotationen\" laden"));
+    	actions.add(new ControlsAction("create-vspace-tag-neighbors", "Vektor-Raum \"benachbarte Annotationen\" neu erstellen"));
     	actions.add(new ControlsAction("wait", "Warte mal kurz!"));
     	
     	model.addAttribute("actions", actions);
