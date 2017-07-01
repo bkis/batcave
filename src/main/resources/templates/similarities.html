@@ -1,13 +1,31 @@
-<div id="bc-analysis">
-
-	<div class="bc-analysis-title" th:text="'Semantisch ähnlich zu: ' + ${word} + ' (' + ${language} + ')'">
-		Semantisch ähnlich
-	</div>
-	
-	<div th:each="entry : ${similarities}">
-		<span th:text="${entry.key}"></span>
-		<span th:text="'(' + ${entry.value} + ')'" class="sim-value"></span>
-		<br>
-	</div>
-	
+<div id="bc-analysis-close">
+	&Lt;
 </div>
+
+<div id="bc-analysis-title">
+	Semantische Ähnlichkeit auf Basis gemeinsamer Kookkurrenzen:<br>
+	<span th:text="${word} + ' (' + ${language} + ')'"></span>
+</div>
+
+<div class="bc-analysis-content">
+
+	<table th:if="${similarities != null && similarities.size() > 0}" class="bc-results-table">
+		<tr>
+			<th>Begriff</th>
+			<th>Ähnlichkeitswert</th>
+		</tr>
+		<tr th:each="entry : ${similarities}">
+			<td th:text="${entry.key}">N/A</td>
+			<td th:text="${entry.value}" class="sim-value">N/A</td>
+		</tr>
+	</table>
+	<br>
+	<span th:if="${similarities == null || similarities.size() == 0}">
+		Für diesen Begriff sind keine Daten zur semantischen Ähnlichkeit vorhanden.
+	</span>
+
+</div>
+
+<script>
+	
+</script>

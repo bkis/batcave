@@ -159,6 +159,7 @@ button.controls-btn-disabled {
 }
 
 #bc-display {
+	display: relative;
 	padding: 30px;
 	font-family: serif;
     color: #363636;
@@ -289,7 +290,7 @@ button.controls-btn-disabled {
 
 .bc-results-table th {
 	font-weight: bold;
-	font-size: 130%;
+	font-size: 100%;
 }
 
 .bc-result {
@@ -311,33 +312,40 @@ button.controls-btn-disabled {
 }
 
 #bc-analysis {
-	position: absolute;
-	z-index: 99;
-	width: 256px;
-	max-width: 100%;
+	display: none;
 	
-	background-color: #fff;
-	color: #363636;
-	border: 3px solid #363636;
-	
-	-webkit-box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.4);
-    -moz-box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.4);
-    box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.4);
+	-webkit-touch-callout: text;
+      -webkit-user-select: text;
+       -khtml-user-select: text;
+         -moz-user-select: text;
+          -ms-user-select: text;
+              user-select: text;
 }
 
-#bc-analysis .bc-analysis-title {
-	padding-left: 5px;
-	padding-right: 5px;
-	margin-bottom: 10px;
-	
-	font-weight: bold;	
-	background-color: #363636;
-	color: #fff;
+#bc-analysis #bc-analysis-close {
+	float: left;
+	font-size: 200%;
+	padding-right: 30px;
+	padding-left: 10px;
+	color: #bbb;
+	margin-bottom: 20px;
+	cursor: pointer;
+}
+
+#bc-analysis #bc-analysis-title span {
+	margin-bottom: 20px;
+	font-size: 150%;
+}
+
+#bc-analysis .bc-analysis-content{
+	padding-left: 10px;
+	margin-top: 15px;
+	border-top: 3px solid #ddd;
 }
 
 #bc-analysis .sim-value {
-	color: #888;
-	font-size: 80%;
+	color: #666;
+	font-size: 90%;
 }
 
 #search-placeholder {

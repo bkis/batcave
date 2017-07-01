@@ -39,6 +39,15 @@ function getScanWidth(){
 	});
 }
 
+//analysis window back button
+function setupAnalysisBackButton(){
+	$("#bc-analysis-close").click(function(){
+		$("#bc-analysis").fadeOut(function (){
+			$("#bc-display").fadeIn();
+		});
+	});
+}
+
 
 //build frontend elements based on data
 function initPageJS(){
@@ -101,12 +110,30 @@ function initPageJS(){
 	
 	//set click actions for display objects
 	$(".bc-object").click(function() {
-		var target = $(this);
-		$(".bc-tags-item").each(function(){
-			if (target.attr("data-tag").includes($(this).attr("data-tag"))){
-				$(this).click();
-			}
+//		var target = $(this);
+//		$(".bc-tags-item").each(function(){
+//			if (target.attr("data-tag").includes($(this).attr("data-tag"))){
+//				$(this).click();
+//			}
+//		});
+		$("#bc-display").fadeOut(function(){
+			$("#bc-analysis").fadeIn();
+			setupAnalysisBackButton();
 		});
+		
+		var target = $(this);
+		
+		var request = $.ajax({
+		    url: '/similarity',
+		    type: 'GET',
+		    data: { word: target.text(), language : $("#bc-display").attr("data-language")} ,
+		    contentType: 'text/plain; charset=utf-8'
+		});
+
+		request.done(function(data) {
+		      $("#bc-analysis").html(data);
+		});
+		
 	});
 	
 	//set click action for tag-reset button
@@ -117,6 +144,7 @@ function initPageJS(){
 	$("#bc-display").mouseleave(function(){
 		$("#scan-img").css("margin-top", "0px");
 	});
+	
 }
 
 

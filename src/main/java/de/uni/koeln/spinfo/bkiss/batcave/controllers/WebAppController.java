@@ -109,6 +109,8 @@ public class WebAppController {
     	model.addAttribute("tags", extractTags(page));
     	//add highlight index
    		model.addAttribute("highlight", hl != null ? Integer.valueOf(hl) : -1);
+   		//guess page language
+   		model.addAttribute("language", page.getLanguages().toArray()[0]);
     	
         return "page";
     }
@@ -119,6 +121,7 @@ public class WebAppController {
     		@RequestParam String language,
     		Model model) {
     	
+    	word = AnalysisService.cleanToken(word);
     	model.addAttribute("word", word);
     	model.addAttribute("language", language);
     	model.addAttribute(

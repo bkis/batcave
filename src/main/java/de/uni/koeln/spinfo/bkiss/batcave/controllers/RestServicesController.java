@@ -1,6 +1,9 @@
 package de.uni.koeln.spinfo.bkiss.batcave.controllers;
 
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -11,6 +14,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import de.uni.koeln.spinfo.bkiss.batcave.analysis.AnalysisService;
+import de.uni.koeln.spinfo.bkiss.batcave.db.data.PageDocument;
+import de.uni.koeln.spinfo.bkiss.batcave.db.data.PageDocumentRepository;
 import de.uni.koeln.spinfo.bkiss.batcave.db.data.ScanDocumentRepository;
 import de.uni.koeln.spinfo.bkiss.batcave.search.SearchService;
 
@@ -20,6 +25,9 @@ public class RestServicesController {
 	
 	@Autowired
 	ScanDocumentRepository scanRepo;
+	
+	@Autowired
+	PageDocumentRepository pageRepo;
 	
 	@Autowired
 	private SearchService searchService;
@@ -47,6 +55,18 @@ public class RestServicesController {
 			result = searchService.createIndex();
 		} else if (action.equalsIgnoreCase("create-semantic-data")){
 			result = analysisService.createSimilarityData();
+		} else if (action.equalsIgnoreCase("languages")){
+			Map<String, Integer> count = new HashMap<String, Integer>();
+			for (PageDocument page : pageRepo.findAll()){
+				for (String l : page.getLanguages()){
+					if (count.containsKey(l)){
+						count.put(l, count.get(l)+1);
+					} else {
+						count.put(l, 1);
+					}
+				}
+			}
+			result = count.toString();
 		}
 		
 	    return result;

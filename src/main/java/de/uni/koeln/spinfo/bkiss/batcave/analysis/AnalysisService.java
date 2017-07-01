@@ -62,6 +62,8 @@ public class AnalysisService {
 	
 	
 	public String createSimilarityData(String language){
+		System.gc();
+		
 		//remove old semantics data
 		simRepo.delete(simRepo.findByLanguage(language));
 		
@@ -194,7 +196,7 @@ public class AnalysisService {
 	}
 	
 	
-	private String cleanToken(String token){
+	public static String cleanToken(String token){
 		return token.replaceAll("\\P{L}", "").toUpperCase();
 	}
 	
