@@ -54,7 +54,9 @@ public class SearchService {
 	}
 	
 	
-	public String createIndex(List<PageDocument> pages){
+	public String createIndex(){
+		List<PageDocument> pages = pageRepo.findAll();
+		
 		init();
 		IndexWriter w = getIndexWriter();
 		

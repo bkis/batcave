@@ -1,7 +1,6 @@
 package de.uni.koeln.spinfo.bkiss.batcave.controllers;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -11,7 +10,6 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -43,9 +41,7 @@ public class WebAppController {
     	List<ControlsAction> actions = new ArrayList<ControlsAction>();
     	
     	actions.add(new ControlsAction("index", "Such-Index erstellen / aktualisieren"));
-    	actions.add(new ControlsAction("load-vspace-tag-neighbors", "Vektor-Raum \"benachbarte Annotationen\" laden"));
-    	actions.add(new ControlsAction("create-vspace-tag-neighbors", "Vektor-Raum \"benachbarte Annotationen\" neu erstellen"));
-    	actions.add(new ControlsAction("wait", "Warte mal kurz!"));
+    	actions.add(new ControlsAction("create-semantic-data", "Analyse-Daten erzeugen"));
     	
     	model.addAttribute("actions", actions);
         return "system";
