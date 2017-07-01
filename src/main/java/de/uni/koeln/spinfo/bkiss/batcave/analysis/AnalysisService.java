@@ -40,6 +40,17 @@ public class AnalysisService {
 	}
 	
 	
+	public String createSimilarityData(){
+		Set<String> languages = new HashSet<String>();
+		for (PageDocument page : pageRepo.findAll()){
+			languages.addAll(page.getLanguages());
+		}
+		
+		String[] l = languages.toArray(new String[]{});
+		return createSimilarityData(l);
+	}
+	
+	
 	public String createSimilarityData(String[] languages){
 		StringBuilder sb = new StringBuilder();
 		for (String language : languages){
@@ -130,6 +141,7 @@ public class AnalysisService {
 			similarity = new Similarity(key1, language);
 			sim = new HashMap<String, Double>();
 			for (String key2 : countMap.keySet()){
+				if (key1.equals(key2)) continue;
 				Double value = VectorMath.cosineSimilarity(countMap.get(key1), countMap.get(key2));
 				if (value > 0.0) sim.put(key2, value);
 			}

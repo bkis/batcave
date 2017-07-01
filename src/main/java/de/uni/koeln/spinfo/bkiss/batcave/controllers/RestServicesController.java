@@ -46,8 +46,7 @@ public class RestServicesController {
 		if (action.equalsIgnoreCase("index")){
 			result = searchService.createIndex();
 		} else if (action.equalsIgnoreCase("create-semantic-data")){
-			String[] languages = {"Italiano", "Sutsilvan"};
-			result = analysisService.createSimilarityData(languages);
+			result = analysisService.createSimilarityData();
 		}
 		
 	    return result;
