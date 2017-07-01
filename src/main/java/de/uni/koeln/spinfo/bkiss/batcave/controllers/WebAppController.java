@@ -13,6 +13,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import de.uni.koeln.spinfo.bkiss.batcave.analysis.AnalysisService;
 import de.uni.koeln.spinfo.bkiss.batcave.db.data.ControlsAction;
 import de.uni.koeln.spinfo.bkiss.batcave.db.data.PageDocument;
 import de.uni.koeln.spinfo.bkiss.batcave.db.data.PageDocumentRepository;
@@ -25,6 +26,9 @@ public class WebAppController {
 	
 	@Autowired
 	private PageDocumentRepository pageRepo;
+	
+	@Autowired
+	private AnalysisService analysisService;
 	
 	@Autowired
 	private SearchService searchService;
@@ -107,6 +111,21 @@ public class WebAppController {
    		model.addAttribute("highlight", hl != null ? Integer.valueOf(hl) : -1);
     	
         return "page";
+    }
+    
+    @RequestMapping("/similarity")
+    public String similaritiesView(
+    		@RequestParam String word,
+    		@RequestParam String language,
+    		Model model) {
+    	
+    	model.addAttribute("word", word);
+    	model.addAttribute("language", language);
+    	model.addAttribute(
+    			"similarities",
+    			analysisService.sims(word, language, 10));
+    	
+        return "similarities";
     }
     
     @RequestMapping(value={"/page/"})

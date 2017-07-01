@@ -1,0 +1,13 @@
+<div id="bc-analysis">
+
+	<div class="bc-analysis-title" th:text="'Semantisch ähnlich zu: ' + ${word} + ' (' + ${language} + ')'">
+		Semantisch ähnlich
+	</div>
+	
+	<div th:each="entry : ${similarities}">
+		<span th:text="${entry.key}"></span>
+		<span th:text="'(' + ${entry.value} + ')'" class="sim-value"></span>
+		<br>
+	</div>
+	
+</div>
