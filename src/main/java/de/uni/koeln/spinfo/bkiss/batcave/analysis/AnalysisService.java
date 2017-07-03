@@ -70,6 +70,10 @@ public class AnalysisService {
 		//get raw data
 		List<PageDocument> data = pageRepo.findByLanguages(new String[]{language});
 		
+		//get idf for types
+		Map<String, Double> idf = IDF.idf(data);
+		//TODO use idf
+		
 		Map<String, Integer> dimensions = new HashMap<String, Integer>();
 		Map<String, Double[]> countMap = new HashMap<String, Double[]>();
 		
@@ -197,7 +201,7 @@ public class AnalysisService {
 	
 	
 	public static String cleanToken(String token){
-		return token.replaceAll("\\P{L}", "").toUpperCase();
+		return token.replaceAll("\\P{L}+", "").toUpperCase();
 	}
 	
 }
