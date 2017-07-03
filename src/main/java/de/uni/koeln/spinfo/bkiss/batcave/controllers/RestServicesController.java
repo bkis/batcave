@@ -14,10 +14,12 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import de.uni.koeln.spinfo.bkiss.batcave.analysis.AnalysisService;
+import de.uni.koeln.spinfo.bkiss.batcave.analysis.IDF;
 import de.uni.koeln.spinfo.bkiss.batcave.db.data.PageDocument;
 import de.uni.koeln.spinfo.bkiss.batcave.db.data.PageDocumentRepository;
 import de.uni.koeln.spinfo.bkiss.batcave.db.data.ScanDocumentRepository;
 import de.uni.koeln.spinfo.bkiss.batcave.search.SearchService;
+import de.uni.koeln.spinfo.bkiss.batcave.utils.CollectionTools;
 
 
 @RestController
@@ -56,6 +58,7 @@ public class RestServicesController {
 		} else if (action.equalsIgnoreCase("create-semantic-data")){
 			result = analysisService.createSimilarityData();
 		} else if (action.equalsIgnoreCase("languages")){
+			//ALL LANGUAGES OUTPUT
 			Map<String, Integer> count = new HashMap<String, Integer>();
 			for (PageDocument page : pageRepo.findAll()){
 				for (String l : page.getLanguages()){
@@ -67,6 +70,13 @@ public class RestServicesController {
 				}
 			}
 			result = count.toString();
+		} else if (action.equalsIgnoreCase("idf")){
+			//IDF TEST
+			Map<String, Double> idf = IDF.idf(pageRepo.findByLanguages(new String[]{"Vallader"}));
+			idf = CollectionTools.sortMapByValue(idf, false);
+			for (String key : idf.keySet()){
+				result += key + " (" + idf.get(key) + ")<br>";
+			}
 		}
 		
 	    return result;
