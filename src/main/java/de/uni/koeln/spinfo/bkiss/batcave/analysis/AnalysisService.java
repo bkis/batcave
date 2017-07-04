@@ -22,6 +22,9 @@ import de.uni.koeln.spinfo.bkiss.batcave.utils.CollectionTools;
 @Service
 public class AnalysisService {
 	
+	private static final double MIN_IDF_VALUE = 2.2;
+	
+	
 	@Autowired
 	private SimilarityRepository simRepo;
 	
@@ -62,8 +65,6 @@ public class AnalysisService {
 	
 	
 	public String createSimilarityData(String language){
-		System.gc();
-		
 		//remove old semantics data
 		simRepo.delete(simRepo.findByLanguage(language));
 		
@@ -72,7 +73,7 @@ public class AnalysisService {
 		
 		//get idf for types
 		Map<String, Double> idf = IDF.idf(data);
-		//TODO use idf
+		System.gc();
 		
 		Map<String, Integer> dimensions = new HashMap<String, Integer>();
 		Map<String, Double[]> countMap = new HashMap<String, Double[]>();
@@ -83,7 +84,7 @@ public class AnalysisService {
 			//collect and count types
 			for (Token token : page.getTokens()){
 				String type = cleanToken(token.getForm());
-				if (type.length() < 2) continue;
+				if (idf.get(type) < MIN_IDF_VALUE || type.length() < 2) continue;
 				if (!dimensions.containsKey(type))
 					dimensions.put(type, 1);
 				else
@@ -93,7 +94,7 @@ public class AnalysisService {
 		//sort by count
 		dimensions = CollectionTools.sortMapByValue(dimensions, false);
 		//keep most frequent
-		dimensions = CollectionTools.trimMap(dimensions, Math.min(dimensions.size(), 1000)); //TODO mehr!
+		dimensions = CollectionTools.trimMap(dimensions, Math.min(dimensions.size(), 1000));
 		dimensions = fillIndexMap(dimensions);
 		System.out.println("[SemanticVectorSpace] Done. Dimensions: " + dimensions.size());
 
@@ -108,7 +109,7 @@ public class AnalysisService {
 			StringBuilder sb = new StringBuilder();
 			for (Token t : page.getTokens()){
 				String token = cleanToken(t.getForm());
-				if (token.length() < 2) continue;
+				if (idf.get(token) < MIN_IDF_VALUE || token.length() < 2) continue;
 				sb.append(token.toUpperCase());
 				sb.append(" ");
 			}
