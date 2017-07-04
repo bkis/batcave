@@ -17,11 +17,11 @@ function showScanPosition(x, y, w, h){
 		'<div id="scanbox"></div>'
 	);
 	//show image portion
-	$("#scan-img").css("margin-top", "-" + parseInt((y-200) * scaleFactor) + "px");
+	//$("#scan-img").css("margin-top", "-" + parseInt((y-200) * scaleFactor) + "px");
 	//set position and dimensions
 	$("#scanbox").css("width", (w * scaleFactor) + 20);
 	$("#scanbox").css("height", (h * scaleFactor) + 20);
-	$("#scanbox").css("top", (200 * scaleFactor) - 10);
+	$("#scanbox").css("top", (y * scaleFactor) - 10);
 	$("#scanbox").css("left", (x * scaleFactor) - 10);
 }
 //hide position in scan
