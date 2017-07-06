@@ -23,14 +23,24 @@ function showScanPosition(x, y, w, h){
 	$("#scanbox").css("height", (h * scaleFactor) + 20);
 	$("#scanbox").css("top", (y * scaleFactor) - 10);
 	$("#scanbox").css("left", (x * scaleFactor) - 10);
+	
+	//setViewport(document.getElementById("scan-img"), x * scaleFactor, y * scaleFactor);
 }
+
 //hide position in scan
 function hideScanPosition(){
 	$("#scanbox").remove();
+	setViewport(document.getElementById("scan-img"), 0, 0);
 }
+
 //calculate scan positions relative to scan size
 function getScaleFactor(){
 	return parseInt($("#scan-img").prop("width")) / scanWidth;
+}
+
+function setViewport(img, x, y) {
+    img.style.left = "-" + (x-50) + "px";
+    img.style.top  = "-" + (y-50) + "px";
 }
 
 function getScanWidth(){

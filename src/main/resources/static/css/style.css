@@ -109,11 +109,10 @@ div.noframe-box{
 }
 
 #page-header {
-
+	padding-top: 20px;
 }
 
 #page-title {
-	padding-top: 10px;
     font-size: 130%;
     font-weight: bold;
 }
@@ -215,12 +214,15 @@ button.controls-btn-disabled {
 #scan-img {
 	width: 100%;
 	height: auto;
+	display: block;
+    position: absolute;
 }
 
 #scanbox {
 	position: absolute;
 	border: 2px solid rgba(0,255,0,0.6);
 	background-color: rgba(0,255,0,0.2);
+	z-index: 99;
 }
 
 #bc-tags {
@@ -329,7 +331,7 @@ button.controls-btn-disabled {
 }
 
 #bc-search-analysis {
-	margin-top: 20px;
+	margin-top: 30px;
 	text-align: center;
 }
 
