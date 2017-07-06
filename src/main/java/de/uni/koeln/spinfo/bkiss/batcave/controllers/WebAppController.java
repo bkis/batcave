@@ -3,7 +3,6 @@ package de.uni.koeln.spinfo.bkiss.batcave.controllers;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
-import java.util.Map;
 import java.util.Set;
 
 import javax.servlet.http.HttpServletRequest;
@@ -72,6 +71,10 @@ public class WebAppController {
     	if (tagPrev == null) tagPrev = "";
     	if (tagNext == null) tagNext = "";
     	if (mode == null) mode = "normal";
+    	
+    	//page title
+    	model.addAttribute("title", "Suchergebnisse für \"" + token + "\"");
+    	
     	token = token.replaceAll("\\P{L}", "");
     	
     	//update session
@@ -105,6 +108,9 @@ public class WebAppController {
     	
     	//param defaults
     	if (token == null) return "search";
+    	
+    	//page title
+    	model.addAttribute("title", "Semantische Ähnlichkeit zu \"" + token + "\"");
     	
     	//update session
     	updateSession(token, request);
