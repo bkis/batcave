@@ -221,11 +221,10 @@ public class DbTransform {
 	}
 	
 	
-	private static void correctNewLines(PageDocument page){
+	private static PageDocument correctNewLines(PageDocument page){
 		System.out.println("Generating newline markers...");
-		List<Token> tokens;
+		List<Token> tokens = page.getTokens();
 		
-		tokens = page.getTokens();
 		for (int i = 0; i < tokens.size(); i++) {
 			if (i > 0
 					&& tokens.get(i).getScanPosition().getY()
@@ -235,6 +234,8 @@ public class DbTransform {
 				tokens.get(i).setNewLine(false);
 			}
 		}
+		
+		return page;
 	}
 	
 }
