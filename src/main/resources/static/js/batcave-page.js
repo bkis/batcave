@@ -110,15 +110,14 @@ function initPageJS(){
 	
 	//set click actions for display objects
 	$(".bc-object").click(function() {
-//		var target = $(this);
-//		$(".bc-tags-item").each(function(){
-//			if (target.attr("data-tag").includes($(this).attr("data-tag"))){
-//				$(this).click();
-//			}
-//		});
+
 		$("#bc-display").fadeOut(function(){
 			$("#bc-analysis").fadeIn();
 			setupAnalysisBackButton();
+			//scroll
+			$('html, body').animate({
+		        scrollTop: $("#bc-analysis").offset().top
+		    }, 100);
 		});
 		
 		var target = $(this);

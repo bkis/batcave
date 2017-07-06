@@ -2,6 +2,7 @@ package de.uni.koeln.spinfo.bkiss.batcave.controllers;
 
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +19,7 @@ import de.uni.koeln.spinfo.bkiss.batcave.analysis.IDF;
 import de.uni.koeln.spinfo.bkiss.batcave.db.data.PageDocument;
 import de.uni.koeln.spinfo.bkiss.batcave.db.data.PageDocumentRepository;
 import de.uni.koeln.spinfo.bkiss.batcave.db.data.ScanDocumentRepository;
+import de.uni.koeln.spinfo.bkiss.batcave.db.data.Token;
 import de.uni.koeln.spinfo.bkiss.batcave.search.SearchService;
 import de.uni.koeln.spinfo.bkiss.batcave.utils.CollectionTools;
 
@@ -57,6 +59,8 @@ public class RestServicesController {
 			result = searchService.createIndex();
 		} else if (action.equalsIgnoreCase("create-semantic-data")){
 			result = analysisService.createSimilarityData();
+		} else if (action.equalsIgnoreCase("create-semantic-data-vallader")){
+			result = analysisService.createSimilarityData("Vallader");
 		} else if (action.equalsIgnoreCase("languages")){
 			//ALL LANGUAGES OUTPUT
 			Map<String, Integer> count = new HashMap<String, Integer>();

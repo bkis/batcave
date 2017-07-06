@@ -1,5 +1,6 @@
 package de.uni.koeln.spinfo.bkiss.batcave.analysis;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -40,6 +41,27 @@ public class AnalysisService {
 	public Map<String, Double> sims(String to, String lang, int n){
 		Similarity result = simRepo.findByTokenAndLanguage(to.toUpperCase(), lang);
 		return result != null ? result.getMostSimilar(n) : new HashMap<String, Double>();
+	}
+	
+	
+	public Map<String, Map<String, Double>> sims(String to, int n){
+		Map<String, Map<String, Double>> data = new HashMap<String, Map<String, Double>>();
+		List<Similarity> sims = simRepo.findByToken(to.toUpperCase());
+		if (sims == null) return null;
+		
+		for (Similarity sim : sims){
+			data.put(sim.getLanguage(), sim.getMostSimilar(n));
+		}
+		
+		DecimalFormat df = new DecimalFormat("#.##");
+		for (String lang : data.keySet()){
+			for (String key : data.get(lang).keySet()){
+				data.get(lang).put(key,
+						Double.valueOf(df.format(data.get(lang).get(key))));
+			}
+		}
+		
+		return data;
 	}
 	
 	

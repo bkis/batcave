@@ -3,6 +3,7 @@ package de.uni.koeln.spinfo.bkiss.batcave.controllers;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 import javax.servlet.http.HttpServletRequest;
@@ -89,7 +90,31 @@ public class WebAppController {
     	model.addAttribute("results", results);
     	model.addAttribute("resultsCount", results.size());
     	
+    	//analysis results
+    	model.addAttribute("sims", analysisService.sims(token, 10));
+    	
         return "search";
+    }
+    
+    
+    @RequestMapping("/search-similarities")
+    public String searchSimView(
+    		@RequestParam String token,
+    		Model model,
+    		HttpServletRequest request) {
+    	
+    	//param defaults
+    	if (token == null) return "search";
+    	
+    	//update session
+    	updateSession(token, request);
+    	
+    	//analysis results
+    	token = AnalysisService.cleanToken(token);
+    	model.addAttribute("sims", analysisService.sims(token, 10));
+    	model.addAttribute("token", token);
+    	
+        return "search-similarities";
     }
     
     
@@ -118,7 +143,7 @@ public class WebAppController {
     @RequestMapping("/similarity")
     public String similaritiesView(
     		@RequestParam String word,
-    		@RequestParam String language,
+    		@RequestParam(required = false) String language,
     		Model model) {
     	
     	word = AnalysisService.cleanToken(word);
@@ -163,6 +188,11 @@ public class WebAppController {
     	request.getSession().setAttribute("searchTagPrev", searchTagPrev);
     	request.getSession().setAttribute("searchTagNext", searchTagNext);
     	request.getSession().setAttribute("searchMode", searchMode);
+    }
+    
+    private void updateSession(String searchToken,
+    		HttpServletRequest request){
+    	request.getSession().setAttribute("searchToken", searchToken);
     }
     
 }

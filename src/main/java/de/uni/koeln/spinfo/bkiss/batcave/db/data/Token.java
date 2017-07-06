@@ -79,7 +79,11 @@ public class Token implements Comparable<Token> {
 	
 	@Override
 	public String toString() {
-		return form + " " + index + " tags=" + tags + "";
+		return form + " " + index
+				+ " tags=" + tags
+				+ " x=" + scanPosition.getX()
+				+ " y=" + scanPosition.getY()
+				+ " new-line=" + newLine;
 	}
 	
 	/**

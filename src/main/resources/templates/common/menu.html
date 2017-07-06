@@ -7,8 +7,6 @@
 					<div id="page-title" th:each="chapter, iter : ${page.chapters}"
 						th:text="${iter.last} ? ${chapter} : ${chapter} + ', '">
 					</div>
-					
-					
 				</div>
 				
 				
@@ -76,6 +74,10 @@
 						<img th:src="@{~/img/icon-search.png}" alt="Suchen"/>
 					</button>
 					
+					<button id="bc-search-similarities-btn" class="button-primary bc-search-btn" type="button">
+						<img th:src="@{~/img/icon-analysis.png}" alt="Semantik"/>
+					</button>
+					
 					<button id="bc-search-reset-btn" class="button-primary bc-search-btn" type="button">
 						<img th:src="@{~/img/icon-reset.png}" alt="Zurücksetzen"/>
 					</button>
@@ -83,5 +85,18 @@
 	
 		</div>
 	</form>
+	
+	<!--  NOSCRIPT -->
+	<div class="noscript">
+		<span class="absolute-center">
+			Bitte aktivieren Sie JavaScript, um diese Seite benutzen zu können
+		</span>
+	</div>
+	
+	<noscript>
+		<style>
+			div.noscript { display: initial; }
+		</style>
+	</noscript>
 	
 </div>

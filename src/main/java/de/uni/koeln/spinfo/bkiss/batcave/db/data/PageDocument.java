@@ -87,6 +87,11 @@ public class PageDocument implements Comparable<PageDocument> {
 		return tokens;
 	}
 	
+	public void replaceTokens(List<Token> tokens){
+		this.tokens.clear();
+		this.tokens.addAll(tokens);
+	}
+	
 	public void sortTokens(){
 		Collections.sort(tokens);
 	}
