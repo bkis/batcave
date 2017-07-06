@@ -4,13 +4,14 @@
 		<div class="row">
 
 				<div id="page-header" class="column column-50" th:if="${page != null}">
-					<div id="page-title" th:each="chapter, iter : ${page.chapters}"
+					<span id="page-title" th:each="chapter, iter : ${page.chapters}"
 						th:text="${iter.last} ? ${chapter} : ${chapter} + ', '">
-					</div>
+					</span>
 				</div>
 				
 				
-				<div class="column column-50" th:if="${page == null}">
+				<div id="page-header" class="column column-50" th:if="${page == null}">
+					<span id="page-title" th:if="${title != null}" th:text="${title}"></span>
 				</div>
 				
 			
