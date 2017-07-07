@@ -3,6 +3,7 @@ var colorHash = new ColorHash({lightness: 0.6});
 
 //original scan width (set when img loaded)
 var scanWidth = 1;
+var zoomWidth = 1;
 
 //returns color based on tag-string
 function col(tagString){
@@ -24,13 +25,17 @@ function showScanPosition(x, y, w, h){
 	$("#scanbox").css("top", (y * scaleFactor) - 10);
 	$("#scanbox").css("left", (x * scaleFactor) - 10);
 	
-	//setViewport(document.getElementById("scan-img"), x * scaleFactor, y * scaleFactor);
+	setZoomClip(
+			$("#bc-scan-zoom-img"),
+			x - ($("#bc-scan-zoom-container").width()/2) + (w/2),
+			y - 40
+	);
 }
 
 //hide position in scan
 function hideScanPosition(){
 	$("#scanbox").remove();
-	setViewport(document.getElementById("scan-img"), 0, 0);
+	setZoomClip($("#bc-scan-zoom-img"), 0, 0);
 }
 
 //calculate scan positions relative to scan size
@@ -38,9 +43,9 @@ function getScaleFactor(){
 	return parseInt($("#scan-img").prop("width")) / scanWidth;
 }
 
-function setViewport(img, x, y) {
-    img.style.left = "-" + (x-50) + "px";
-    img.style.top  = "-" + (y-50) + "px";
+function setZoomClip(img, x, y) {
+	img.css("left", "-" + x + "px");
+	img.css("top", "-" + y + "px");
 }
 
 function getScanWidth(){
@@ -150,8 +155,9 @@ function initPageJS(){
 		$(".bc-tags-item[data-locked='true']").click().mouseout();
 	});
 	
-	$("#bc-display").mouseleave(function(){
-		$("#scan-img").css("margin-top", "0px");
+	//close zoom view button
+	$("#bc-scan-zoom-close-btn").click(function() {
+		$("#bc-scan-zoom").fadeOut();
 	});
 	
 }
