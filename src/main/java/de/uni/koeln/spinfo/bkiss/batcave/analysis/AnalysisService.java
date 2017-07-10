@@ -20,10 +20,16 @@ import de.uni.koeln.spinfo.bkiss.batcave.db.data.SimilarityRepository;
 import de.uni.koeln.spinfo.bkiss.batcave.db.data.Token;
 import de.uni.koeln.spinfo.bkiss.batcave.utils.CollectionTools;
 
+
+/**
+ * Service class for creating and serving analysis data
+ * @author kiss
+ *
+ */
 @Service
 public class AnalysisService {
 	
-	private static final double MIN_IDF_VALUE = 2.2;
+	private static final double MIN_IDF_VALUE = 2.2;	//minimum IDF-value for tokens to be used
 	
 	
 	@Autowired
@@ -33,17 +39,26 @@ public class AnalysisService {
 	private PageDocumentRepository pageRepo;
 	
 	
-	public AnalysisService(){
-		
-	}
-	
-	
+	/**
+	 * Returns the most similar words of the given language to the given
+	 * token, mapped to the respective similarity value
+	 * @param to token to find similar words for
+	 * @param lang language corpus to use
+	 * @param n maximum number of returned similarities
+	 * @return
+	 */
 	public Map<String, Double> sims(String to, String lang, int n){
 		Similarity result = simRepo.findByTokenAndLanguage(to.toUpperCase(), lang);
 		return result != null ? result.getMostSimilar(n) : new HashMap<String, Double>();
 	}
 	
-	
+	/**
+	 * Returns the most similar words of any language of the corpus to the given
+	 * token, mapped to the respective similarity value
+	 * @param to token to find similar words for
+	 * @param n maximum number of returned similarities
+	 * @return
+	 */
 	public Map<String, Map<String, Double>> sims(String to, int n){
 		Map<String, Map<String, Double>> data = new HashMap<String, Map<String, Double>>();
 		List<Similarity> sims = simRepo.findByToken(to.toUpperCase());
@@ -64,7 +79,11 @@ public class AnalysisService {
 		return data;
 	}
 	
-	
+	/**
+	 * creates the similarity data for words of all languages
+	 * in the corpus, data is taken from DB.
+	 * @return
+	 */
 	public String createSimilarityData(){
 		Set<String> languages = new HashSet<String>();
 		for (PageDocument page : pageRepo.findAll()){
@@ -75,7 +94,12 @@ public class AnalysisService {
 		return createSimilarityData(l);
 	}
 	
-	
+	/**
+	 * creates the similarity data for words of the specified languages
+	 * in the corpus, data is taken from DB.
+	 * @param languages
+	 * @return
+	 */
 	public String createSimilarityData(String[] languages){
 		StringBuilder sb = new StringBuilder();
 		for (String language : languages){
@@ -85,7 +109,12 @@ public class AnalysisService {
 		return sb.toString();
 	}
 	
-	
+	/**
+	 * creates the similarity data for words of the specified language
+	 * in the corpus, data is taken from DB.
+	 * @param language
+	 * @return
+	 */
 	public String createSimilarityData(String language){
 		//remove old semantics data
 		simRepo.delete(simRepo.findByLanguage(language));
@@ -187,7 +216,9 @@ public class AnalysisService {
 		return "Vector space for language \"" + language + "\" created.";
 	}
 	
-	
+	/*
+	 * Finds contexts of a word in a text
+	 */
 	private List<String[]> trimTextMulti(String text, String around, int contextNrOfWords, boolean useSubstrings) {
 		List<String[]> out = new ArrayList<String[]>();
 		String[] tokens = text.replaceAll("\\P{L}", " ").replaceAll("\\s+", " ").split(" ");
@@ -222,7 +253,9 @@ public class AnalysisService {
 		return map;
 	}
 	
-	
+	/*
+	 * default token normalization
+	 */
 	public static String cleanToken(String token){
 		return token.replaceAll("\\P{L}+", "").toUpperCase();
 	}

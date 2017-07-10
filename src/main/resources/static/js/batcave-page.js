@@ -43,11 +43,13 @@ function getScaleFactor(){
 	return parseInt($("#scan-img").prop("width")) / scanWidth;
 }
 
+//set clipping for scan zoom view
 function setZoomClip(img, x, y) {
 	img.css("left", "-" + x + "px");
 	img.css("top", "-" + y + "px");
 }
 
+//get natural width of scan image
 function getScanWidth(){
 	$("#scan-img").load(function(){
 		scanWidth = $(this).prop("naturalWidth");
@@ -137,6 +139,7 @@ function initPageJS(){
 		
 		var target = $(this);
 		
+		//request data for similarities view via AJAX
 		var request = $.ajax({
 		    url: '/similarity',
 		    type: 'GET',

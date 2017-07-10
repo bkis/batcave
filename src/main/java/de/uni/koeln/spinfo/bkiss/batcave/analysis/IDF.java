@@ -10,9 +10,18 @@ import java.util.Set;
 import de.uni.koeln.spinfo.bkiss.batcave.db.data.PageDocument;
 import de.uni.koeln.spinfo.bkiss.batcave.db.data.Token;
 
+/**
+ * Helper class for IDF values
+ * @author kiss
+ *
+ */
 public class IDF {
 	
-	
+	/**
+	 * calculates the IDF values of every token in the given documents
+	 * @param pages
+	 * @return
+	 */
 	public static Map<String, Double> idf(List<PageDocument> pages){
 		//prepare output structure
 		Map<String, Double> idf = new HashMap<String, Double>();
@@ -36,7 +45,9 @@ public class IDF {
 		return idf;
 	}
 	
-	
+	/*
+	 * counts the documents each token appears in
+	 */
 	private static Map<String, Integer> getTypes(List<String> docs){
 		Map<String, Integer> types = new HashMap<String,Integer>();
 		Set<String> docTypes = new HashSet<String>();
@@ -62,7 +73,9 @@ public class IDF {
 		return types;
 	}
 	
-	
+	/*
+	 * concatenates the tokens of a PageDocument to plain text
+	 */
 	private static String getText(PageDocument page){
 		StringBuilder sb = new StringBuilder();
 		for (Token t : page.getTokens()){
