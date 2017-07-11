@@ -33,6 +33,11 @@ import de.uni.koeln.spinfo.bkiss.batcave.db.data.PageDocumentRepository;
 import de.uni.koeln.spinfo.bkiss.batcave.db.data.Token;
 
 
+/**
+ * Service class offering index creation routines and search logic.
+ * @author kiss
+ *
+ */
 @Service
 public class SearchService {
 	
@@ -49,11 +54,11 @@ public class SearchService {
 	
 	private MultiFieldQueryParser queryParser;
 	
-	public SearchService(){
-		
-	}
 	
-	
+	/**
+	 * Creates the search index. Will delete old index if present.
+	 * @return
+	 */
 	public String createIndex(){
 		List<PageDocument> pages = pageRepo.findAll();
 		
@@ -113,6 +118,16 @@ public class SearchService {
 	}
 	
 	
+	/**
+	 * Search request method. Returns list of SearchResult objects.
+	 * @param token
+	 * @param tag
+	 * @param tagPrev
+	 * @param tagNext
+	 * @param fuzzy
+	 * @param contextWindow
+	 * @return list of SearchResult objects
+	 */
 	public List<SearchResult> search(
 			String token,
 			String tag,
@@ -137,6 +152,7 @@ public class SearchService {
 		queryString += (tagPrev.length() > 0 ? (queryString.length() > 0 ? " AND " : "") + "tagPrev:" + tagPrev.toUpperCase() : "");
 		queryString += (tagNext.length() > 0 ? (queryString.length() > 0 ? " AND " : "") + "tagNext:" + tagNext.toUpperCase() : "");
 		
+		//parse query
 		Query q = null;
 		try {
 			q = queryParser.parse(queryString);
@@ -144,6 +160,7 @@ public class SearchService {
 			e1.printStackTrace();
 		}
 		
+		//get top docs
 		TopDocs topDocs = null;
         try {
 			topDocs = searcher.search(q, 50, Sort.RELEVANCE);
@@ -151,6 +168,7 @@ public class SearchService {
 			e.printStackTrace();
 		}
         
+        //contruct search results
         List<SearchResult> results = new ArrayList<SearchResult>();
         for (ScoreDoc sd : topDocs.scoreDocs){
         	try {
@@ -162,21 +180,6 @@ public class SearchService {
         
         return results;
 	}
-	
-	
-//	public List<SearchResult> filterByContext(
-//			List<SearchResult> results,
-//			String tagPrev,
-//			String tagNext){
-//		
-//		Iterator<SearchResult> iter = results.iterator();
-//		while (iter.hasNext()){
-//			SearchResult result = iter.next();
-//			//TODO
-//		}
-//		
-//		return results;
-//	}
 	
 	
 	private IndexWriter getIndexWriter(){
@@ -204,6 +207,9 @@ public class SearchService {
 	}
 	
 	
+	/*
+	 * Helper method generating a search result
+	 */
 	private SearchResult generateResult(ScoreDoc scoreDoc, int contextWindow) throws IOException{
 		Document doc = searcher.doc(scoreDoc.doc);
 		
@@ -229,6 +235,9 @@ public class SearchService {
 	}
 	
 	
+	/*
+	 * Helper method returning the context of a token in a document
+	 */
 	private String getContext(PageDocument page, int tokenIndex, int contextWindow){
 		if (page == null)
 			return "";
@@ -247,6 +256,9 @@ public class SearchService {
 	}
 	
 	
+	/*
+	 * Helper method checking if index is present
+	 */
 	private boolean indexExists(){
 		try {
 			return DirectoryReader.indexExists(indexDirectory);
@@ -256,12 +268,16 @@ public class SearchService {
 		return false;
 	}
 	
+	
 	private File initIndexDirectory(){
 		File indexDir = new File(indexDirPath);
 		if (!indexDir.exists()) indexDir.mkdirs();
 		return indexDir;
 	}
 	
+	/*
+	 * initializes the necessary fields
+	 */
 	private void init(){
 		if (this.analyzer != null) return;
 		this.analyzer = new StandardAnalyzer();
@@ -275,4 +291,5 @@ public class SearchService {
 			e.printStackTrace();
 		}
 	}
+	
 }

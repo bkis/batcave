@@ -1,5 +1,10 @@
 package de.uni.koeln.spinfo.bkiss.batcave.search;
 
+/**
+ * Data class representing a search result
+ * @author kiss
+ *
+ */
 public class SearchResult {
 	
 	private String pageId;
