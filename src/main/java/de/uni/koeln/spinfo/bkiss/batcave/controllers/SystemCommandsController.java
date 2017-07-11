@@ -2,36 +2,30 @@ package de.uni.koeln.spinfo.bkiss.batcave.controllers;
 
 import java.io.IOException;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import de.uni.koeln.spinfo.bkiss.batcave.analysis.AnalysisService;
-import de.uni.koeln.spinfo.bkiss.batcave.analysis.IDF;
 import de.uni.koeln.spinfo.bkiss.batcave.db.data.PageDocument;
 import de.uni.koeln.spinfo.bkiss.batcave.db.data.PageDocumentRepository;
-import de.uni.koeln.spinfo.bkiss.batcave.db.data.ScanDocumentRepository;
-import de.uni.koeln.spinfo.bkiss.batcave.db.data.Token;
 import de.uni.koeln.spinfo.bkiss.batcave.search.SearchService;
-import de.uni.koeln.spinfo.bkiss.batcave.utils.CollectionTools;
 
 
+/**
+ * Controller class for system commands/maintenance
+ * @author kiss
+ *
+ */
 @RestController
-public class RestServicesController {
+public class SystemCommandsController {
 	
 	@Autowired
-	ScanDocumentRepository scanRepo;
-	
-	@Autowired
-	PageDocumentRepository pageRepo;
+	private PageDocumentRepository pageRepo;
 	
 	@Autowired
 	private SearchService searchService;
@@ -40,13 +34,13 @@ public class RestServicesController {
 	private AnalysisService analysisService;
 	
 	
-	@ResponseBody
-	@RequestMapping(value = "/scan/{id}", method = RequestMethod.GET, produces = MediaType.IMAGE_PNG_VALUE)
-	public byte[] serveImage(@PathVariable String id) throws IOException {
-	    return scanRepo.findById(id.replaceAll("\\.\\w+$", "")).getImage();
-	}
 	
-	
+	/**
+	 * Handles system maintenance command requests
+	 * @param action
+	 * @return
+	 * @throws IOException
+	 */
 	@ResponseBody
 	@RequestMapping(value = "/actions")
 	public String actions(@RequestParam(required = false) String action) throws IOException {
@@ -55,13 +49,11 @@ public class RestServicesController {
 		
 		String result = "";
 		
-		if (action.equalsIgnoreCase("index")){
+		if (action.equalsIgnoreCase("index")){							//create index
 			result = searchService.createIndex();
-		} else if (action.equalsIgnoreCase("create-semantic-data")){
+		} else if (action.equalsIgnoreCase("create-semantic-data")){	//create similarity data
 			result = analysisService.createSimilarityData();
-		} else if (action.equalsIgnoreCase("create-semantic-data-vallader")){
-			result = analysisService.createSimilarityData("Vallader");
-		} else if (action.equalsIgnoreCase("languages")){
+		} else if (action.equalsIgnoreCase("languages")){				//list all languages contained in corpus
 			//ALL LANGUAGES OUTPUT
 			Map<String, Integer> count = new HashMap<String, Integer>();
 			for (PageDocument page : pageRepo.findAll()){
@@ -74,13 +66,6 @@ public class RestServicesController {
 				}
 			}
 			result = count.toString();
-		} else if (action.equalsIgnoreCase("idf")){
-			//IDF TEST
-			Map<String, Double> idf = IDF.idf(pageRepo.findByLanguages(new String[]{"Vallader"}));
-			idf = CollectionTools.sortMapByValue(idf, false);
-			for (String key : idf.keySet()){
-				result += key + " (" + idf.get(key) + ")<br>";
-			}
 		}
 		
 	    return result;

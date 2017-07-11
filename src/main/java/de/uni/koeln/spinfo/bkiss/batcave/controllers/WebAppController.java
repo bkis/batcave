@@ -34,12 +34,21 @@ public class WebAppController {
 	private SearchService searchService;
 	
 
+	/**
+	 * Default request handler
+	 * @return
+	 */
     @RequestMapping("*")
     public String defaultRequest() {
         return "search";
     }
     
     
+    /**
+     * Handles requests for system maintenance page
+     * @param model
+     * @return
+     */
     @RequestMapping("/system")
     public String action(Model model) {
     	List<ControlsAction> actions = new ArrayList<ControlsAction>();
@@ -52,6 +61,18 @@ public class WebAppController {
     }
     
     
+    /**
+     * Handles requests for search results page
+     * @param search
+     * @param token
+     * @param tag
+     * @param tagPrev
+     * @param tagNext
+     * @param mode
+     * @param model
+     * @param request
+     * @return
+     */
     @RequestMapping("/search")
     public String searchView(
     		@RequestParam(required = false) String search,
@@ -100,6 +121,13 @@ public class WebAppController {
     }
     
     
+    /**
+     * Handles requests for semantic similarities search page
+     * @param token
+     * @param model
+     * @param request
+     * @return
+     */
     @RequestMapping("/search-similarities")
     public String searchSimView(
     		@RequestParam String token,
@@ -124,6 +152,13 @@ public class WebAppController {
     }
     
     
+    /**
+     * Handles requests for single document page view
+     * @param id
+     * @param hl
+     * @param model
+     * @return
+     */
     @RequestMapping("/page")
     public String pageView(
     		@RequestParam(required = false) String id,
@@ -131,7 +166,7 @@ public class WebAppController {
     		Model model) {
     	
     	if (id == null)
-    		return pageRndView(model);
+    		return "search";
     	
     	PageDocument page = pageRepo.findById(id);
     	//add page object
@@ -146,6 +181,13 @@ public class WebAppController {
         return "page";
     }
     
+    /**
+     * Handles requests for semantic similarity view inside page view
+     * @param word
+     * @param language
+     * @param model
+     * @return
+     */
     @RequestMapping("/similarity")
     public String similaritiesView(
     		@RequestParam String word,
@@ -162,18 +204,9 @@ public class WebAppController {
         return "similarities";
     }
     
-    @RequestMapping(value={"/page/"})
-    public String pageRndView(Model model) {
-    	
-    	PageDocument page = pageRepo.findByVolume("Band I");
-    	//add page object
-    	model.addAttribute("page", page);
-    	//add tags array
-    	model.addAttribute("tags", extractTags(page));
-        return "page";
-    }
-    
-    
+    /*
+     * Helper method to extract all tags from a document
+     */
     private Set<String> extractTags(PageDocument doc){
     	Set<String> tags = new HashSet<String>();
     	for (Token t : doc.getTokens())
@@ -181,7 +214,9 @@ public class WebAppController {
     	return tags;
     }
     
-    
+    /*
+     * Updates session data
+     */
     private void updateSession(String searchToken,
     		String searchTag,
     		String searchTagPrev,
@@ -196,6 +231,9 @@ public class WebAppController {
     	request.getSession().setAttribute("searchMode", searchMode);
     }
     
+    /*
+     * Updates session data
+     */
     private void updateSession(String searchToken,
     		HttpServletRequest request){
     	request.getSession().setAttribute("searchToken", searchToken);
