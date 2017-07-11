@@ -133,7 +133,7 @@ function initPageJS(){
 			setupAnalysisBackButton();
 			//scroll
 			$('html, body').animate({
-		        scrollTop: $("#bc-analysis").offset().top
+		        scrollTop: $("#bc-analysis").offset().top - 20
 		    }, 100);
 		});
 		
