@@ -14,6 +14,12 @@ import com.mongodb.MongoClient;
 import com.mongodb.client.MongoCollection;
 
 
+/**
+ * Utility class offering a routine for building a DB collection containing
+ * scan images. Paths are defined in db.properties file.
+ * @author kiss
+ *
+ */
 public class DbBuildImageCollection {
 	
 

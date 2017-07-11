@@ -33,7 +33,8 @@ import net.minidev.json.JSONArray;
 
 
 /**
- * Class used to transform data from the ARC project db into a new purpose-built db structure
+ * Class used to transform data from the ARC project DB into the needed data structure.
+ * Settings (paths etc) are made in db.properties file.
  * 
  * @author kiss
  *
