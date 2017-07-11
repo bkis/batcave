@@ -3,6 +3,11 @@ package de.uni.koeln.spinfo.bkiss.batcave.db.data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+/**
+ * Data class to represent a scan image from the DB collection "scans"
+ * @author kiss
+ *
+ */
 @Document(collection="scans")
 public class ScanDocument implements Comparable<ScanDocument> {
 	

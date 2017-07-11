@@ -4,7 +4,11 @@ import java.util.List;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
 
-
+/**
+ * Repository interface for managing PageDocument objects in DB
+ * @author kiss
+ *
+ */
 public interface PageDocumentRepository extends MongoRepository<PageDocument, String> {
 
     public PageDocument findById(String id);

@@ -9,6 +9,11 @@ import java.util.Set;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+/**
+ * Data class to represent a DB object from the "pages" colletion
+ * @author kiss
+ *
+ */
 @Document(collection="pages")
 public class PageDocument implements Comparable<PageDocument> {
 	

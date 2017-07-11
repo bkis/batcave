@@ -3,7 +3,11 @@ package de.uni.koeln.spinfo.bkiss.batcave.db.data;
 import java.util.HashSet;
 import java.util.Set;
 
-
+/**
+ * Data class representing a token inside a document
+ * @author kiss
+ *
+ */
 public class Token implements Comparable<Token> {
 	
 	private String form;

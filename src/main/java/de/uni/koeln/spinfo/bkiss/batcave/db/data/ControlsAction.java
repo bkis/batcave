@@ -1,5 +1,10 @@
 package de.uni.koeln.spinfo.bkiss.batcave.db.data;
 
+/**
+ * Data class to represent system maintenance commands
+ * @author kiss
+ *
+ */
 public class ControlsAction {
 	
 	private String id;

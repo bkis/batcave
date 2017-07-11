@@ -1,5 +1,10 @@
 package de.uni.koeln.spinfo.bkiss.batcave.db.data;
 
+/**
+ * Data class representing the position of a token in a scan image
+ * @author kiss
+ *
+ */
 public class ScanPosition {
 	
 	private int x;

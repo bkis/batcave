@@ -9,6 +9,11 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import de.uni.koeln.spinfo.bkiss.batcave.utils.CollectionTools;
 
+/**
+ * Data class to represent a DB object from the "semantics" colletion
+ * @author kiss
+ *
+ */
 @Document(collection="semantics")
 public class Similarity {
 	
