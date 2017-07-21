@@ -63,9 +63,43 @@
 		
 		
 		<div class="row" th:if="${results == null}">
-			<div id="search-placeholder" class="column">
-				<br><br><br>
-				<img th:src="@{~/img/icon-search.svg}" alt="Bitte nutzen Sie die Suchfunktion"/>
+			<div class="column">
+				<div id="search-placeholder">
+					<br>
+					<h6>Webbasiertes Retrieval und Mining in annotierten Textkorpora</h6>
+					<p>
+						Diese Anwendung zeigt exemplarisch Möglichkeiten zum webbasierten Durchsuchen, Browsen,
+						Darstellen und Analysieren von annotierten Textkorpora auf. Als Beispiel-Ressource werden
+						die Daten der <a href="http://www.spinfo.phil-fak.uni-koeln.de/24652.html" target="_blank">DRC</a>
+						- und <a href="http://www.spinfo.phil-fak.uni-koeln.de/24653.html" target="_blank">ARC</a>-Projekte
+						der Sprachlichen Informationsverarbeitung (Universität zu Köln) verwendet.
+					</p>
+					<p>
+						In der am Kopf der Seite immer sichtbaren Suchmaske lassen sich ein Suchbegriff sowie
+						die PoS-Annotationen (<a href="https://en.wikipedia.org/wiki/Part_of_speech" target="_blank">Part of speech</a>)
+						des Suchbegriffs und seiner voran- und nachstehenden Begriffe definieren. Dabei sind alle diese Parameter optional,
+						d.h. es ist z.B. auch eine Suche ohne die Angabe eines Suchbegriffs möglich.<br>
+						Zusätzlich zum "normalen" Suchmodus lässt sich außerdem eine "unscharfe" Suche einstellen, bei der auch Begriffe
+						mit ähnlicher Schreibweise gefunden werden.
+					</p>
+					<p>
+						Aus der zurückgegebenen Liste entsprechender Fundstellen gelangt man mit einem Klick in die Seiten-Ansicht
+						des Dokuments, welches die Fundstelle enthält. In dieser Seiten-Ansicht lassen sich links die verschiedenen
+						Annotationen im Text farblich darstellen und markieren (der Such begriff ist grün umrandet), rechts wird die Position des mit der Maus berührten
+						Begriffs im Originaldokument gezeigt.<br>
+						Ein Klick auf eine der über dem Text aufgelisteten Annotationen markiert diese im gesamten Text dauerhaft,
+						ein weiterer setzt diese Funktion wieder zurück.<br>
+						Durch einen Klick auf ein Wort im Text wird eine semantische Suche für dieses Wort im Kontext der jeweiligen
+						Sprache des Dokuments durchgeführt. Es erscheint eine Liste der zehn dem Begriff semantisch ähnlichsten Begriffe des Korpus.<br>
+						Jeder Begriff dieser Liste lässt wiederum durch einen Klick im Korpus suchen.
+					</p>
+					<p>
+						Neben der oben beschriebenen Suche nach Fundstellen im Korpus lässt sich über den zweiten Such-Button eine
+						semantische Suche durchführen. Es werden dann jeweils die zehn dem Suchbegriff semantisch ähnlichsten Begriffe
+						für jede im Korpus vertretene Sprache angezeigt. Diese Daten lassen sich auch direkt für ein bestimmtes Wort
+						aus einem Dokument in der Dokumenten-Ansicht aufrufen.
+					</p>
+				</div>
 			</div>
 		</div>
 			

@@ -421,7 +421,16 @@ button.controls-btn-disabled {
 }
 
 #search-placeholder {
-	text-align: center;
+	width: 768px;
+	max-width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	/*
+	background-image: url('../img/icon-search.svg');
+	background-position: center center;
+	background-size: contain;
+	background-repeat: no-repeat;
+	*/
 }
 
 #search-placeholder img {
