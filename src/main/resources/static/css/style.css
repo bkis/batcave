@@ -22,16 +22,17 @@ body {
 }
 
 a:link {
-    color: #229954;
+    color: #229988;
 }
 a:visited {
-    color: #229954;
+    color: #229988;
 }
 a:hover {
-    color: #229954;
+    color: #229988;
+    text-decoration: underline;
 }
 a:active {
-    color: #229954;
+    color: #229988;
 }
 
 .b { font-weight: bold; }

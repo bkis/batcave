@@ -56,14 +56,22 @@ function getScanWidth(){
 	});
 }
 
-//analysis window back button
-function setupAnalysisBackButton(){
+//analysis window functions
+function setupAnalysisView(){
+	//back button
 	$("#bc-analysis-close").click(function(){
 		$("#bc-analysis").fadeOut(function (){
 			$("#bc-display").fadeIn();
 		});
 	});
+	//search links
+	$(".bc-analysis-search-link").click(function(){
+		$("#search-token").val($(this).text());
+		$("#search-form").submit();
+	});
 }
+
+//analysis 
 
 
 //build frontend elements based on data
@@ -130,7 +138,7 @@ function initPageJS(){
 
 		$("#bc-display").fadeOut(function(){
 			$("#bc-analysis").fadeIn();
-			setupAnalysisBackButton();
+			setupAnalysisView();
 			//scroll
 			$('html, body').animate({
 		        scrollTop: $("#bc-analysis").offset().top - 20

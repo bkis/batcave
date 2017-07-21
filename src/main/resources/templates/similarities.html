@@ -4,7 +4,8 @@
 
 <div id="bc-analysis-title">
 	Semantische Ähnlichkeit auf Basis gemeinsamer Kookkurrenzen:<br>
-	<span th:text="${word} + ' (' + ${language} + ')'"></span>
+	<a class="bc-analysis-search-link" href="javascript:void(0)" th:text="${word}" th:title="${word} + ' suchen'">N/A</a>
+	<span th:text="' (' + ${language} + ')'"></span>
 </div>
 
 <div class="bc-analysis-content">
@@ -15,8 +16,12 @@
 			<th>Ähnlichkeitswert</th>
 		</tr>
 		<tr th:each="entry : ${similarities}">
-			<td th:text="${entry.key}">N/A</td>
-			<td th:text="${entry.value}" class="sim-value">N/A</td>
+			<td>
+				<a class="bc-analysis-search-link" href="javascript:void(0)" th:text="${entry.key}" th:title="${entry.key} + ' suchen'">N/A</a>
+			</td>
+			<td th:text="${entry.value}" class="sim-value">
+				N/A
+			</td>
 		</tr>
 	</table>
 	<br>
@@ -25,7 +30,3 @@
 	</span>
 
 </div>
-
-<script>
-	
-</script>
