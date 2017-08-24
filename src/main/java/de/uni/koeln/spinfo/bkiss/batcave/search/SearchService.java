@@ -141,6 +141,13 @@ public class SearchService {
 		if (this.searcher == null)
 			initIndexSearcher();
 		
+		List<SearchResult> results = new ArrayList<SearchResult>();
+		if (token.length()
+				+ tag.length()
+				+ tagPrev.length()
+				+ tagNext.length() == 0)
+			return results;
+		
 		//apply fuzzy search
 		if (fuzzy && token != null && token.length() > 0)
 			token = token.concat("~");
@@ -169,7 +176,6 @@ public class SearchService {
 		}
         
         //contruct search results
-        List<SearchResult> results = new ArrayList<SearchResult>();
         for (ScoreDoc sd : topDocs.scoreDocs){
         	try {
 				results.add(generateResult(sd, contextWindow));
